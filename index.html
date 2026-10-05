@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>214 Books: 6-Year Master Reading Journey</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { 500: '#6366f1', 600: '#4f46e5', 900: '#1e1b4b' }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans">
+  <!-- Header -->
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50 px-6 py-4">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <div>
+        <h1 class="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+          214-Book 6-Year Roadmap
+        </h1>
+        <p class="text-xs text-slate-400 mt-1">Exact Library Catalog • Target: 3 Books (~1,500 Pages) per Month</p>
+      </div>
+      
+      <!-- Stats Summary -->
+      <div class="flex gap-4 text-center">
+        <div class="bg-slate-800/60 px-4 py-2 rounded-lg border border-slate-700/50">
+          <div id="books-completed" class="text-lg font-bold text-indigo-400">0 / 214</div>
+          <div class="text-[10px] uppercase tracking-wider text-slate-400">Total Read</div>
+        </div>
+        <div class="bg-slate-800/60 px-4 py-2 rounded-lg border border-slate-700/50">
+          <div id="pages-completed" class="text-lg font-bold text-purple-400">0 / 96,300</div>
+          <div class="text-[10px] uppercase tracking-wider text-slate-400">Est. Pages Read</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-7xl mx-auto px-6 py-8">
+    <!-- View & Year Selector -->
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
+      <div class="flex flex-wrap bg-slate-900 border border-slate-800 p-1 rounded-xl" id="year-selector">
+        <button onclick="selectYear('all')" class="year-btn px-4 py-2 rounded-lg text-xs font-semibold bg-indigo-600 text-white">Full Catalog (214)</button>
+        <button onclick="selectYear(1)" class="year-btn px-4 py-2 rounded-lg text-xs font-semibold text-slate-400 hover:text-white">Year 1</button>
+        <button onclick="selectYear(2)" class="year-btn px-4 py-2 rounded-lg text-xs font-semibold text-slate-400 hover:text-white">Year 2</button>
+        <button onclick="selectYear(3)" class="year-btn px-4 py-2 rounded-lg text-xs font-semibold text-slate-400 hover:text-white">Year 3</button>
+        <button onclick="selectYear(4)" class="year-btn px-4 py-2 rounded-lg text-xs font-semibold text-slate-400 hover:text-white">Year 4</button>
+        <button onclick="selectYear(5)" class="year-btn px-4 py-2 rounded-lg text-xs font-semibold text-slate-400 hover:text-white">Year 5</button>
+        <button onclick="selectYear(6)" class="year-btn px-4 py-2 rounded-lg text-xs font-semibold text-slate-400 hover:text-white">Year 6</button>
+      </div>
+
+      <div class="w-full md:w-72">
+        <input type="text" id="search-input" oninput="handleSearch()" placeholder="Search title, author, series..." class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-xs text-slate-200 focus:outline-none focus:border-indigo-500">
+      </div>
+    </div>
+
+    <!-- Overall Progress Bar -->
+    <div class="mb-8 bg-slate-900 p-4 rounded-xl border border-slate-800">
+      <div class="flex justify-between text-sm mb-2 font-medium">
+        <span>6-Year Master Journey Completion</span>
+        <span id="progress-percent" class="text-indigo-400">0%</span>
+      </div>
+      <div class="w-full bg-slate-800 h-3 rounded-full overflow-hidden">
+        <div id="progress-bar" class="bg-gradient-to-r from-indigo-500 to-purple-500 h-full w-0 transition-all duration-500"></div>
+      </div>
+    </div>
+
+    <!-- Genre Filter Buttons -->
+    <div class="flex flex-wrap gap-2 mb-8" id="filters">
+      <button onclick="filterGenre('all')" class="genre-btn bg-indigo-600 text-white px-3 py-1.5 rounded-lg text-xs font-semibold">All Genres</button>
+      <button onclick="filterGenre('Sci-Fi')" class="genre-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg text-xs font-semibold">Sci-Fi</button>
+      <button onclick="filterGenre('Fantasy')" class="genre-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg text-xs font-semibold">Fantasy</button>
+      <button onclick="filterGenre('LitRPG')" class="genre-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg text-xs font-semibold">LitRPG</button>
+      <button onclick="filterGenre('Non-Fiction')" class="genre-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg text-xs font-semibold">Non-Fiction</button>
+    </div>
+
+    <!-- Book Grid Container -->
+    <div id="books-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+  </main>
+
+  <script>
+    // Exact 214 Books catalog mapped precisely across 72 months (Years 1-6)
+    const exactCatalog = [
+      // Year 1 (Oct 2026 - Sep 2027)
+      { id: "b1", title: "Golden Son", author: "Pierce Brown", series: "Red Rising #2", genre: "Sci-Fi", pages: 460, year: 1, month: "Oct 2026" },
+      { id: "b2", title: "Between Two Fires", author: "Christopher Buehlman", series: "Standalone", genre: "Fantasy", pages: 430, year: 1, month: "Oct 2026" },
+      { id: "b3", title: "The Lies of Locke Lamora", author: "Scott Lynch", series: "Gentleman Bastard #1", genre: "Fantasy", pages: 500, year: 1, month: "Oct 2026" },
+      { id: "b4", title: "Morning Star", author: "Pierce Brown", series: "Red Rising #3", genre: "Sci-Fi", pages: 520, year: 1, month: "Nov 2026" },
+      { id: "b5", title: "The Blade Itself", author: "Joe Abercrombie", series: "First Law #1", genre: "Fantasy", pages: 530, year: 1, month: "Nov 2026" },
+      { id: "b6", title: "Inverting the Pyramid", author: "Jonathan Wilson", series: "Tactics", genre: "Non-Fiction", pages: 450, year: 1, month: "Nov 2026" },
+      { id: "b7", title: "Dark Matter", author: "Blake Crouch", series: "Standalone", genre: "Sci-Fi", pages: 340, year: 1, month: "Dec 2026" },
+      { id: "b8", title: "Hyperion", author: "Dan Simmons", series: "Hyperion #1", genre: "Sci-Fi", pages: 480, year: 1, month: "Dec 2026" },
+      { id: "b9", title: "The Final Empire", author: "Brandon Sanderson", series: "Mistborn #1", genre: "Fantasy", pages: 540, year: 1, month: "Dec 2026" },
+      { id: "b10", title: "Children of Time", author: "Adrian Tchaikovsky", series: "Children of Time #1", genre: "Sci-Fi", pages: 600, year: 1, month: "Jan 2027" },
+      { id: "b11", title: "Dungeon Crawler Carl", author: "Matt Dinniman", series: "DCC #1", genre: "LitRPG", pages: 450, year: 1, month: "Jan 2027" },
+      { id: "b12", title: "The Rise and Reign of the Mammals", author: "Steve Brusatte", series: "Science", genre: "Non-Fiction", pages: 500, year: 1, month: "Jan 2027" },
+      { id: "b13", title: "The Name of the Wind", author: "Patrick Rothfuss", series: "Kingkiller #1", genre: "Fantasy", pages: 660, year: 1, month: "Feb 2027" },
+      { id: "b14", title: "The Player of Games", author: "Iain M. Banks", series: "Culture #2", genre: "Sci-Fi", pages: 300, year: 1, month: "Feb 2027" },
+      { id: "b15", title: "Zonal Marking", author: "Michael Cox", series: "Tactics", genre: "Non-Fiction", pages: 340, year: 1, month: "Feb 2027" },
+      { id: "b16", title: "Empire of Silence", author: "Christopher Ruocchio", series: "Sun Eater #1", genre: "Sci-Fi", pages: 600, year: 1, month: "Mar 2027" },
+      { id: "b17", title: "The Shadow of What Was Lost", author: "James Islington", series: "Licanius #1", genre: "Fantasy", pages: 700, year: 1, month: "Mar 2027" },
+      { id: "b18", title: "The Sports Gene", author: "David Epstein", series: "Science", genre: "Non-Fiction", pages: 350, year: 1, month: "Mar 2027" },
+      { id: "b19", title: "Recursion", author: "Blake Crouch", series: "Standalone", genre: "Sci-Fi", pages: 330, year: 1, month: "Apr 2027" },
+      { id: "b20", title: "The Pillars of the Earth", author: "Ken Follett", series: "Kingsbridge #1", genre: "Historical", pages: 1000, year: 1, month: "Apr 2027" },
+      { id: "b21", title: "Scythe", author: "Neal Shusterman", series: "Scythe #1", genre: "Sci-Fi", pages: 430, year: 1, month: "Apr 2027" },
+      { id: "b22", title: "Assassin's Apprentice", author: "Robin Hobb", series: "Farseer #1", genre: "Fantasy", pages: 400, year: 1, month: "May 2027" },
+      { id: "b23", title: "Carl’s Doomsday Scenario", author: "Matt Dinniman", series: "DCC #2", genre: "LitRPG", pages: 400, year: 1, month: "May 2027" },
+      { id: "b24", title: "Service Model", author: "Adrian Tchaikovsky", series: "Standalone", genre: "Sci-Fi", pages: 360, year: 1, month: "May 2027" },
+      { id: "b25", title: "Iron Gold", author: "Pierce Brown", series: "Red Rising #4", genre: "Sci-Fi", pages: 600, year: 1, month: "Jun 2027" },
+      { id: "b26", title: "The Poppy War", author: "R.F. Kuang", series: "Poppy War #1", genre: "Fantasy", pages: 530, year: 1, month: "Jun 2027" },
+      { id: "b27", title: "Horns, Strings, and Harmony", author: "John Backus", series: "Acoustics", genre: "Non-Fiction", pages: 320, year: 1, month: "Jun 2027" },
+      { id: "b28", title: "The Shadow of the Gods", author: "John Gwynne", series: "Bloodsworn #1", genre: "Fantasy", pages: 500, year: 1, month: "Jul 2027" },
+      { id: "b29", title: "The Dungeon Anarchist's Cookbook", author: "Matt Dinniman", series: "DCC #3", genre: "LitRPG", pages: 500, year: 1, month: "Jul 2027" },
+      { id: "b30", title: "The Three-Body Problem", author: "Cixin Liu", series: "Remembrance #1", genre: "Sci-Fi", pages: 400, year: 1, month: "Jul 2027" },
+      { id: "b31", title: "The Way of Kings", author: "Brandon Sanderson", series: "Stormlight #1", genre: "Fantasy", pages: 1000, year: 1, month: "Aug 2027" },
+      { id: "b32", title: "Before They Are Hanged", author: "Joe Abercrombie", series: "First Law #2", genre: "Fantasy", pages: 540, year: 1, month: "Aug 2027" },
+      { id: "b33", title: "The Sixth Extinction", author: "Elizabeth Kolbert", series: "Science", genre: "Non-Fiction", pages: 320, year: 1, month: "Aug 2027" },
+      { id: "b34", title: "Dark Age", author: "Pierce Brown", series: "Red Rising #5", genre: "Sci-Fi", pages: 750, year: 1, month: "Sep 2027" },
+      { id: "b35", title: "Last Argument of Kings", author: "Joe Abercrombie", series: "First Law #3", genre: "Fantasy", pages: 600, year: 1, month: "Sep 2027" },
+      { id: "b36", title: "The Gate of the Feral Gods", author: "Matt Dinniman", series: "DCC #4", genre: "LitRPG", pages: 500, year: 1, month: "Sep 2027" },
+
+      // Year 2
+      { id: "b37", title: "Light Bringer", author: "Pierce Brown", series: "Red Rising #6", genre: "Sci-Fi", pages: 700, year: 2, month: "Oct 2027" },
+      { id: "b38", title: "The Dark Forest", author: "Cixin Liu", series: "Remembrance #2", genre: "Sci-Fi", pages: 500, year: 2, month: "Oct 2027" },
+      { id: "b39", title: "Best Served Cold", author: "Joe Abercrombie", series: "First Law World", genre: "Fantasy", pages: 600, year: 2, month: "Oct 2027" },
+      { id: "b40", title: "Words of Radiance", author: "Brandon Sanderson", series: "Stormlight #2", genre: "Fantasy", pages: 1080, year: 2, month: "Nov 2027" },
+      { id: "b41", title: "Children of Ruin", author: "Adrian Tchaikovsky", series: "Children of Time #2", genre: "Sci-Fi", pages: 550, year: 2, month: "Nov 2027" },
+      { id: "b42", title: "The Rise and Fall of the Dinosaurs", author: "Steve Brusatte", series: "Science", genre: "Non-Fiction", pages: 400, year: 2, month: "Nov 2027" },
+      { id: "b43", title: "Well of Ascension", author: "Brandon Sanderson", series: "Mistborn #2", genre: "Fantasy", pages: 600, year: 2, month: "Dec 2027" },
+      { id: "b44", title: "The Butcher's Masquerade", author: "Matt Dinniman", series: "DCC #5", genre: "LitRPG", pages: 500, year: 2, month: "Dec 2027" },
+      { id: "b45", title: "Use of Weapons", author: "Iain M. Banks", series: "Culture #3", genre: "Sci-Fi", pages: 400, year: 2, month: "Dec 2027" },
+      { id: "b46", title: "Howling Dark", author: "Christopher Ruocchio", series: "Sun Eater #2", genre: "Sci-Fi", pages: 650, year: 2, month: "Jan 2028" },
+      { id: "b47", title: "Thunderhead", author: "Neal Shusterman", series: "Scythe #2", genre: "Sci-Fi", pages: 500, year: 2, month: "Jan 2028" },
+      { id: "b48", title: "Net Gains", author: "Ryan O'Hanlon", series: "Sports Analytics", genre: "Non-Fiction", pages: 300, year: 2, month: "Jan 2028" },
+      { id: "b49", title: "Royal Assassin", author: "Robin Hobb", series: "Farseer #2", genre: "Fantasy", pages: 500, year: 2, month: "Feb 2028" },
+      { id: "b50", title: "The Heroes", author: "Joe Abercrombie", series: "First Law World", genre: "Fantasy", pages: 600, year: 2, month: "Feb 2028" },
+      { id: "b51", title: "World Without End", author: "Ken Follett", series: "Kingsbridge #2", genre: "Historical", pages: 1000, year: 2, month: "Feb 2028" },
+      { id: "b52", title: "Death's End", author: "Cixin Liu", series: "Remembrance #3", genre: "Sci-Fi", pages: 600, year: 2, month: "Mar 2028" },
+      { id: "b53", title: "The Anvil of Ice", author: "Michael Scott Rohan", series: "Winter of the World #1", genre: "Fantasy", pages: 400, year: 2, month: "Mar 2028" },
+      { id: "b54", title: "Upgrade", author: "Blake Crouch", series: "Standalone", genre: "Sci-Fi", pages: 350, year: 2, month: "Mar 2028" },
+      { id: "b55", title: "An Echo of Things to Come", author: "James Islington", series: "Licanius #2", genre: "Fantasy", pages: 700, year: 2, month: "Apr 2028" },
+      { id: "b56", title: "Children of Memory", author: "Adrian Tchaikovsky", series: "Children of Time #3", genre: "Sci-Fi", pages: 500, year: 2, month: "Apr 2028" },
+      { id: "b57", title: "Peak", author: "Anders Ericsson", series: "Psychology", genre: "Non-Fiction", pages: 330, year: 2, month: "Apr 2028" },
+      { id: "b58", title: "The Eye of the Bedlam Bride", author: "Matt Dinniman", series: "DCC #6", genre: "LitRPG", pages: 600, year: 2, month: "May 2028" },
+      { id: "b59", title: "Demon In White", author: "Christopher Ruocchio", series: "Sun Eater #3", genre: "Sci-Fi", pages: 700, year: 2, month: "May 2028" },
+      { id: "b60", title: "The Dragonbone Chair", author: "Tad Williams", series: "Memory, Sorrow & Thorn #1", genre: "Fantasy", pages: 650, year: 2, month: "May 2028" },
+      { id: "b61", title: "Ship of Magic", author: "Robin Hobb", series: "Liveship Traders #1", genre: "Fantasy", pages: 800, year: 2, month: "Jun 2028" },
+      { id: "b62", title: "Red Country", author: "Joe Abercrombie", series: "First Law World", genre: "Fantasy", pages: 500, year: 2, month: "Jun 2028" },
+      { id: "b63", title: "The Expected Goals Philosophy", author: "James Tippett", series: "Sports Analytics", genre: "Non-Fiction", pages: 280, year: 2, month: "Jun 2028" },
+      { id: "b64", title: "The Hunger of the Gods", author: "John Gwynne", series: "Bloodsworn #2", genre: "Fantasy", pages: 500, year: 2, month: "Jul 2028" },
+      { id: "b65", title: "Hero of Ages", author: "Brandon Sanderson", series: "Mistborn #3", genre: "Fantasy", pages: 600, year: 2, month: "Jul 2028" },
+      { id: "b66", title: "Excession", author: "Iain M. Banks", series: "Culture #5", genre: "Sci-Fi", pages: 400, year: 2, month: "Jul 2028" },
+      { id: "b67", title: "Oathbringer", author: "Brandon Sanderson", series: "Stormlight #3", genre: "Fantasy", pages: 1200, year: 2, month: "Aug 2028" },
+      { id: "b68", title: "The Dragon Republic", author: "R.F. Kuang", series: "Poppy War #2", genre: "Fantasy", pages: 600, year: 2, month: "Aug 2028" },
+      { id: "b69", title: "Assassin's Quest", author: "Robin Hobb", series: "Farseer #3", genre: "Fantasy", pages: 600, year: 2, month: "Sep 2028" },
+      { id: "b70", title: "This Is How They Tell Me the World Ends", author: "Nicole Perlroth", series: "Cybersecurity", genre: "Non-Fiction", pages: 500, year: 2, month: "Sep 2028" },
+      { id: "b71", title: "The Toll", author: "Neal Shusterman", series: "Scythe #3", genre: "Sci-Fi", pages: 600, year: 2, month: "Sep 2028" },
+      { id: "b72", title: "Kingdom of Needles", author: "Christopher Ruocchio", series: "Sun Eater Companion", genre: "Sci-Fi", pages: 300, year: 2, month: "Sep 2028" },
+
+      // Year 3
+      { id: "b73", title: "A Little Hatred", author: "Joe Abercrombie", series: "Age of Madness #1", genre: "Fantasy", pages: 450, year: 3, month: "Oct 2028" },
+      { id: "b74", title: "Inversions", author: "Iain M. Banks", series: "Culture #6", genre: "Sci-Fi", pages: 350, year: 3, month: "Oct 2028" },
+      { id: "b75", title: "Red Sister", author: "Mark Lawrence", series: "Ancestor #1", genre: "Fantasy", pages: 450, year: 3, month: "Oct 2028" },
+      { id: "b76", title: "The Light of All That Falls", author: "James Islington", series: "Licanius #3", genre: "Fantasy", pages: 700, year: 3, month: "Nov 2028" },
+      { id: "b77", title: "Ashes of Man", author: "Christopher Ruocchio", series: "Sun Eater #4", genre: "Sci-Fi", pages: 700, year: 3, month: "Nov 2028" },
+      { id: "b78", title: "Sapiens", author: "Yuval Noah Harari", series: "History", genre: "Non-Fiction", pages: 450, year: 3, month: "Nov 2028" },
+      { id: "b79", title: "Mad Ship", author: "Robin Hobb", series: "Liveship Traders #2", genre: "Fantasy", pages: 850, year: 3, month: "Dec 2028" },
+      { id: "b80", title: "Warbreaker", author: "Brandon Sanderson", series: "Cosmere Standalone", genre: "Fantasy", pages: 600, year: 3, month: "Dec 2028" },
+      { id: "b81", title: "Matter", author: "Iain M. Banks", series: "Culture #8", genre: "Sci-Fi", pages: 500, year: 3, month: "Dec 2028" },
+      { id: "b82", title: "Red God", author: "Pierce Brown", series: "Red Rising #7", genre: "Sci-Fi", pages: 700, year: 3, month: "Jan 2029" },
+      { id: "b83", title: "Dungeon Crawler Carl #7", author: "Matt Dinniman", series: "DCC #7", genre: "LitRPG", pages: 600, year: 3, month: "Jan 2029" },
+      { id: "b84", title: "Thinking, Fast and Slow", author: "Daniel Kahneman", series: "Psychology", genre: "Non-Fiction", pages: 500, year: 3, month: "Jan 2029" },
+      { id: "b85", title: "The Trouble with Peace", author: "Joe Abercrombie", series: "Age of Madness #2", genre: "Fantasy", pages: 500, year: 3, month: "Feb 2029" },
+      { id: "b86", title: "Disruption", author: "Christopher Ruocchio", series: "Sun Eater Novella", genre: "Sci-Fi", pages: 200, year: 3, month: "Feb 2029" },
+      { id: "b87", title: "Elantris", author: "Brandon Sanderson", series: "Cosmere Standalone", genre: "Fantasy", pages: 600, year: 3, month: "Feb 2029" },
+      { id: "b88", title: "Ship of Destiny", author: "Robin Hobb", series: "Liveship Traders #3", genre: "Fantasy", pages: 850, year: 3, month: "Mar 2029" },
+      { id: "b89", title: "Surface Detail", author: "Iain M. Banks", series: "Culture #9", genre: "Sci-Fi", pages: 500, year: 3, month: "Mar 2029" },
+      { id: "b90", title: "Physics and Music", author: "Harvey E. White", series: "Acoustics", genre: "Non-Fiction", pages: 300, year: 3, month: "Mar 2029" },
+      { id: "b91", title: "Rhythm of War", author: "Brandon Sanderson", series: "Stormlight #4", genre: "Fantasy", pages: 1200, year: 3, month: "Apr 2029" },
+      { id: "b92", title: "The Burning God", author: "R.F. Kuang", series: "Poppy War #3", genre: "Fantasy", pages: 650, year: 3, month: "Apr 2029" },
+      { id: "b93", title: "Babel", author: "R.F. Kuang", series: "Standalone", genre: "Fantasy", pages: 540, year: 3, month: "May 2029" },
+      { id: "b94", title: "Grey Sister", author: "Mark Lawrence", series: "Ancestor #2", genre: "Fantasy", pages: 450, year: 3, month: "May 2029" },
+      { id: "b95", title: "The Stone of Farewell", author: "Tad Williams", series: "Memory, Sorrow & Thorn #2", genre: "Fantasy", pages: 600, year: 3, month: "May 2029" },
+      { id: "b96", title: "The Wisdom of Crowds", author: "Joe Abercrombie", series: "Age of Madness #3", genre: "Fantasy", pages: 500, year: 3, month: "Jun 2029" },
+      { id: "b97", title: "A Column of Fire", author: "Ken Follett", series: "Kingsbridge #3", genre: "Historical", pages: 900, year: 3, month: "Jun 2029" },
+      { id: "b98", title: "The Fury of the Gods", author: "John Gwynne", series: "Bloodsworn #3", genre: "Fantasy", pages: 550, year: 3, month: "Jul 2029" },
+      { id: "b99", title: "Mistborn: The Alloy of Law", author: "Brandon Sanderson", series: "Mistborn #4", genre: "Fantasy", pages: 350, year: 3, month: "Jul 2029" },
+      { id: "b100", title: "The Hydrogen Sonata", author: "Iain M. Banks", series: "Culture #10", genre: "Sci-Fi", pages: 450, year: 3, month: "Jul 2029" },
+      { id: "b101", title: "Wind and Truth", author: "Brandon Sanderson", series: "Stormlight #5", genre: "Fantasy", pages: 1200, year: 3, month: "Aug 2029" },
+      { id: "b102", title: "Holy Sister", author: "Mark Lawrence", series: "Ancestor #3", genre: "Fantasy", pages: 450, year: 3, month: "Aug 2029" },
+      { id: "b103", title: "Fool's Errand", author: "Robin Hobb", series: "Tawny Man #1", genre: "Fantasy", pages: 500, year: 3, month: "Sep 2029" },
+      { id: "b104", title: "Shadows of Self", author: "Brandon Sanderson", series: "Mistborn #5", genre: "Fantasy", pages: 380, year: 3, month: "Sep 2029" },
+      { id: "b105", title: "Guns, Germs, and Steel", author: "Jared Diamond", series: "History", genre: "Non-Fiction", pages: 480, year: 3, month: "Sep 2029" },
+      { id: "b106", title: "Shadows For Silence in the Forests of Hell", author: "Brandon Sanderson", series: "Arcanum", genre: "Fantasy", pages: 150, year: 3, month: "Sep 2029" },
+
+      // Year 4
+      { id: "b107", title: "Golden Fool", author: "Robin Hobb", series: "Tawny Man #2", genre: "Fantasy", pages: 600, year: 4, month: "Oct 2029" },
+      { id: "b108", title: "Gideon the Ninth", author: "Tamsyn Muir", series: "Locked Tomb #1", genre: "Sci-Fi", pages: 450, year: 4, month: "Oct 2029" },
+      { id: "b109", title: "The Emperor's Soul", author: "Brandon Sanderson", series: "Arcanum", genre: "Fantasy", pages: 170, year: 4, month: "Oct 2029" },
+      { id: "b110", title: "Fool's Fate", author: "Robin Hobb", series: "Tawny Man #3", genre: "Fantasy", pages: 650, year: 4, month: "Nov 2029" },
+      { id: "b111", title: "Bands of Mourning", author: "Brandon Sanderson", series: "Mistborn #6", genre: "Fantasy", pages: 440, year: 4, month: "Nov 2029" },
+      { id: "b112", title: "Endurance", author: "Alfred Lansing", series: "History", genre: "Non-Fiction", pages: 350, year: 4, month: "Nov 2029" },
+      { id: "b113", title: "The State of the Art", author: "Iain M. Banks", series: "Culture Novellas", genre: "Sci-Fi", pages: 200, year: 4, month: "Dec 2029" },
+      { id: "b114", title: "The Shadow Rising", author: "Robert Jordan", series: "Wheel of Time #4", genre: "Fantasy", pages: 1000, year: 4, month: "Dec 2029" },
+      { id: "b115", title: "Shards of Earth", author: "Adrian Tchaikovsky", series: "Final Architecture #1", genre: "Sci-Fi", pages: 500, year: 4, month: "Jan 2030" },
+      { id: "b116", title: "The Lost Metal", author: "Brandon Sanderson", series: "Mistborn #7", genre: "Fantasy", pages: 500, year: 4, month: "Jan 2030" },
+      { id: "b117", title: "The Barcelona Way", author: "Damian Hughes", series: "Leadership", genre: "Non-Fiction", pages: 300, year: 4, month: "Jan 2030" },
+      { id: "b118", title: "Dragon Keeper", author: "Robin Hobb", series: "Rain Wilds #1", genre: "Fantasy", pages: 450, year: 4, month: "Feb 2030" },
+      { id: "b119", title: "To Green Angel Tower - Part 1", author: "Tad Williams", series: "Memory, Sorrow & Thorn #3", genre: "Fantasy", pages: 600, year: 4, month: "Feb 2030" },
+      { id: "b120", title: "The Physics of Musical Instruments", author: "Neville H. Fletcher", series: "Acoustics", genre: "Non-Fiction", pages: 600, year: 4, month: "Feb 2030" },
+      { id: "b121", title: "Eyes of the Void", author: "Adrian Tchaikovsky", series: "Final Architecture #2", genre: "Sci-Fi", pages: 500, year: 4, month: "Mar 2030" },
+      { id: "b122", title: "Red Seas Under Red Skies", author: "Scott Lynch", series: "Gentleman Bastard #2", genre: "Fantasy", pages: 550, year: 4, month: "Mar 2030" },
+      { id: "b123", title: "The Armor of Light", author: "Ken Follett", series: "Kingsbridge #4", genre: "Historical", pages: 750, year: 4, month: "Mar 2030" },
+      { id: "b124", title: "Dragon Haven", author: "Robin Hobb", series: "Rain Wilds #2", genre: "Fantasy", pages: 450, year: 4, month: "Apr 2030" },
+      { id: "b125", title: "Harrow the Ninth", author: "Tamsyn Muir", series: "Locked Tomb #2", genre: "Sci-Fi", pages: 500, year: 4, month: "Apr 2030" },
+      { id: "b126", title: "Quiet", author: "Susan Cain", series: "Psychology", genre: "Non-Fiction", pages: 350, year: 4, month: "Apr 2030" },
+      { id: "b127", title: "Lords of Uncreation", author: "Adrian Tchaikovsky", series: "Final Architecture #3", genre: "Sci-Fi", pages: 550, year: 4, month: "May 2030" },
+      { id: "b128", title: "To Green Angel Tower - Part 2", author: "Tad Williams", series: "Memory, Sorrow & Thorn #4", genre: "Fantasy", pages: 600, year: 4, month: "May 2030" },
+      { id: "b129", title: "Fires in the Dark", author: "Kay Redfield Jamison", series: "Biography", genre: "Non-Fiction", pages: 300, year: 4, month: "May 2030" },
+      { id: "b130", title: "City of Dragons", author: "Robin Hobb", series: "Rain Wilds #3", genre: "Fantasy", pages: 450, year: 4, month: "Jun 2030" },
+      { id: "b131", title: "Foundation", author: "Isaac Asimov", series: "Foundation #1", genre: "Sci-Fi", pages: 250, year: 4, month: "Jun 2030" },
+      { id: "b132", title: "Atomic Habits", author: "James Clear", series: "Productivity", genre: "Non-Fiction", pages: 300, year: 4, month: "Jun 2030" },
+      { id: "b133", title: "Blood of Dragons", author: "Robin Hobb", series: "Rain Wilds #4", genre: "Fantasy", pages: 500, year: 4, month: "Jul 2030" },
+      { id: "b134", title: "The Republic of Thieves", author: "Scott Lynch", series: "Gentleman Bastard #3", genre: "Fantasy", pages: 600, year: 4, month: "Jul 2030" },
+      { id: "b135", title: "Nona the Ninth", author: "Tamsyn Muir", series: "Locked Tomb #3", genre: "Sci-Fi", pages: 450, year: 4, month: "Jul 2030" },
+      { id: "b136", title: "Malice", author: "John Gwynne", series: "Faithful and the Fallen #1", genre: "Fantasy", pages: 600, year: 4, month: "Aug 2030" },
+      { id: "b137", title: "Foundation and Empire", author: "Isaac Asimov", series: "Foundation #2", genre: "Sci-Fi", pages: 250, year: 4, month: "Aug 2030" },
+      { id: "b138", title: "A Short History of Nearly Everything", author: "Bill Bryson", series: "Science", genre: "Non-Fiction", pages: 500, year: 4, month: "Aug 2030" },
+      { id: "b139", title: "Valour", author: "John Gwynne", series: "Faithful and the Fallen #2", genre: "Fantasy", pages: 650, year: 4, month: "Sep 2030" },
+      { id: "b140", title: "Second Foundation", author: "Isaac Asimov", series: "Foundation #3", genre: "Sci-Fi", pages: 250, year: 4, month: "Sep 2030" },
+      { id: "b141", title: "Outliers", author: "Malcolm Gladwell", series: "Sociology", genre: "Non-Fiction", pages: 300, year: 4, month: "Sep 2030" },
+      { id: "b142", title: "The Hope of Elantris", author: "Brandon Sanderson", series: "Arcanum", genre: "Fantasy", pages: 50, year: 4, month: "Sep 2030" },
+
+      // Year 5
+      { id: "b143", title: "Ruin", author: "John Gwynne", series: "Faithful and the Fallen #3", genre: "Fantasy", pages: 700, year: 5, month: "Oct 2030" },
+      { id: "b144", title: "Fool's Assassin", author: "Robin Hobb", series: "Fitz and the Fool #1", genre: "Fantasy", pages: 600, year: 5, month: "Oct 2030" },
+      { id: "b145", title: "The Haunting of Hill House", author: "Shirley Jackson", series: "Horror", genre: "Fantasy", pages: 250, year: 5, month: "Oct 2030" },
+      { id: "b146", title: "Wrath", author: "John Gwynne", series: "Faithful and the Fallen #4", genre: "Fantasy", pages: 700, year: 5, month: "Nov 2030" },
+      { id: "b147", title: "Fool's Quest", author: "Robin Hobb", series: "Fitz and the Fool #2", genre: "Fantasy", pages: 700, year: 5, month: "Nov 2030" },
+      { id: "b148", title: "A Night in the Lonesome October", author: "Roger Zelazny", series: "Fantasy", genre: "Fantasy", pages: 280, year: 5, month: "Nov 2030" },
+      { id: "b149", title: "Assassin's Fate", author: "Robin Hobb", series: "Fitz and the Fool #3", genre: "Fantasy", pages: 850, year: 5, month: "Dec 2030" },
+      { id: "b150", title: "The Evening and the Morning", author: "Ken Follett", series: "Kingsbridge Prequel", genre: "Historical", pages: 800, year: 5, month: "Dec 2030" },
+      { id: "b151", title: "Foundation's Edge", author: "Isaac Asimov", series: "Foundation #4", genre: "Sci-Fi", pages: 370, year: 5, month: "Dec 2030" },
+      { id: "b152", title: "The Last Wish", author: "Andrzej Sapkowski", series: "The Witcher #1", genre: "Fantasy", pages: 300, year: 5, month: "Jan 2031" },
+      { id: "b153", title: "Foundation and Earth", author: "Isaac Asimov", series: "Foundation #5", genre: "Sci-Fi", pages: 350, year: 5, month: "Jan 2031" },
+      { id: "b154", title: "The Master and His Emissary", author: "Iain McGilchrist", series: "Neuroscience", genre: "Non-Fiction", pages: 600, year: 5, month: "Jan 2031" },
+      { id: "b155", title: "Sword of Destiny", author: "Andrzej Sapkowski", series: "The Witcher #2", genre: "Fantasy", pages: 400, year: 5, month: "Feb 2031" },
+      { id: "b156", title: "The Fires of Heaven", author: "Robert Jordan", series: "Wheel of Time #5", genre: "Fantasy", pages: 1000, year: 5, month: "Feb 2031" },
+      { id: "b157", title: "Football Hackers", author: "Christoph Biermann", series: "Sports Analytics", genre: "Non-Fiction", pages: 250, year: 5, month: "Feb 2031" },
+      { id: "b158", title: "Blood of Elves", author: "Andrzej Sapkowski", series: "The Witcher #3", genre: "Fantasy", pages: 320, year: 5, month: "Mar 2031" },
+      { id: "b159", title: "Pushing Ice", author: "Alastair Reynolds", series: "Standalone Sci-Fi", genre: "Sci-Fi", pages: 500, year: 5, month: "Mar 2031" },
+      { id: "b160", title: "The Gene", author: "Siddhartha Mukherjee", series: "Science", genre: "Non-Fiction", pages: 600, year: 5, month: "Mar 2031" },
+      { id: "b161", title: "Time of Contempt", author: "Andrzej Sapkowski", series: "The Witcher #4", genre: "Fantasy", pages: 330, year: 5, month: "Apr 2031" },
+      { id: "b162", title: "Lord of Chaos", author: "Robert Jordan", series: "Wheel of Time #6", genre: "Fantasy", pages: 1000, year: 5, month: "Apr 2031" },
+      { id: "b163", title: "Chaos", author: "James Gleick", series: "Science", genre: "Non-Fiction", pages: 350, year: 5, month: "Apr 2031" },
+      { id: "b164", title: "Baptism of Fire", author: "Andrzej Sapkowski", series: "The Witcher #5", genre: "Fantasy", pages: 350, year: 5, month: "May 2031" },
+      { id: "b165", title: "House of Suns", author: "Alastair Reynolds", series: "Standalone Sci-Fi", genre: "Sci-Fi", pages: 500, year: 5, month: "May 2031" },
+      { id: "b166", title: "Mastering Audio", author: "Bob Katz", series: "Audio Engineering", genre: "Non-Fiction", pages: 400, year: 5, month: "May 2031" },
+      { id: "b167", title: "The Tower of the Swallow", author: "Andrzej Sapkowski", series: "The Witcher #6", genre: "Fantasy", pages: 450, year: 5, month: "Jun 2031" },
+      { id: "b168", title: "A Crown of Swords", author: "Robert Jordan", series: "Wheel of Time #7", genre: "Fantasy", pages: 850, year: 5, month: "Jun 2031" },
+      { id: "b169", title: "The Time Traveller's Guide to Medieval England", author: "Ian Mortimer", series: "History", genre: "Non-Fiction", pages: 300, year: 5, month: "Jun 2031" },
+      { id: "b170", title: "The Lady of the Lake", author: "Andrzej Sapkowski", series: "The Witcher #7", genre: "Fantasy", pages: 550, year: 5, month: "Jul 2031" },
+      { id: "b171", title: "Chasm City", author: "Alastair Reynolds", series: "Revelation Space #2", genre: "Sci-Fi", pages: 600, year: 5, month: "Jul 2031" },
+      { id: "b172", title: "The Path of Daggers", author: "Robert Jordan", series: "Wheel of Time #8", genre: "Fantasy", pages: 700, year: 5, month: "Jul 2031" },
+      { id: "b173", title: "Season of Storms", author: "Andrzej Sapkowski", series: "The Witcher #8", genre: "Fantasy", pages: 400, year: 5, month: "Aug 2031" },
+      { id: "b174", title: "Revelation Space", author: "Alastair Reynolds", series: "Revelation Space #1", genre: "Sci-Fi", pages: 600, year: 5, month: "Aug 2031" },
+      { id: "b175", title: "Winter's Heart", author: "Robert Jordan", series: "Wheel of Time #9", genre: "Fantasy", pages: 800, year: 5, month: "Aug 2031" },
+      { id: "b176", title: "Redemption Ark", author: "Alastair Reynolds", series: "Revelation Space #3", genre: "Sci-Fi", pages: 600, year: 5, month: "Sep 2031" },
+      { id: "b177", title: "Crossroads of Twilight", author: "Robert Jordan", series: "Wheel of Time #10", genre: "Fantasy", pages: 800, year: 5, month: "Sep 2031" },
+      { id: "b178", title: "The Signal and the Noise", author: "Nate Silver", series: "Statistics", genre: "Non-Fiction", pages: 500, year: 5, month: "Sep 2031" },
+
+      // Year 6
+      { id: "b179", title: "Absolution Gap", author: "Alastair Reynolds", series: "Revelation Space #4", genre: "Sci-Fi", pages: 600, year: 6, month: "Oct 2031" },
+      { id: "b180", title: "Knife of Dreams", author: "Robert Jordan", series: "Wheel of Time #11", genre: "Fantasy", pages: 900, year: 6, month: "Oct 2031" },
+      { id: "b181", title: "Something Wicked This Way Comes", author: "Ray Bradbury", series: "Standalone", genre: "Fantasy", pages: 300, year: 6, month: "Oct 2031" },
+      { id: "b182", title: "The Gathering Storm", author: "Robert Jordan & Brandon Sanderson", series: "Wheel of Time #12", genre: "Fantasy", pages: 800, year: 6, month: "Nov 2031" },
+      { id: "b183", title: "Inhibitor Phase", author: "Alastair Reynolds", series: "Revelation Space #5", genre: "Sci-Fi", pages: 450, year: 6, month: "Nov 2031" },
+      { id: "b184", title: "The Code Breaker", author: "Walter Isaacson", series: "Biography", genre: "Non-Fiction", pages: 550, year: 6, month: "Nov 2031" },
+      { id: "b185", title: "Towers of Midnight", author: "Robert Jordan & Brandon Sanderson", series: "Wheel of Time #13", genre: "Fantasy", pages: 900, year: 6, month: "Dec 2031" },
+      { id: "b186", title: "Elysium Fire", author: "Alastair Reynolds", series: "Prefect Dreyfus #2", genre: "Sci-Fi", pages: 400, year: 6, month: "Dec 2031" },
+      { id: "b187", title: "The Prefect", author: "Alastair Reynolds", series: "Prefect Dreyfus #1", genre: "Sci-Fi", pages: 500, year: 6, month: "Dec 2031" },
+      { id: "b188", title: "A Memory of Light", author: "Robert Jordan & Brandon Sanderson", series: "Wheel of Time #14", genre: "Fantasy", pages: 1000, year: 6, month: "Jan 2032" },
+      { id: "b189", title: "Machine Vendetta", author: "Alastair Reynolds", series: "Prefect Dreyfus #3", genre: "Sci-Fi", pages: 450, year: 6, month: "Jan 2032" },
+      { id: "b190", title: "Thinking in Systems", author: "Donella H. Meadows", series: "Systems Science", genre: "Non-Fiction", pages: 220, year: 6, month: "Jan 2032" },
+      { id: "b191", title: "The Black Company", author: "Glen Cook", series: "Black Company #1", genre: "Fantasy", pages: 320, year: 6, month: "Feb 2032" },
+      { id: "b192", title: "Fall of Giants", author: "Ken Follett", series: "Century #1", genre: "Historical", pages: 1000, year: 6, month: "Feb 2032" },
+      { id: "b193", title: "Scorecasting", author: "Tobias Moskowitz & L. Jon Wertheim", series: "Sports Analytics", genre: "Non-Fiction", pages: 300, year: 6, month: "Feb 2032" },
+      { id: "b194", title: "Shadows Linger", author: "Glen Cook", series: "Black Company #2", genre: "Fantasy", pages: 320, year: 6, month: "Mar 2032" },
+      { id: "b195", title: "Winter of the World", author: "Ken Follett", series: "Century #2", genre: "Historical", pages: 950, year: 6, month: "Mar 2032" },
+      { id: "b196", title: "Six Easy Pieces", author: "Richard Feynman", series: "Physics", genre: "Non-Fiction", pages: 150, year: 6, month: "Mar 2032" },
+      { id: "b197", title: "The White Rose", author: "Glen Cook", series: "Black Company #3", genre: "Fantasy", pages: 350, year: 6, month: "Apr 2032" },
+      { id: "b198", title: "Edge of Eternity", author: "Ken Follett", series: "Century #3", genre: "Historical", pages: 1100, year: 6, month: "Apr 2032" },
+      { id: "b199", title: "Guns of August", author: "Barbara W. Tuchman", series: "History", genre: "Non-Fiction", pages: 500, year: 6, month: "Apr 2032" },
+      { id: "b200", title: "Shadow Games", author: "Glen Cook", series: "Black Company #4", genre: "Fantasy", pages: 350, year: 6, month: "May 2032" },
+      { id: "b201", title: "Blindsight", author: "Peter Watts", series: "Firefall #1", genre: "Sci-Fi", pages: 380, year: 6, month: "May 2032" },
+      { id: "b202", title: "The Emperor of All Maladies", author: "Siddhartha Mukherjee", series: "Science", genre: "Non-Fiction", pages: 600, year: 6, month: "May 2032" },
+      { id: "b203", title: "Dreams of Steel", author: "Glen Cook", series: "Black Company #5", genre: "Fantasy", pages: 380, year: 6, month: "Jun 2032" },
+      { id: "b204", title: "Echopraxia", author: "Peter Watts", series: "Firefall #2", genre: "Sci-Fi", pages: 390, year: 6, month: "Jun 2032" },
+      { id: "b205", title: "Algorithms to Live By", author: "Brian Christian", series: "Computer Science", genre: "Non-Fiction", pages: 350, year: 6, month: "Jun 2032" },
+      { id: "b206", title: "Bleak Seasons", author: "Glen Cook", series: "Black Company #6", genre: "Fantasy", pages: 350, year: 6, month: "Jul 2032" },
+      { id: "b207", title: "Dragon's Egg", author: "Robert L. Forward", series: "Cheela #1", genre: "Sci-Fi", pages: 330, year: 6, month: "Jul 2032" },
+      { id: "b208", title: "The Fabric of the Cosmos", author: "Brian Greene", series: "Physics", genre: "Non-Fiction", pages: 550, year: 6, month: "Jul 2032" },
+      { id: "b209", title: "She Is the Darkness", author: "Glen Cook", series: "Black Company #7", genre: "Fantasy", pages: 350, year: 6, month: "Aug 2032" },
+      { id: "b210", title: "Starquake", author: "Robert L. Forward", series: "Cheela #2", genre: "Sci-Fi", pages: 330, year: 6, month: "Aug 2032" },
+      { id: "b211", title: "The Man Who Mistook His Wife for a Hat", author: "Oliver Sacks", series: "Neurology", genre: "Non-Fiction", pages: 250, year: 6, month: "Aug 2032" },
+      { id: "b212", title: "Water Sleeps", author: "Glen Cook", series: "Black Company #8", genre: "Fantasy", pages: 350, year: 6, month: "Sep 2032" },
+      { id: "b213", title: "Soldiers Live", author: "Glen Cook", series: "Black Company #9", genre: "Fantasy", pages: 380, year: 6, month: "Sep 2032" },
+      { id: "b214", title: "The Order of Time", author: "Carlo Rovelli", series: "Physics", genre: "Non-Fiction", pages: 240, year: 6, month: "Sep 2032" }
+    ];
+
+    const STORAGE_KEY = "exact_214_catalog_completed_v1";
+    let completedBooks = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || "[\"b1\", \"b2\"]"));
+    let selectedYear = "all";
+    let activeGenre = "all";
+    let searchQuery = "";
+
+    function genreBadgeColor(genre) {
+      switch(genre) {
+        case 'Sci-Fi': return 'bg-blue-900/50 text-blue-300 border-blue-700/50';
+        case 'Fantasy': return 'bg-purple-900/50 text-purple-300 border-purple-700/50';
+        case 'LitRPG': return 'bg-emerald-900/50 text-emerald-300 border-emerald-700/50';
+        case 'Non-Fiction': return 'bg-amber-900/50 text-amber-300 border-amber-700/50';
+        case 'Historical': return 'bg-rose-900/50 text-rose-300 border-rose-700/50';
+        default: return 'bg-slate-800 text-slate-300 border-slate-700';
+      }
+    }
+
+    function toggleBook(id) {
+      if (completedBooks.has(id)) {
+        completedBooks.delete(id);
+      } else {
+        completedBooks.add(id);
+      }
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(completedBooks)));
+      render();
+    }
+
+    function selectYear(yr) {
+      selectedYear = yr;
+      document.querySelectorAll('.year-btn').forEach(btn => {
+        btn.classList.remove('bg-indigo-600', 'text-white');
+        btn.classList.add('text-slate-400');
+      });
+      event.target.classList.add('bg-indigo-600', 'text-white');
+      event.target.classList.remove('text-slate-400');
+      render();
+    }
+
+    function filterGenre(genre) {
+      activeGenre = genre;
+      document.querySelectorAll('.genre-btn').forEach(btn => {
+        btn.classList.remove('bg-indigo-600', 'text-white');
+        btn.classList.add('bg-slate-800', 'text-slate-300');
+      });
+      event.target.classList.add('bg-indigo-600', 'text-white');
+      event.target.classList.remove('bg-slate-800', 'text-slate-300');
+      render();
+    }
+
+    function handleSearch() {
+      searchQuery = document.getElementById('search-input').value.toLowerCase();
+      render();
+    }
+
+    function render() {
+      const grid = document.getElementById('books-grid');
+      grid.innerHTML = '';
+
+      const filtered = exactCatalog.filter(b => {
+        const matchYear = selectedYear === 'all' || b.year === selectedYear;
+        const matchGenre = activeGenre === 'all' || b.genre === activeGenre;
+        const matchSearch = b.title.toLowerCase().includes(searchQuery) || b.author.toLowerCase().includes(searchQuery) || b.series.toLowerCase().includes(searchQuery);
+        return matchYear && matchGenre && matchSearch;
+      });
+
+      filtered.forEach(book => {
+        const isDone = completedBooks.has(book.id);
+        const card = document.createElement('div');
+        card.onclick = () => toggleBook(book.id);
+        card.className = `cursor-pointer p-4 rounded-xl border transition-all ${isDone ? 'bg-slate-900/40 border-indigo-900/40 opacity-50' : 'bg-slate-900 border-slate-800 hover:border-indigo-500/50'} flex justify-between items-center gap-3`;
+
+        card.innerHTML = `
+          <div class="flex-1 text-left">
+            <div class="font-semibold text-sm ${isDone ? 'line-through text-slate-400' : 'text-slate-100'}">${book.title}</div>
+            <div class="text-xs text-slate-400">${book.author} • <span class="text-indigo-400">${book.month} (Year ${book.year})</span></div>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-[10px] px-2 py-0.5 rounded border ${genreBadgeColor(book.genre)}">${book.genre}</span>
+            <input type="checkbox" ${isDone ? 'checked' : ''} class="w-4 h-4 accent-indigo-500 rounded cursor-pointer pointer-events-none" />
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      // Metrics
+      const totalDone = completedBooks.size;
+      const totalPagesRead = exactCatalog.filter(b => completedBooks.has(b.id)).reduce((acc, b) => acc + b.pages, 0);
+      const grandTotalPages = exactCatalog.reduce((acc, b) => acc + b.pages, 0);
+
+      document.getElementById('books-completed').innerText = `${totalDone} / 214`;
+      document.getElementById('pages-completed').innerText = `${totalPagesRead.toLocaleString()} / ${grandTotalPages.toLocaleString()}`;
+
+      const pct = Math.round((totalDone / 214) * 100);
+      document.getElementById('progress-percent').innerText = `${pct}%`;
+      document.getElementById('progress-bar').style.width = `${pct}%`;
+    }
+
+    render();
+  </script>
+</body>
+</html>
