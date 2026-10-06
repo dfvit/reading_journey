@@ -1,1192 +1,429 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>6-Year Reading Schedule Dashboard</title>
-    <style>
-        :root {
-            --bg-color: #0b0f19;
-            --card-bg: #131c2e;
-            --card-hover: #1e293b;
-            --text-main: #f1f5f9;
-            --text-muted: #94a3b8;
-            --accent: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.15);
-            --border-color: rgba(255, 255, 255, 0.08);
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            margin: 0;
-            padding: 24px 16px;
-            line-height: 1.5;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        header h1 {
-            font-size: 2rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            margin: 0 0 8px 0;
-            background: linear-gradient(135deg, #f1f5f9 0%, #38bdf8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        header p {
-            color: var(--text-muted);
-            font-size: 1rem;
-            margin: 0;
-        }
-
-        /* Month Section Styling */
-        .month-section {
-            margin-bottom: 48px;
-            background: rgba(19, 28, 46, 0.5);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 24px;
-            backdrop-filter: blur(8px);
-        }
-
-        .month-header {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .month-title {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin: 0;
-        }
-
-        .month-theme {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* Book Grid & Cards */
-        .book-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 16px;
-        }
-
-        .book-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 14px;
-            display: flex;
-            gap: 14px;
-            align-items: center;
-            transition: all 0.2s ease;
-        }
-
-        .book-card:hover {
-            background-color: var(--card-hover);
-            border-color: rgba(56, 189, 248, 0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px -4px var(--accent-glow);
-        }
-
-        .book-cover {
-            width: 55px;
-            height: 82px;
-            object-fit: cover;
-            border-radius: 6px;
-            background-color: #1e293b;
-            flex-shrink: 0;
-        }
-
-        .book-info {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            min-width: 0;
-        }
-
-        .book-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-main);
-            margin: 0;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .book-author {
-            font-size: 0.8125rem;
-            color: var(--text-muted);
-            margin: 0;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        .book-meta {
-            font-size: 0.75rem;
-            color: var(--accent);
-            margin: 0;
-        }
-
-        @media (min-width: 768px) {
-            body { padding: 40px; }
-            header h1 { font-size: 2.5rem; }
-            .month-section { padding: 32px; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <header>
-            <h1>Reading Schedule</h1>
-            <p>A curated 6-year literary journey through 214 masterworks</p>
-        </header>
-
-        <!-- MONTH 1: Oct 2026 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 1 • Oct 2026</span>
-                <h2 class="month-title">Month 1</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card">
-                    <img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover">
-                    <div class="book-info">
-                        <h3 class="book-title">Golden Son</h3>
-                        <p class="book-author">Pierce Brown</p>
-                        <p class="book-meta">Sci-Fi • Red Rising #2</p>
-                    </div>
-                </div>
-                <div class="book-card">
-                    <img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover">
-                    <div class="book-info">
-                        <h3 class="book-title">Between Two Fires</h3>
-                        <p class="book-author">Christopher Buehlman</p>
-                        <p class="book-meta">Fantasy • Standalone</p>
-                    </div>
-                </div>
-                <div class="book-card">
-                    <img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover">
-                    <div class="book-info">
-                        <h3 class="book-title">The Lies of Locke Lamora</h3>
-                        <p class="book-author">Scott Lynch</p>
-                        <p class="book-meta">Fantasy • Gentleman Bastard #1</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- MONTH 2: Nov 2026 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 1 • Nov 2026</span>
-                <h2 class="month-title">Month 2</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card">
-                    <img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover">
-                    <div class="book-info">
-                        <h3 class="book-title">Morning Star</h3>
-                        <p class="book-author">Pierce Brown</p>
-                        <p class="book-meta">Sci-Fi • Red Rising #3</p>
-                    </div>
-                </div>
-                <div class="book-card">
-                    <img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover">
-                    <div class="book-info">
-                        <h3 class="book-title">The Blade Itself</h3>
-                        <p class="book-author">Joe Abercrombie</p>
-                        <p class="book-meta">Fantasy • First Law #1</p>
-                    </div>
-                </div>
-                <div class="book-card">
-                    <img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover">
-                    <div class="book-info">
-                        <h3 class="book-title">Inverting the Pyramid</h3>
-                        <p class="book-author">Jonathan Wilson</p>
-                        <p class="book-meta">Non-Fiction • Tactics</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- MONTH 3: Dec 2026 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 1 • Dec 2026</span>
-                <h2 class="month-title">Month 3</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card">
-                    <img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover">
-                    <div class="book-info">
-                        <h3 class="book-title">Dark Matter</h3>
-                        <p class="book-author">Blake Crouch</p>
-                        <p class="book-meta">Sci-Fi • Standalone</p>
-                    </div>
-                </div>
-                <div class="book-card">
-                    <img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover">
-                    <div class="book-info">
-                        <h3 class="book-title">Hyperion</h3>
-                        <p class="book-author">Dan Simmons</p>
-                        <p class="book-meta">Sci-Fi • Hyperion #1</p>
-                    </div>
-                </div>
-                <div class="book-card">
-                    <img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover">
-                    <div class="book-info">
-                        <h3 class="book-title">The Final Empire</h3>
-                        <p class="book-author">Brandon Sanderson</p>
-                        <p class="book-meta">Fantasy • Mistborn #1</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- MONTH 4: Jan 2027 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 1 • Jan 2027</span>
-                <h2 class="month-title">Month 4</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card">
-                    <img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover">
-                    <div class="book-info">
-                        <h3 class="book-title">Children of Time</h3>
-                        <p class="book-author">Adrian Tchaikovsky</p>
-                        <p class="book-meta">Sci-Fi • Children of Time #1</p>
-                    </div>
-                </div>
-                <div class="book-card">
-                    <img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover">
-                    <div class="book-info">
-                        <h3 class="book-title">Dungeon Crawler Carl</h3>
-                        <p class="book-author">Matt Dinniman</p>
-                        <p class="book-meta">LitRPG • DCC #1</p>
-                    </div>
-                </div>
-                <div class="book-card">
-                    <img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover">
-                    <div class="book-info">
-                        <h3 class="book-title">The Rise and Reign of the Mammals</h3>
-                        <p class="book-author">Steve Brusatte</p>
-                        <p class="book-meta">Non-Fiction • Science</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- MONTH 5: Feb 2027 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 1 • Feb 2027</span>
-                <h2 class="month-title">Month 5</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Name of the Wind</h3><p class="book-author">Patrick Rothfuss</p><p class="book-meta">Fantasy • Kingkiller #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Player of Games</h3><p class="book-author">Iain M. Banks</p><p class="book-meta">Sci-Fi • Culture #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Zonal Marking</h3><p class="book-author">Michael Cox</p><p class="book-meta">Non-Fiction • Tactics</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 6: Mar 2027 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 1 • Mar 2027</span>
-                <h2 class="month-title">Month 6</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Empire of Silence</h3><p class="book-author">Christopher Ruocchio</p><p class="book-meta">Sci-Fi • Sun Eater #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Shadow of What Was Lost</h3><p class="book-author">James Islington</p><p class="book-meta">Fantasy • Licanius #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Sports Gene</h3><p class="book-author">David Epstein</p><p class="book-meta">Non-Fiction • Science</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 7: Apr 2027 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 1 • Apr 2027</span>
-                <h2 class="month-title">Month 7</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Recursion</h3><p class="book-author">Blake Crouch</p><p class="book-meta">Sci-Fi • Standalone</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Pillars of the Earth</h3><p class="book-author">Ken Follett</p><p class="book-meta">Historical • Kingsbridge #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Scythe</h3><p class="book-author">Neal Shusterman</p><p class="book-meta">Sci-Fi • Scythe #1</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 8: May 2027 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 1 • May 2027</span>
-                <h2 class="month-title">Month 8</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Assassin's Apprentice</h3><p class="book-author">Robin Hobb</p><p class="book-meta">Fantasy • Farseer #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Carl’s Doomsday Scenario</h3><p class="book-author">Matt Dinniman</p><p class="book-meta">LitRPG • DCC #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Service Model</h3><p class="book-author">Adrian Tchaikovsky</p><p class="book-meta">Sci-Fi • Standalone</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 9: Jun 2027 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 1 • Jun 2027</span>
-                <h2 class="month-title">Month 9</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Iron Gold</h3><p class="book-author">Pierce Brown</p><p class="book-meta">Sci-Fi • Red Rising #4</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Poppy War</h3><p class="book-author">R.F. Kuang</p><p class="book-meta">Fantasy • Poppy War #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Horns, Strings, and Harmony</h3><p class="book-author">John Backus</p><p class="book-meta">Non-Fiction • Acoustics</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 10: Jul 2027 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 1 • Jul 2027</span>
-                <h2 class="month-title">Month 10</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Shadow of the Gods</h3><p class="book-author">John Gwynne</p><p class="book-meta">Fantasy • Bloodsworn #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Dungeon Anarchist's Cookbook</h3><p class="book-author">Matt Dinniman</p><p class="book-meta">LitRPG • DCC #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Three-Body Problem</h3><p class="book-author">Cixin Liu</p><p class="book-meta">Sci-Fi • Remembrance #1</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 11: Aug 2027 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 1 • Aug 2027</span>
-                <h2 class="month-title">Month 11</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Way of Kings</h3><p class="book-author">Brandon Sanderson</p><p class="book-meta">Fantasy • Stormlight #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Before They Are Hanged</h3><p class="book-author">Joe Abercrombie</p><p class="book-meta">Fantasy • First Law #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Sixth Extinction</h3><p class="book-author">Elizabeth Kolbert</p><p class="book-meta">Non-Fiction • Science</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 12: Sep 2027 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 1 • Sep 2027</span>
-                <h2 class="month-title">Month 12</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Dark Age</h3><p class="book-author">Pierce Brown</p><p class="book-meta">Sci-Fi • Red Rising #5</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Last Argument of Kings</h3><p class="book-author">Joe Abercrombie</p><p class="book-meta">Fantasy • First Law #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Gate of the Feral Gods</h3><p class="book-author">Matt Dinniman</p><p class="book-meta">LitRPG • DCC #4</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 13: Oct 2027 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 2 • Oct 2027</span>
-                <h2 class="month-title">Month 13</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Light Bringer</h3><p class="book-author">Pierce Brown</p><p class="book-meta">Sci-Fi • Red Rising #6</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Dark Forest</h3><p class="book-author">Cixin Liu</p><p class="book-meta">Sci-Fi • Remembrance #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Best Served Cold</h3><p class="book-author">Joe Abercrombie</p><p class="book-meta">Fantasy • First Law World</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 14: Nov 2027 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 2 • Nov 2027</span>
-                <h2 class="month-title">Month 14</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Words of Radiance</h3><p class="book-author">Brandon Sanderson</p><p class="book-meta">Fantasy • Stormlight #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Children of Ruin</h3><p class="book-author">Adrian Tchaikovsky</p><p class="book-meta">Sci-Fi • Children of Time #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Rise and Fall of the Dinosaurs</h3><p class="book-author">Steve Brusatte</p><p class="book-meta">Non-Fiction • Science</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 15: Dec 2027 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 2 • Dec 2027</span>
-                <h2 class="month-title">Month 15</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Well of Ascension</h3><p class="book-author">Brandon Sanderson</p><p class="book-meta">Fantasy • Mistborn #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Butcher's Masquerade</h3><p class="book-author">Matt Dinniman</p><p class="book-meta">LitRPG • DCC #5</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Use of Weapons</h3><p class="book-author">Iain M. Banks</p><p class="book-meta">Sci-Fi • Culture #3</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 16: Jan 2028 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 2 • Jan 2028</span>
-                <h2 class="month-title">Month 16</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Howling Dark</h3><p class="book-author">Christopher Ruocchio</p><p class="book-meta">Sci-Fi • Sun Eater #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Thunderhead</h3><p class="book-author">Neal Shusterman</p><p class="book-meta">Sci-Fi • Scythe #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Net Gains</h3><p class="book-author">Ryan O'Hanlon</p><p class="book-meta">Non-Fiction • Sports Analytics</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 17: Feb 2028 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 2 • Feb 2028</span>
-                <h2 class="month-title">Month 17</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Royal Assassin</h3><p class="book-author">Robin Hobb</p><p class="book-meta">Fantasy • Farseer #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Heroes</h3><p class="book-author">Joe Abercrombie</p><p class="book-meta">Fantasy • First Law World</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">World Without End</h3><p class="book-author">Ken Follett</p><p class="book-meta">Historical • Kingsbridge #2</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 18: Mar 2028 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 2 • Mar 2028</span>
-                <h2 class="month-title">Month 18</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Death's End</h3><p class="book-author">Cixin Liu</p><p class="book-meta">Sci-Fi • Remembrance #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Anvil of Ice</h3><p class="book-author">Michael Scott Rohan</p><p class="book-meta">Fantasy • Winter of the World #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Upgrade</h3><p class="book-author">Blake Crouch</p><p class="book-meta">Sci-Fi • Standalone</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 19: Apr 2028 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 2 • Apr 2028</span>
-                <h2 class="month-title">Month 19</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">An Echo of Things to Come</h3><p class="book-author">James Islington</p><p class="book-meta">Fantasy • Licanius #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Children of Memory</h3><p class="book-author">Adrian Tchaikovsky</p><p class="book-meta">Sci-Fi • Children of Time #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Peak</h3><p class="book-author">Anders Ericsson</p><p class="book-meta">Non-Fiction • Psychology</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 20: May 2028 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 2 • May 2028</span>
-                <h2 class="month-title">Month 20</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Eye of the Bedlam Bride</h3><p class="book-author">Matt Dinniman</p><p class="book-meta">LitRPG • DCC #6</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Demon In White</h3><p class="book-author">Christopher Ruocchio</p><p class="book-meta">Sci-Fi • Sun Eater #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Dragonbone Chair</h3><p class="book-author">Tad Williams</p><p class="book-meta">Fantasy • Memory, Sorrow & Thorn #1</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 21: Jun 2028 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 2 • Jun 2028</span>
-                <h2 class="month-title">Month 21</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Ship of Magic</h3><p class="book-author">Robin Hobb</p><p class="book-meta">Fantasy • Liveship Traders #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Red Country</h3><p class="book-author">Joe Abercrombie</p><p class="book-meta">Fantasy • First Law World</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Expected Goals Philosophy</h3><p class="book-author">James Tippett</p><p class="book-meta">Non-Fiction • Sports Analytics</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 22: Jul 2028 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 2 • Jul 2028</span>
-                <h2 class="month-title">Month 22</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Hunger of the Gods</h3><p class="book-author">John Gwynne</p><p class="book-meta">Fantasy • Bloodsworn #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Hero of Ages</h3><p class="book-author">Brandon Sanderson</p><p class="book-meta">Fantasy • Mistborn #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Excession</h3><p class="book-author">Iain M. Banks</p><p class="book-meta">Sci-Fi • Culture #5</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 23: Aug 2028 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 2 • Aug 2028</span>
-                <h2 class="month-title">Month 23</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Oathbringer</h3><p class="book-author">Brandon Sanderson</p><p class="book-meta">Fantasy • Stormlight #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Dragon Republic</h3><p class="book-author">R.F. Kuang</p><p class="book-meta">Fantasy • Poppy War #2</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 24: Sep 2028 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 2 • Sep 2028</span>
-                <h2 class="month-title">Month 24</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Assassin's Quest</h3><p class="book-author">Robin Hobb</p><p class="book-meta">Fantasy • Farseer #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">This Is How They Tell Me the World Ends</h3><p class="book-author">Nicole Perlroth</p><p class="book-meta">Non-Fiction • Cybersecurity</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Toll</h3><p class="book-author">Neal Shusterman</p><p class="book-meta">Sci-Fi • Scythe #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Kingdom of Needles</h3><p class="book-author">Christopher Ruocchio</p><p class="book-meta">Sci-Fi • Sun Eater Companion</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 25: Oct 2028 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 3 • Oct 2028</span>
-                <h2 class="month-title">Month 25</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">A Little Hatred</h3><p class="book-author">Joe Abercrombie</p><p class="book-meta">Fantasy • Age of Madness #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Inversions</h3><p class="book-author">Iain M. Banks</p><p class="book-meta">Sci-Fi • Culture #6</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Red Sister</h3><p class="book-author">Mark Lawrence</p><p class="book-meta">Fantasy • Ancestor #1</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 26: Nov 2028 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 3 • Nov 2028</span>
-                <h2 class="month-title">Month 26</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Light of All That Falls</h3><p class="book-author">James Islington</p><p class="book-meta">Fantasy • Licanius #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Ashes of Man</h3><p class="book-author">Christopher Ruocchio</p><p class="book-meta">Sci-Fi • Sun Eater #4</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Sapiens</h3><p class="book-author">Yuval Noah Harari</p><p class="book-meta">Non-Fiction • History</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 27: Dec 2028 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 3 • Dec 2028</span>
-                <h2 class="month-title">Month 27</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Mad Ship</h3><p class="book-author">Robin Hobb</p><p class="book-meta">Fantasy • Liveship Traders #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Warbreaker</h3><p class="book-author">Brandon Sanderson</p><p class="book-meta">Fantasy • Cosmere Standalone</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Matter</h3><p class="book-author">Iain M. Banks</p><p class="book-meta">Sci-Fi • Culture #8</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 28: Jan 2029 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 3 • Jan 2029</span>
-                <h2 class="month-title">Month 28</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Red God</h3><p class="book-author">Pierce Brown</p><p class="book-meta">Sci-Fi • Red Rising #7</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Dungeon Crawler Carl #7</h3><p class="book-author">Matt Dinniman</p><p class="book-meta">LitRPG • DCC #7</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Thinking, Fast and Slow</h3><p class="book-author">Daniel Kahneman</p><p class="book-meta">Non-Fiction • Psychology</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 29: Feb 2029 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 3 • Feb 2029</span>
-                <h2 class="month-title">Month 29</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Trouble with Peace</h3><p class="book-author">Joe Abercrombie</p><p class="book-meta">Fantasy • Age of Madness #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Disruption</h3><p class="book-author">Christopher Ruocchio</p><p class="book-meta">Sci-Fi • Sun Eater Novella</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Elantris</h3><p class="book-author">Brandon Sanderson</p><p class="book-meta">Fantasy • Cosmere Standalone</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 30: Mar 2029 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 3 • Mar 2029</span>
-                <h2 class="month-title">Month 30</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Ship of Destiny</h3><p class="book-author">Robin Hobb</p><p class="book-meta">Fantasy • Liveship Traders #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Surface Detail</h3><p class="book-author">Iain M. Banks</p><p class="book-meta">Sci-Fi • Culture #9</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Physics and Music</h3><p class="book-author">Harvey E. White</p><p class="book-meta">Non-Fiction • Acoustics</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 31: Apr 2029 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 3 • Apr 2029</span>
-                <h2 class="month-title">Month 31</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Rhythm of War</h3><p class="book-author">Brandon Sanderson</p><p class="book-meta">Fantasy • Stormlight #4</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Burning God</h3><p class="book-author">R.F. Kuang</p><p class="book-meta">Fantasy • Poppy War #3</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 32: May 2029 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 3 • May 2029</span>
-                <h2 class="month-title">Month 32</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Babel</h3><p class="book-author">R.F. Kuang</p><p class="book-meta">Fantasy • Standalone</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Grey Sister</h3><p class="book-author">Mark Lawrence</p><p class="book-meta">Fantasy • Ancestor #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Stone of Farewell</h3><p class="book-author">Tad Williams</p><p class="book-meta">Fantasy • Memory, Sorrow & Thorn #2</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 33: Jun 2029 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 3 • Jun 2029</span>
-                <h2 class="month-title">Month 33</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Wisdom of Crowds</h3><p class="book-author">Joe Abercrombie</p><p class="book-meta">Fantasy • Age of Madness #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">A Column of Fire</h3><p class="book-author">Ken Follett</p><p class="book-meta">Historical • Kingsbridge #3</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 34: Jul 2029 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 3 • Jul 2029</span>
-                <h2 class="month-title">Month 34</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Fury of the Gods</h3><p class="book-author">John Gwynne</p><p class="book-meta">Fantasy • Bloodsworn #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Mistborn: The Alloy of Law</h3><p class="book-author">Brandon Sanderson</p><p class="book-meta">Fantasy • Mistborn #4</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Hydrogen Sonata</h3><p class="book-author">Iain M. Banks</p><p class="book-meta">Sci-Fi • Culture #10</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 35: Aug 2029 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 3 • Aug 2029</span>
-                <h2 class="month-title">Month 35</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Wind and Truth</h3><p class="book-author">Brandon Sanderson</p><p class="book-meta">Fantasy • Stormlight #5</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Holy Sister</h3><p class="book-author">Mark Lawrence</p><p class="book-meta">Fantasy • Ancestor #3</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 36: Sep 2029 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 3 • Sep 2029</span>
-                <h2 class="month-title">Month 36</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Fool's Errand</h3><p class="book-author">Robin Hobb</p><p class="book-meta">Fantasy • Tawny Man #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Shadows of Self</h3><p class="book-author">Brandon Sanderson</p><p class="book-meta">Fantasy • Mistborn #5</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Guns, Germs, and Steel</h3><p class="book-author">Jared Diamond</p><p class="book-meta">Non-Fiction • History</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Shadows For Silence in the Forests of Hell</h3><p class="book-author">Brandon Sanderson</p><p class="book-meta">Fantasy • Arcanum</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 37: Oct 2029 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 4 • Oct 2029</span>
-                <h2 class="month-title">Month 37</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Golden Fool</h3><p class="book-author">Robin Hobb</p><p class="book-meta">Fantasy • Tawny Man #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Gideon the Ninth</h3><p class="book-author">Tamsyn Muir</p><p class="book-meta">Sci-Fi • Locked Tomb #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Emperor's Soul</h3><p class="book-author">Brandon Sanderson</p><p class="book-meta">Fantasy • Arcanum</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 38: Nov 2029 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 4 • Nov 2029</span>
-                <h2 class="month-title">Month 38</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Fool's Fate</h3><p class="book-author">Robin Hobb</p><p class="book-meta">Fantasy • Tawny Man #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Bands of Mourning</h3><p class="book-author">Brandon Sanderson</p><p class="book-meta">Fantasy • Mistborn #6</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Endurance</h3><p class="book-author">Alfred Lansing</p><p class="book-meta">Non-Fiction • History</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 39: Dec 2029 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 4 • Dec 2029</span>
-                <h2 class="month-title">Month 39</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The State of the Art</h3><p class="book-author">Iain M. Banks</p><p class="book-meta">Sci-Fi • Culture Novellas</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Shadow Rising</h3><p class="book-author">Robert Jordan</p><p class="book-meta">Fantasy • Wheel of Time #4</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 40: Jan 2030 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 4 • Jan 2030</span>
-                <h2 class="month-title">Month 40</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Shards of Earth</h3><p class="book-author">Adrian Tchaikovsky</p><p class="book-meta">Sci-Fi • Final Architecture #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Lost Metal</h3><p class="book-author">Brandon Sanderson</p><p class="book-meta">Fantasy • Mistborn #7</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Barcelona Way</h3><p class="book-author">Damian Hughes</p><p class="book-meta">Non-Fiction • Leadership</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 41: Feb 2030 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 4 • Feb 2030</span>
-                <h2 class="month-title">Month 41</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Dragon Keeper</h3><p class="book-author">Robin Hobb</p><p class="book-meta">Fantasy • Rain Wilds #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">To Green Angel Tower - Part 1</h3><p class="book-author">Tad Williams</p><p class="book-meta">Fantasy • Memory, Sorrow & Thorn #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Physics of Musical Instruments</h3><p class="book-author">Neville H. Fletcher</p><p class="book-meta">Non-Fiction • Acoustics</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 42: Mar 2030 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 4 • Mar 2030</span>
-                <h2 class="month-title">Month 42</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Eyes of the Void</h3><p class="book-author">Adrian Tchaikovsky</p><p class="book-meta">Sci-Fi • Final Architecture #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Red Seas Under Red Skies</h3><p class="book-author">Scott Lynch</p><p class="book-meta">Fantasy • Gentleman Bastard #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Armor of Light</h3><p class="book-author">Ken Follett</p><p class="book-meta">Historical • Kingsbridge #4</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 43: Apr 2030 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 4 • Apr 2030</span>
-                <h2 class="month-title">Month 43</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Dragon Haven</h3><p class="book-author">Robin Hobb</p><p class="book-meta">Fantasy • Rain Wilds #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Harrow the Ninth</h3><p class="book-author">Tamsyn Muir</p><p class="book-meta">Sci-Fi • Locked Tomb #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Quiet</h3><p class="book-author">Susan Cain</p><p class="book-meta">Non-Fiction • Psychology</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 44: May 2030 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 4 • May 2030</span>
-                <h2 class="month-title">Month 44</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Lords of Uncreation</h3><p class="book-author">Adrian Tchaikovsky</p><p class="book-meta">Sci-Fi • Final Architecture #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">To Green Angel Tower - Part 2</h3><p class="book-author">Tad Williams</p><p class="book-meta">Fantasy • Memory, Sorrow & Thorn #4</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Fires in the Dark</h3><p class="book-author">Kay Redfield Jamison</p><p class="book-meta">Non-Fiction • Biography</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 45: Jun 2030 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 4 • Jun 2030</span>
-                <h2 class="month-title">Month 45</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">City of Dragons</h3><p class="book-author">Robin Hobb</p><p class="book-meta">Fantasy • Rain Wilds #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Foundation</h3><p class="book-author">Isaac Asimov</p><p class="book-meta">Sci-Fi • Foundation #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Atomic Habits</h3><p class="book-author">James Clear</p><p class="book-meta">Non-Fiction • Productivity</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 46: Jul 2030 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 4 • Jul 2030</span>
-                <h2 class="month-title">Month 46</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Blood of Dragons</h3><p class="book-author">Robin Hobb</p><p class="book-meta">Fantasy • Rain Wilds #4</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Republic of Thieves</h3><p class="book-author">Scott Lynch</p><p class="book-meta">Fantasy • Gentleman Bastard #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Nona the Ninth</h3><p class="book-author">Tamsyn Muir</p><p class="book-meta">Sci-Fi • Locked Tomb #3</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 47: Aug 2030 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 4 • Aug 2030</span>
-                <h2 class="month-title">Month 47</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Malice</h3><p class="book-author">John Gwynne</p><p class="book-meta">Fantasy • Faithful and the Fallen #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Foundation and Empire</h3><p class="book-author">Isaac Asimov</p><p class="book-meta">Sci-Fi • Foundation #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">A Short History of Nearly Everything</h3><p class="book-author">Bill Bryson</p><p class="book-meta">Non-Fiction • Science</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 48: Sep 2030 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 4 • Sep 2030</span>
-                <h2 class="month-title">Month 48</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Valour</h3><p class="book-author">John Gwynne</p><p class="book-meta">Fantasy • Faithful and the Fallen #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Second Foundation</h3><p class="book-author">Isaac Asimov</p><p class="book-meta">Sci-Fi • Foundation #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Outliers</h3><p class="book-author">Malcolm Gladwell</p><p class="book-meta">Non-Fiction • Sociology</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Hope of Elantris</h3><p class="book-author">Brandon Sanderson</p><p class="book-meta">Fantasy • Arcanum</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 49: Oct 2030 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 5 • Oct 2030</span>
-                <h2 class="month-title">Month 49</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Ruin</h3><p class="book-author">John Gwynne</p><p class="book-meta">Fantasy • Faithful and the Fallen #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Fool's Assassin</h3><p class="book-author">Robin Hobb</p><p class="book-meta">Fantasy • Fitz and the Fool #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Haunting of Hill House</h3><p class="book-author">Shirley Jackson</p><p class="book-meta">Fantasy • Horror</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 50: Nov 2030 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 5 • Nov 2030</span>
-                <h2 class="month-title">Month 50</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Wrath</h3><p class="book-author">John Gwynne</p><p class="book-meta">Fantasy • Faithful and the Fallen #4</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Fool's Quest</h3><p class="book-author">Robin Hobb</p><p class="book-meta">Fantasy • Fitz and the Fool #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">A Night in the Lonesome October</h3><p class="book-author">Roger Zelazny</p><p class="book-meta">Fantasy • Fantasy</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 51: Dec 2030 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 5 • Dec 2030</span>
-                <h2 class="month-title">Month 51</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Assassin's Fate</h3><p class="book-author">Robin Hobb</p><p class="book-meta">Fantasy • Fitz and the Fool #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Evening and the Morning</h3><p class="book-author">Ken Follett</p><p class="book-meta">Historical • Kingsbridge Prequel</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Foundation's Edge</h3><p class="book-author">Isaac Asimov</p><p class="book-meta">Sci-Fi • Foundation #4</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 52: Jan 2031 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 5 • Jan 2031</span>
-                <h2 class="month-title">Month 52</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Last Wish</h3><p class="book-author">Andrzej Sapkowski</p><p class="book-meta">Fantasy • The Witcher #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Foundation and Earth</h3><p class="book-author">Isaac Asimov</p><p class="book-meta">Sci-Fi • Foundation #5</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Master and His Emissary</h3><p class="book-author">Iain McGilchrist</p><p class="book-meta">Non-Fiction • Neuroscience</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 53: Feb 2031 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 5 • Feb 2031</span>
-                <h2 class="month-title">Month 53</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Sword of Destiny</h3><p class="book-author">Andrzej Sapkowski</p><p class="book-meta">Fantasy • The Witcher #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Fires of Heaven</h3><p class="book-author">Robert Jordan</p><p class="book-meta">Fantasy • Wheel of Time #5</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Football Hackers</h3><p class="book-author">Christoph Biermann</p><p class="book-meta">Non-Fiction • Sports Analytics</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 54: Mar 2031 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 5 • Mar 2031</span>
-                <h2 class="month-title">Month 54</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Blood of Elves</h3><p class="book-author">Andrzej Sapkowski</p><p class="book-meta">Fantasy • The Witcher #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Pushing Ice</h3><p class="book-author">Alastair Reynolds</p><p class="book-meta">Sci-Fi • Standalone Sci-Fi</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Gene</h3><p class="book-author">Siddhartha Mukherjee</p><p class="book-meta">Non-Fiction • Science</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 55: Apr 2031 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 5 • Apr 2031</span>
-                <h2 class="month-title">Month 55</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Time of Contempt</h3><p class="book-author">Andrzej Sapkowski</p><p class="book-meta">Fantasy • The Witcher #4</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Lord of Chaos</h3><p class="book-author">Robert Jordan</p><p class="book-meta">Fantasy • Wheel of Time #6</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Chaos</h3><p class="book-author">James Gleick</p><p class="book-meta">Non-Fiction • Science</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 56: May 2031 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 5 • May 2031</span>
-                <h2 class="month-title">Month 56</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Baptism of Fire</h3><p class="book-author">Andrzej Sapkowski</p><p class="book-meta">Fantasy • The Witcher #5</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">House of Suns</h3><p class="book-author">Alastair Reynolds</p><p class="book-meta">Sci-Fi • Standalone Sci-Fi</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Mastering Audio</h3><p class="book-author">Bob Katz</p><p class="book-meta">Non-Fiction • Audio Engineering</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 57: Jun 2031 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 5 • Jun 2031</span>
-                <h2 class="month-title">Month 57</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Tower of the Swallow</h3><p class="book-author">Andrzej Sapkowski</p><p class="book-meta">Fantasy • The Witcher #6</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">A Crown of Swords</h3><p class="book-author">Robert Jordan</p><p class="book-meta">Fantasy • Wheel of Time #7</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Time Traveller's Guide to Medieval England</h3><p class="book-author">Ian Mortimer</p><p class="book-meta">Non-Fiction • History</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 58: Jul 2031 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 5 • Jul 2031</span>
-                <h2 class="month-title">Month 58</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Lady of the Lake</h3><p class="book-author">Andrzej Sapkowski</p><p class="book-meta">Fantasy • The Witcher #7</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Chasm City</h3><p class="book-author">Alastair Reynolds</p><p class="book-meta">Sci-Fi • Revelation Space #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Path of Daggers</h3><p class="book-author">Robert Jordan</p><p class="book-meta">Fantasy • Wheel of Time #8</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 59: Aug 2031 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 5 • Aug 2031</span>
-                <h2 class="month-title">Month 59</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Season of Storms</h3><p class="book-author">Andrzej Sapkowski</p><p class="book-meta">Fantasy • The Witcher #8</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Revelation Space</h3><p class="book-author">Alastair Reynolds</p><p class="book-meta">Sci-Fi • Revelation Space #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Winter's Heart</h3><p class="book-author">Robert Jordan</p><p class="book-meta">Fantasy • Wheel of Time #9</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 60: Sep 2031 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 5 • Sep 2031</span>
-                <h2 class="month-title">Month 60</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Redemption Ark</h3><p class="book-author">Alastair Reynolds</p><p class="book-meta">Sci-Fi • Revelation Space #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Crossroads of Twilight</h3><p class="book-author">Robert Jordan</p><p class="book-meta">Fantasy • Wheel of Time #10</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Signal and the Noise</h3><p class="book-author">Nate Silver</p><p class="book-meta">Non-Fiction • Statistics</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 61: Oct 2031 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 6 • Oct 2031</span>
-                <h2 class="month-title">Month 61</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Absolution Gap</h3><p class="book-author">Alastair Reynolds</p><p class="book-meta">Sci-Fi • Revelation Space #4</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Knife of Dreams</h3><p class="book-author">Robert Jordan</p><p class="book-meta">Fantasy • Wheel of Time #11</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Something Wicked This Way Comes</h3><p class="book-author">Ray Bradbury</p><p class="book-meta">Fantasy • Standalone</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 62: Nov 2031 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 6 • Nov 2031</span>
-                <h2 class="month-title">Month 62</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Gathering Storm</h3><p class="book-author">Robert Jordan & Brandon Sanderson</p><p class="book-meta">Fantasy • Wheel of Time #12</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Inhibitor Phase</h3><p class="book-author">Alastair Reynolds</p><p class="book-meta">Sci-Fi • Revelation Space #5</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Code Breaker</h3><p class="book-author">Walter Isaacson</p><p class="book-meta">Non-Fiction • Biography</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 63: Dec 2031 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 6 • Dec 2031</span>
-                <h2 class="month-title">Month 63</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Towers of Midnight</h3><p class="book-author">Robert Jordan & Brandon Sanderson</p><p class="book-meta">Fantasy • Wheel of Time #13</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Elysium Fire</h3><p class="book-author">Alastair Reynolds</p><p class="book-meta">Sci-Fi • Prefect Dreyfus #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Prefect</h3><p class="book-author">Alastair Reynolds</p><p class="book-meta">Sci-Fi • Prefect Dreyfus #1</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 64: Jan 2032 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 6 • Jan 2032</span>
-                <h2 class="month-title">Month 64</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">A Memory of Light</h3><p class="book-author">Robert Jordan & Brandon Sanderson</p><p class="book-meta">Fantasy • Wheel of Time #14</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Machine Vendetta</h3><p class="book-author">Alastair Reynolds</p><p class="book-meta">Sci-Fi • Prefect Dreyfus #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Thinking in Systems</h3><p class="book-author">Donella H. Meadows</p><p class="book-meta">Non-Fiction • Systems Science</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 65: Feb 2032 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 6 • Feb 2032</span>
-                <h2 class="month-title">Month 65</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Black Company</h3><p class="book-author">Glen Cook</p><p class="book-meta">Fantasy • Black Company #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Fall of Giants</h3><p class="book-author">Ken Follett</p><p class="book-meta">Historical • Century #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Scorecasting</h3><p class="book-author">Tobias Moskowitz & L. Jon Wertheim</p><p class="book-meta">Non-Fiction • Sports Analytics</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 66: Mar 2032 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 6 • Mar 2032</span>
-                <h2 class="month-title">Month 66</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Shadows Linger</h3><p class="book-author">Glen Cook</p><p class="book-meta">Fantasy • Black Company #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Winter of the World</h3><p class="book-author">Ken Follett</p><p class="book-meta">Historical • Century #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Six Easy Pieces</h3><p class="book-author">Richard Feynman</p><p class="book-meta">Non-Fiction • Physics</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 67: Apr 2032 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 6 • Apr 2032</span>
-                <h2 class="month-title">Month 67</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The White Rose</h3><p class="book-author">Glen Cook</p><p class="book-meta">Fantasy • Black Company #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Edge of Eternity</h3><p class="book-author">Ken Follett</p><p class="book-meta">Historical • Century #3</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Guns of August</h3><p class="book-author">Barbara W. Tuchman</p><p class="book-meta">Non-Fiction • History</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 68: May 2032 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 6 • May 2032</span>
-                <h2 class="month-title">Month 68</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Shadow Games</h3><p class="book-author">Glen Cook</p><p class="book-meta">Fantasy • Black Company #4</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Blindsight</h3><p class="book-author">Peter Watts</p><p class="book-meta">Sci-Fi • Firefall #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Emperor of All Maladies</h3><p class="book-author">Siddhartha Mukherjee</p><p class="book-meta">Non-Fiction • Science</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 69: Jun 2032 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 6 • Jun 2032</span>
-                <h2 class="month-title">Month 69</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Dreams of Steel</h3><p class="book-author">Glen Cook</p><p class="book-meta">Fantasy • Black Company #5</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Echopraxia</h3><p class="book-author">Peter Watts</p><p class="book-meta">Sci-Fi • Firefall #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Algorithms to Live By</h3><p class="book-author">Brian Christian</p><p class="book-meta">Non-Fiction • Computer Science</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 70: Jul 2032 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 6 • Jul 2032</span>
-                <h2 class="month-title">Month 70</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Bleak Seasons</h3><p class="book-author">Glen Cook</p><p class="book-meta">Fantasy • Black Company #6</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Dragon's Egg</h3><p class="book-author">Robert L. Forward</p><p class="book-meta">Sci-Fi • Cheela #1</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Fabric of the Cosmos</h3><p class="book-author">Brian Greene</p><p class="book-meta">Non-Fiction • Physics</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 71: Aug 2032 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 6 • Aug 2032</span>
-                <h2 class="month-title">Month 71</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">She Is the Darkness</h3><p class="book-author">Glen Cook</p><p class="book-meta">Fantasy • Black Company #7</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Starquake</h3><p class="book-author">Robert L. Forward</p><p class="book-meta">Sci-Fi • Cheela #2</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Man Who Mistook His Wife for a Hat</h3><p class="book-author">Oliver Sacks</p><p class="book-meta">Non-Fiction • Neurology</p></div></div>
-            </div>
-        </section>
-
-        <!-- MONTH 72: Sep 2032 -->
-        <section class="month-section">
-            <div class="month-header">
-                <span class="month-theme">Year 6 • Sep 2032</span>
-                <h2 class="month-title">Month 72</h2>
-            </div>
-            <div class="book-grid">
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Water Sleeps</h3><p class="book-author">Glen Cook</p><p class="book-meta">Fantasy • Black Company #8</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">Soldiers Live</h3><p class="book-author">Glen Cook</p><p class="book-meta">Fantasy • Black Company #9</p></div></div>
-                <div class="book-card"><img src="https://via.placeholder.com/55x82?text=No+Cover" alt="Cover" class="book-cover"><div class="book-info"><h3 class="book-title">The Order of Time</h3><p class="book-author">Carlo Rovelli</p><p class="book-meta">Non-Fiction • Physics</p></div></div>
-            </div>
-        </section>
-
-    </div>
-
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Reading Journey · Oct 2026 →</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#14110f;--card:#1e1a17;--ink:#f1e9dd;--mut:#a39a8c;--line:#352f29;--ac:#d9a441}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,system-ui,sans-serif}
+header{padding:56px 20px 24px;text-align:center;background:radial-gradient(circle at 50% 0,#3a2a16,transparent 70%)}
+h1{font:700 clamp(2rem,5vw,3.4rem) Fraunces,serif;margin:0 0 8px}header p{color:var(--mut);margin:0}
+.stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}.stats span{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:13px}
+.filters{position:sticky;top:0;z-index:5;background:#14110fee;backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 20px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+select,input,button{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:inherit;max-width:190px}button{cursor:pointer;background:var(--ac);color:#1a1206;border:0;font-weight:600}
+main{max-width:1100px;margin:0 auto;padding:10px 20px 80px}
+.year{font:700 2.4rem Fraunces,serif;margin:46px 0 4px;border-bottom:2px solid var(--line);padding-bottom:6px}
+.month{margin:26px 0;border-left:4px solid var(--ac);padding-left:16px}
+.month[data-s=w]{--ac:#7fb4e6}.month[data-s=sp]{--ac:#8fcf86}.month[data-s=su]{--ac:#f0c24b}.month[data-s=au]{--ac:#e8814a}
+.mh{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;align-items:baseline}
+.mh h2{font:700 1.5rem Fraunces,serif;margin:0}.mh h2 small{color:var(--ac);font:600 .8rem Inter;margin-left:8px;text-transform:uppercase;letter-spacing:.06em}.mh em{color:var(--mut);font-size:13px;font-style:normal}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;position:relative;border-top:3px solid var(--ac)}
+.card{display:flex;gap:12px}.bd{flex:1;min-width:0}.cv{flex:0 0 72px;height:108px;border-radius:6px;overflow:hidden;background:linear-gradient(160deg,#2c2620,#1a1613);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;text-align:center;font:600 10px/1.2 Fraunces,serif;color:var(--mut);padding:4px;box-shadow:0 4px 10px #0006}.cv img{width:100%;height:100%;object-fit:cover;display:block;margin:-4px}.card.read{opacity:.45}.card h3{font:600 1.02rem Fraunces,serif;margin:0 0 2px;padding-right:22px}.card .au{color:var(--mut);font-size:13px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;font-size:11.5px}.tags span{border:1px solid var(--line);border-radius:99px;padding:2px 9px;color:var(--mut)}.tags .g{color:var(--ac);border-color:var(--ac)}
+.now{position:absolute;top:-9px;right:10px;background:var(--ac);color:#1a1206;font-size:11px;font-weight:700;padding:1px 9px;border-radius:99px}
+.card input{position:absolute;top:12px;right:10px;width:16px;height:16px;padding:0;accent-color:var(--ac)}
+.empty{text-align:center;color:var(--mut);padding:60px}footer{text-align:center;color:var(--mut);padding:30px;font-size:13px}
+</style></head><body>
+<header><h1>📚 The Reading Journey</h1><p>3 books a month · ~1,500 pages · seasonal themes · starting October 2026</p><div class="stats" id="stats"></div></header>
+<div class="filters">
+<select id="fy"></select><select id="fg"></select><select id="fa"></select><select id="fs"></select><input id="fq" placeholder="Search title…"><button id="rs">Reset</button></div>
+<main id="out"></main><footer>Tick a book to mark it read (saved in your browser). Series order is always preserved.</footer>
+<script>
+const RAW=`#Douglas Adams
+The Restaurant at the End of the Universe|Hitchhiker's Guide|2|S|208
+Life, the Universe and Everything|Hitchhiker's Guide|3|S|224
+So Long, and Thanks for All the Fish|Hitchhiker's Guide|4|S|224
+Mostly Harmless|Hitchhiker's Guide|5|S|256
+#Eoin Colfer
+And Another Thing...|Hitchhiker's Guide|6|S|288
+#J.R.R. Tolkien
+The Hobbit|Middle-earth|0|F|300
+The Fellowship of the Ring|Middle-earth|1|F|423
+The Two Towers|Middle-earth|2|F|352
+The Return of the King|Middle-earth|3|F|416
+#Ursula K. Le Guin
+A Wizard of Earthsea|||F|183
+#Jacqueline Harpman
+I Who Have Never Known Men|||S|200
+#Michael W. Cox
+Zonal Marking|||N|450
+#Jonathan Wilson
+Inverting the Pyramid|||N|480
+#David Epstein
+The Sports Gene|||N|352
+#Iain M. Banks
+Consider Phlebas|The Culture|1|S|471
+The Player of Games|The Culture|2|S|309
+Use of Weapons|The Culture|3|S|411
+The State of the Art|The Culture|4|S|192
+Excession|The Culture|5|S|450
+Inversions|The Culture|6|S|368
+Look to Windward|The Culture|7|S|400
+Matter|The Culture|8|S|593
+Surface Detail|The Culture|9|S|627
+The Hydrogen Sonata|The Culture|10|S|544
+#Andy Weir
+The Martian|||S|369
+#Brandon Sanderson
+Mistborn: The Final Empire|Mistborn|1|F|541
+The Well of Ascension|Mistborn|2|F|590
+The Hero of Ages|Mistborn|3|F|572
+The Alloy of Law|Mistborn|4|F|332
+Shadows of Self|Mistborn|5|F|385
+The Bands of Mourning|Mistborn|6|F|448
+The Lost Metal|Mistborn|7|F|544
+The Way of Kings|Stormlight Archive|1|F|1007
+Words of Radiance|Stormlight Archive|2|F|1087
+Oathbringer|Stormlight Archive|3|F|1248
+Rhythm of War|Stormlight Archive|4|F|1232
+Wind and Truth|Stormlight Archive|5|F|1344
+Tress of the Emerald Sea|Cosmere Standalones|1|F|368
+Yumi and the Nightmare Painter|Cosmere Standalones|2|F|480
+The Fires of December|Cosmere Standalones|3|F|350
+#Lawrence Wright
+The Looming Tower|||N|480
+#Ken Follett
+The Evening and the Morning|Kingsbridge|1|H|704
+The Pillars of the Earth|Kingsbridge|2|H|973
+World Without End|Kingsbridge|3|H|1024
+A Column of Fire|Kingsbridge|4|H|928
+The Armor of Light|Kingsbridge|5|H|800
+#John Gwynne
+Malice|Faithful and the Fallen|1|F|560
+Valour|Faithful and the Fallen|2|F|640
+Ruin|Faithful and the Fallen|3|F|700
+Wrath|Faithful and the Fallen|4|F|720
+The Shadow of the Gods|Bloodsworn|1|F|560
+The Hunger of the Gods|Bloodsworn|2|F|640
+The Fury of the Gods|Bloodsworn|3|F|720
+#Patrick Rothfuss
+The Name of the Wind|Kingkiller Chronicle|1|F|662
+The Wise Man's Fear|Kingkiller Chronicle|2|F|994
+The Slow Regard of Silent Things|Kingkiller Chronicle|3|F|176
+The Narrow Road Between Desires|Kingkiller Chronicle|4|F|150
+The Lightning Tree (short)|Kingkiller Chronicle|5|F|50
+How Old Holly Came to Be (short)|Kingkiller Chronicle|6|F|40
+#Joe Abercrombie
+The Blade Itself|First Law|1|F|515
+Before They Are Hanged|First Law|2|F|480
+Last Argument of Kings|First Law|3|F|640
+Best Served Cold|First Law|4|F|640
+The Heroes|First Law|5|F|570
+Red Country|First Law|6|F|480
+Sharp Ends|First Law|7|F|400
+A Little Hatred|First Law|8|F|480
+The Trouble with Peace|First Law|9|F|544
+The Wisdom of Crowds|First Law|10|F|560
+The Great Change (and Other Lies)|First Law|11|F|100
+#James Islington
+The Shadow of What Was Lost|Licanius|1|F|700
+An Echo of Things to Come|Licanius|2|F|800
+The Light of All That Falls|Licanius|3|F|900
+The Will of the Many|Hierarchy|1|F|680
+The Strength of the Few|Hierarchy|2|F|700
+#Andrzej Sapkowski
+Blood of Elves|The Witcher|1|F|320
+The Time of Contempt|The Witcher|2|F|330
+Baptism of Fire|The Witcher|3|F|350
+The Tower of Swallows|The Witcher|4|F|440
+The Lady of the Lake|The Witcher|5|F|530
+Season of Storms|The Witcher|6|F|350
+Crossroads of Ravens|The Witcher|7|F|400
+#Neal Shusterman
+Scythe|Arc of a Scythe|1|S|435
+Thunderhead|Arc of a Scythe|2|S|512
+The Toll|Arc of a Scythe|3|S|640
+Gleanings|Arc of a Scythe|4|S|400
+#Becky Chambers
+To Be Taught, If Fortunate|||S|160
+#Matt Dinniman
+Carl's Doomsday Scenario|Dungeon Crawler Carl|2|S|460
+The Dungeon Anarchist's Cookbook|Dungeon Crawler Carl|3|S|500
+The Gate of the Feral Gods|Dungeon Crawler Carl|4|S|480
+The Butcher's Masquerade|Dungeon Crawler Carl|5|S|560
+The Eye of the Bedlam Bride|Dungeon Crawler Carl|6|S|600
+This Inevitable Ruin|Dungeon Crawler Carl|7|S|600
+A Parade of Horribles|Dungeon Crawler Carl|8|S|650
+#Liu Cixin
+The Three-Body Problem|Remembrance of Earth's Past|1|S|400
+The Dark Forest|Remembrance of Earth's Past|2|S|512
+Death's End|Remembrance of Earth's Past|3|S|608
+#Christopher Ruocchio
+Empire of Silence|The Sun Eater|1|S|600
+Howling Dark|The Sun Eater|2|S|600
+Demon in White|The Sun Eater|3|S|600
+Kingdoms of Death|The Sun Eater|4|S|700
+Ashes of Man|The Sun Eater|5|S|600
+Disquiet Gods|The Sun Eater|6|S|700
+Shadows Upon Time|The Sun Eater|7|S|700
+#Tatiana Țîbuleac
+The Summer My Mother Had Green Eyes|||C|250
+#Richard Bandler
+The Structure of Magic I|||N|250
+#Tom Rath
+StrengthsFinder 2.0|||N|175
+#Michael Wood
+The Story of China|||N|400
+#Steve Brusatte
+The Story of Birds|||N|400
+The Rise and Reign of the Mammals|||N|400
+The Rise and Fall of the Dinosaurs|||N|400
+#N. K. Jemisin
+The Fifth Season|Broken Earth|1|F|468
+The Obelisk Gate|Broken Earth|2|F|448
+The Stone Sky|Broken Earth|3|F|400
+#Gary Klein
+Sources of Power|||N|330
+#Stanisław Lem
+Solaris|||S|204
+#Clive Finlayson
+The Smart Neanderthal|||N|250
+#Elizabeth Kolbert
+The Sixth Extinction|||N|336
+#Adrian Tchaikovsky
+Shroud|||S|480
+Service Model|||S|350
+Children of Time|Children of Time|1|S|600
+Children of Ruin|Children of Time|2|S|580
+Children of Memory|Children of Time|3|S|600
+Children of Strife|Children of Time|4|S|600
+#Steven L. Peck
+A Short Stay in Hell|||T|120
+#Robin Hobb
+Assassin's Apprentice|Realm of the Elderlings|1|F|435
+Royal Assassin|Realm of the Elderlings|2|F|675
+Assassin's Quest|Realm of the Elderlings|3|F|760
+Ship of Magic|Realm of the Elderlings|4|F|880
+Mad Ship|Realm of the Elderlings|5|F|860
+Ship of Destiny|Realm of the Elderlings|6|F|880
+Fool's Errand|Realm of the Elderlings|7|F|640
+Golden Fool|Realm of the Elderlings|8|F|640
+Fool's Fate|Realm of the Elderlings|9|F|780
+Dragon Keeper|Realm of the Elderlings|10|F|500
+Dragon Haven|Realm of the Elderlings|11|F|500
+City of Dragons|Realm of the Elderlings|12|F|480
+Blood of Dragons|Realm of the Elderlings|13|F|480
+Fool's Assassin|Realm of the Elderlings|14|F|640
+Fool's Quest|Realm of the Elderlings|15|F|760
+Assassin's Fate|Realm of the Elderlings|16|F|880
+#Gregory David Roberts
+Shantaram|||H|944
+#Dan Simmons
+Hyperion|Hyperion Cantos|1|S|482
+The Fall of Hyperion|Hyperion Cantos|2|S|517
+Endymion|Hyperion Cantos|3|S|480
+The Rise of Endymion|Hyperion Cantos|4|S|579
+#Toby Wilkinson
+The Rise and Fall of Ancient Egypt|||N|640
+#Arthur C. Clarke
+Rendezvous with Rama|||S|243
+#Blake Crouch
+Recursion|||S|330
+Dark Matter|||S|342
+#R. F. Kuang
+The Poppy War|The Poppy War|1|F|544
+The Dragon Republic|The Poppy War|2|F|672
+The Drowning Faith|The Poppy War|3|F|80
+The Burning God|The Poppy War|4|F|704
+#Kyle Harper
+Plagues upon the Earth|||N|640
+#Frédéric Gros
+A Philosophy of Walking|||N|250
+#Scott Alexander Howard
+The Other Valley|||S|300
+#Ariel Lawhon
+The Pirate Queen|||H|400
+#Rebecca Yarros
+Fourth Wing|Empyrean|1|F|512
+Iron Flame|Empyrean|2|F|640
+Onyx Storm|Empyrean|3|F|544
+#Homer
+The Odyssey|||C|400
+The Iliad|||C|550
+#Fyodor Dostoevsky
+Notes from Underground|||C|130
+#Ernest Hemingway
+A Moveable Feast|||C|220
+On Writing|||N|250
+For Whom the Bell Tolls|||C|480
+#Timothy C. Winegard
+The Mosquito|||N|500
+#Pierce Brown
+Golden Son|Red Rising Saga|2|S|464
+Morning Star|Red Rising Saga|3|S|520
+Iron Gold|Red Rising Saga|4|S|600
+Dark Age|Red Rising Saga|5|S|750
+Light Bringer|Red Rising Saga|6|S|800
+#Hanan al-Shaykh
+One Thousand and One Nights|||C|250
+#Daniel G. Amen
+Memory Rescue|||N|350
+#Marcus Aurelius
+Meditations|||C|250
+#Epictetus
+The Discourses of Epictetus|||C|400
+#Elizabeth Day
+Magpie|||T|300
+#John Dickie
+Mafia Republic|||N|500
+#Larry McMurtry
+Lonesome Dove|||H|960
+#Scott Hawkins
+The Library at Mount Char|||T|390
+#Max Barry
+Lexicon|||T|400
+#Catriona Ward
+The Last House on Needless Street|||T|340
+#Edward Shawcross
+The Last Emperor of Mexico|||N|400
+#Kazuo Ishiguro
+Klara and the Sun|||S|300
+#Joe Hill
+King Sorrow|||T|880
+#Adam Hochschild
+King Leopold's Ghost|||N|400
+#Rebecca Wragg Sykes
+Kindred|||N|450
+#John Scalzi
+The Kaiju Preservation Society|||S|260
+#Jon Krakauer
+Into Thin Air|||N|350
+#Anne Applebaum
+Gulag|||N|640
+#Joseph Roth
+The Hotel Years|||N|300
+#Arthur H. Benade
+Horns, Strings, and Harmony|||N|270
+#Christopher Bollen
+Havoc|||T|400
+#George Gamow
+Gravity|||N|160
+#Jack Weatherford
+Genghis Khan and the Making of the Modern World|||N|320
+#John Steinbeck
+East of Eden|||C|600
+#Emily St. John Mandel
+Exit Party|||S|320
+#Jay Kristoff
+Empire of the Vampire|Empire of the Vampire|1|F|720
+Empire of the Damned|Empire of the Vampire|2|F|800
+Empire of the Dawn|Empire of the Vampire|3|F|800
+#Dante Alighieri
+The Divine Comedy|||C|500
+#David Graeber & David Wengrow
+The Dawn of Everything|||N|700
+#Christopher Buehlman
+The Blacktongue Thief|Blacktongue|1|F|440
+The Daughters' War|Blacktongue|2|F|450
+Between Two Fires|||F|400
+#Daniel Coyle
+The Culture Code|||N|270
+#Augustine Sedgewick
+Coffeeland|||N|400
+#Madeline Miller
+Circe|||F|400
+#M. L. Wang
+Blood Over Bright Haven|||F|650
+#Annie Jacobsen
+Biological War|||N|400
+#Toshikazu Kawaguchi
+Before the Coffee Gets Cold|||F|200
+#Laline Paull
+The Bees|||S|350
+#Edith Birde
+Because I Killed Him|The Nine Gentlemen|1|F|450
+#Agatha Christie
+Murder on the Orient Express|||T|250
+#Jeff VanderMeer
+Annihilation|||S|200
+#L. M. Montgomery
+Anne of Green Gables|||C|320
+#Stephen King
+11/22/63|||T|850
+#Alexandre Dumas
+The Count of Monte Cristo|||C|1250
+#Irvine Welsh
+Trainspotting|||C|350
+#C.S. Lewis
+The Chronicles of Narnia (Books 1–7)|||F|767
+#Dan Koeppel
+Banana|||N|300
+#Neil deGrasse Tyson
+Astrophysics for People in a Hurry|||N|220`;
+const GN={F:'Fantasy',S:'Sci-Fi',N:'Non-Fiction',C:'Classics & Literary',T:'Thriller & Horror',H:'Historical'};
+const GK='FSNCTH';
+const TH=[['Fresh Start','w'],['Cozy Hearth','w'],['Spring Awakening','sp'],['Renewal & Wonder','sp'],['Wanderlust','sp'],['Space Odyssey','su'],['Beach-Read Fun','su'],['Dog-Days Epics','su'],['Back to School','au'],['Spooky Season','au'],['Grimdark November','au'],['Winter Sagas','w']];
+//        F S N C T H
+const W=[[1,1,3,3,0,1],[3,1,1,2,1,3],[3,2,1,1,0,1],[1,3,3,1,0,1],[2,1,3,1,1,3],[1,3,2,0,1,1],[2,3,1,0,2,1],[3,2,1,1,1,2],[1,1,3,3,1,2],[1,1,0,1,3,0],[3,1,1,1,2,3],[3,1,2,2,0,3]];
+const LIGHT=/Hitchhik|Restaurant at|Life, the|So Long|Mostly|Another Thing|Martian|Kaiju|Carl|Dungeon|Anne of|Coffee|Tress|Astrophysics|Hobbit|Circe|Banana|Narnia|Culture Code|Walking/;
+const DARK=/Abercrombie|Poppy|Dragon Republic|Burning|Needless|Mount Char|Between Two|Vampire|Damned|Dawn$|Annihilation|Magpie|Havoc|Gulag|Short Stay|Lexicon|King Sorrow|Hierarchy|Blacktongue|Bees|Scythe|Thunderhead|Toll|Bloodsworn|Gods$/;
+let au='';const books=[];
+RAW.split('\n').forEach(l=>{if(l[0]=='#')au=l.slice(1);else{const[t,s,n,g,p]=l.split('|');books.push({t,a:au,s,n:+n||0,g,p:+p})}});
+const h=s=>[...s].reduce((x,c)=>(x*31+c.charCodeAt(0))%997,7)/997;
+const done=new Set(),sched=[],last={};
+let Y=2026,M=9,mi=0;
+const GS=books.find(b=>b.t=='Golden Son'),BF=books.find(b=>b.t=='Between Two Fires');
+function avail(){return books.filter(b=>!done.has(b)&&(!b.s||!books.some(o=>o.s==b.s&&!done.has(o)&&o.n<b.n)))}
+while(done.size<books.length){
+ const pick=[];let tot=0;
+ const take=b=>{pick.push(b);done.add(b);tot+=b.p;if(b.s)last[b.s]=mi};
+ if(mi==0){take(GS);take(BF)}
+ while(pick.length<3&&done.size<books.length){
+  let best=null,bs=-9e9;
+  for(const b of avail()){
+   if(b.s&&pick.some(x=>x.s==b.s))continue;
+   let sc=W[M][GK.indexOf(b.g)]+h(b.t+mi)*1.2;
+   if(M==9||M==10)sc+=DARK.test(b.t+b.a)?1.5:0;
+   if(M==6||M==1||M==2||M==5)sc+=LIGHT.test(b.t)?1.5:0;
+   if(pick.some(x=>x.g==b.g))sc-=3;
+   if(b.s&&last[b.s]==mi-1)sc-=4;else if(b.s&&last[b.s]==mi-2)sc-=1.5;
+   const nt=tot+b.p;if(nt>1500)sc-=(nt-1500)/150;
+   if(pick.length==2&&nt<1300)sc-=(1300-nt)/200;
+   if(b.p>900&&pick.some(x=>x.p>700))sc-=2;
+   if(sc>bs){bs=sc;best=b}}
+  if(!best)break;take(best)}
+ sched.push({y:Y,m:M,b:pick,p:tot});mi++;if(++M>11){M=0;Y++}}
+const MN=['January','February','March','April','May','June','July','August','September','October','November','December'];
+const rd=JSON.parse((()=>{try{return localStorage.getItem('rd')||'{}'}catch(e){return'{}'}})());
+const $=id=>document.getElementById(id);
+const opt=(el,all,vals)=>el.innerHTML=`<option value="">${all}</option>`+vals.map(v=>`<option value="${v[0]}">${v[1]}</option>`).join('');
+const uniq=a=>[...new Set(a)].filter(Boolean).sort();
+opt($('fy'),'All years',uniq(sched.map(s=>s.y)).map(y=>[y,y]));
+opt($('fg'),'All genres',GK.split('').map(k=>[k,GN[k]]));
+opt($('fa'),'All authors',uniq(books.map(b=>b.a)).map(v=>[v,v]));
+opt($('fs'),'All series',uniq(books.map(b=>b.s)).map(v=>[v,v]));
+const esc=s=>s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+
+const sv=()=>{try{localStorage.setItem('cv',JSON.stringify(cv))}catch(e){}};
+const cv=(()=>{try{return JSON.parse(localStorage.getItem('cv')||'{}')}catch(e){return{}}})();
+let qp=Promise.resolve();const enc=encodeURIComponent;
+async function find(b){
+ const k=b.t+b.a;if(cv[k]!==undefined)return cv[k];
+ const t=b.t.replace(/\(.*?\)/g,'').replace(': The Final Empire','').trim(),a=b.a.split('&')[0].trim();
+ let ok=true;
+ for(const q of [`title=${enc(t)}&author=${enc(a)}`,`title=${enc(t)}`]){
+  try{const r=await fetch(`https://openlibrary.org/search.json?${q}&limit=8&fields=cover_i`);if(!r.ok){ok=false;continue}
+   const d=(await r.json()).docs.find(x=>x.cover_i);if(d){cv[k]=d.cover_i;sv();return d.cover_i}}catch(e){ok=false}}
+ if(ok){cv[k]=0;sv()}return 0}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);const el=e.target,b=books[+el.dataset.i];
+ qp=qp.then(async()=>{const id=await find(b);if(!id)return;const im=new Image(),txt=el.innerHTML;im.alt=b.t;im.onload=()=>{el.innerHTML='';el.appendChild(im)};im.src=`https://covers.openlibrary.org/b/id/${id}-M.jpg?default=false`;await new Promise(r=>setTimeout(r,120))})}),{rootMargin:'400px'});
+function render(){
+ const f={y:$('fy').value,g:$('fg').value,a:$('fa').value,s:$('fs').value,q:$('fq').value.toLowerCase()};
+ const ok=b=>(!f.g||b.g==f.g)&&(!f.a||b.a==f.a)&&(!f.s||b.s==f.s)&&(!f.q||b.t.toLowerCase().includes(f.q));
+ let html='',cy=0,shown=0;
+ sched.forEach(s=>{
+  if(f.y&&s.y!=f.y)return;const bs=s.b.filter(ok);if(!bs.length)return;
+  if(s.y!=cy){cy=s.y;html+=`<div class="year">${cy}</div>`}
+  const[th,se]=TH[s.m];shown+=bs.length;
+  html+=`<section class="month" data-s="${se}"><div class="mh"><h2>${MN[s.m]}<small>${th}</small></h2><em>${s.b.length} books · ${s.p.toLocaleString()} pages</em></div><div class="grid">`+
+  bs.map(b=>{const k=b.t+b.a;return `<div class="card${rd[k]?' read':''}">${b==GS||b==BF?'<span class="now">Reading now</span>':''}<input type="checkbox" data-k="${esc(k)}" ${rd[k]?'checked':''}><div class="cv" data-i="${books.indexOf(b)}">${esc(b.t)}</div><div class="bd"><h3>${esc(b.t)}</h3><div class="au">${esc(b.a)}</div><div class="tags"><span class="g">${GN[b.g]}</span><span>${b.p} pp</span>${b.s?`<span>${esc(b.s)}${b.n?' #'+b.n:''}</span>`:''}</div></div>`}).join('')+`</div></section>`});
+ $('out').innerHTML=html||'<div class="empty">No books match these filters.</div>';
+ document.querySelectorAll('.cv').forEach(e=>io.observe(e));
+ const end=sched[sched.length-1];
+ $('stats').innerHTML=`<span>${books.length} books</span><span>${sched.length} months</span><span>${books.reduce((a,b)=>a+b.p,0).toLocaleString()} pages</span><span>Finish: ${MN[end.m]} ${end.y}</span><span>Showing ${shown}</span><span>Read: ${Object.values(rd).filter(Boolean).length}</span>`;
+}
+document.querySelectorAll('select,input').forEach(e=>e.oninput=render);
+$('rs').onclick=()=>{document.querySelectorAll('select,input').forEach(e=>e.value='');render()};
+$('out').onchange=e=>{if(e.target.dataset.k){rd[e.target.dataset.k]=e.target.checked;try{localStorage.setItem('rd',JSON.stringify(rd))}catch(x){}render()}};
+render();
+</script></body></html>
