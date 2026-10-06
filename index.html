@@ -10,25 +10,37 @@ h1{font:700 clamp(2rem,5vw,3.4rem) Fraunces,serif;margin:0 0 8px}header p{color:
 .stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}.stats span{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:13px}
 .filters{position:sticky;top:0;z-index:5;background:#14110fee;backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 20px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
 select,input,button{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:inherit;max-width:190px}button{cursor:pointer;background:var(--ac);color:#1a1206;border:0;font-weight:600}
-main{max-width:1100px;margin:0 auto;padding:10px 20px 80px}
+main{max-width:1240px;margin:0 auto;padding:10px 20px 80px}
 .year{font:700 2.4rem Fraunces,serif;margin:46px 0 4px;border-bottom:2px solid var(--line);padding-bottom:6px}
 .month{margin:26px 0;border-left:4px solid var(--ac);padding-left:16px}
 .month[data-s=w]{--ac:#7fb4e6}.month[data-s=sp]{--ac:#8fcf86}.month[data-s=su]{--ac:#f0c24b}.month[data-s=au]{--ac:#e8814a}
 .mh{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;align-items:baseline}
 .mh h2{font:700 1.5rem Fraunces,serif;margin:0}.mh h2 small{color:var(--ac);font:600 .8rem Inter;margin-left:8px;text-transform:uppercase;letter-spacing:.06em}.mh em{color:var(--mut);font-size:13px;font-style:normal}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:12px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;position:relative;border-top:3px solid var(--ac)}
-.card{display:flex;gap:12px}.bd{flex:1;min-width:0}.cv{flex:0 0 72px;height:108px;border-radius:6px;overflow:hidden;background:linear-gradient(160deg,#2c2620,#1a1613);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;text-align:center;font:600 10px/1.2 Fraunces,serif;color:var(--mut);padding:4px;box-shadow:0 4px 10px #0006}.cv img{width:100%;height:100%;object-fit:cover;display:block;margin:-4px}.card.read{opacity:.45}.card h3{font:600 1.02rem Fraunces,serif;margin:0 0 2px;padding-right:22px}.card .au{color:var(--mut);font-size:13px}
-.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;font-size:11.5px}.tags span{border:1px solid var(--line);border-radius:99px;padding:2px 9px;color:var(--mut)}.tags .g{color:var(--ac);border-color:var(--ac)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px;margin-top:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;position:relative;border-top:3px solid var(--ac)}
+.card{display:flex;gap:18px;align-items:flex-start}.bd{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}.cv{flex:0 0 92px;height:138px;border-radius:6px;overflow:hidden;background:linear-gradient(160deg,#2c2620,#1a1613);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;text-align:center;font:600 11px/1.3 Fraunces,serif;color:var(--mut);padding:6px;box-shadow:0 6px 14px #0008}.cv img{width:100%;height:100%;object-fit:cover;display:block;margin:-6px;width:calc(100% + 12px);height:calc(100% + 12px);max-width:none}.card.read{opacity:.7}.card h3{font:600 1.12rem/1.25 Fraunces,serif;margin:0;padding:0}.card .au{color:var(--mut);font-size:14px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;font-size:12px}.tags span{border:1px solid var(--line);border-radius:99px;padding:3px 10px;color:var(--mut);white-space:nowrap}.tags .g{color:var(--ac);border-color:var(--ac)}.rd{margin-top:auto;padding-top:8px;cursor:pointer;display:inline-block}.rd input{position:absolute;opacity:0;pointer-events:none}.rd span{display:inline-block;border:1px solid var(--line);border-radius:8px;padding:6px 12px;font-size:13px;color:var(--mut)}.rd:hover span{border-color:var(--ac);color:var(--ink)}.rd input:checked+span{background:var(--ac);color:#1a1206;border-color:var(--ac);font-weight:600}.rd input:checked+span:before{content:'✓ '}.card.read .cv{filter:grayscale(.8)}.now{top:-11px!important}
 .now{position:absolute;top:-9px;right:10px;background:var(--ac);color:#1a1206;font-size:11px;font-weight:700;padding:1px 9px;border-radius:99px}
-.card input{position:absolute;top:12px;right:10px;width:16px;height:16px;padding:0;accent-color:var(--ac)}
+
 .empty{text-align:center;color:var(--mut);padding:60px}footer{text-align:center;color:var(--mut);padding:30px;font-size:13px}
+html{scroll-behavior:smooth}.month,.year{scroll-margin-top:84px}
+main{padding-right:76px!important}
+#nav{position:fixed;right:6px;top:70px;bottom:10px;width:56px;z-index:6;overflow-y:auto;scrollbar-width:none;font-size:11px;text-align:center;padding:4px 0}
+#nav::-webkit-scrollbar{display:none}
+#nav .ny{margin-bottom:10px;border-right:2px solid var(--line);padding-right:2px}
+#nav .yl{display:block;color:var(--ink);font:700 13px Fraunces,serif;text-decoration:none;padding:3px 0}
+#nav .nm a{display:block;color:var(--mut);text-decoration:none;padding:2px 0;border-radius:6px;transition:.15s}
+#nav .nm a:hover{color:var(--ink);background:var(--card)}
+#nav .nm a.on{background:var(--ac);color:#1a1206;font-weight:700}
+@media(max-width:700px){#nav{top:128px;width:44px}main{padding-right:54px!important}}
 </style></head><body>
 <header><h1>📚 The Reading Journey</h1><p>3 books a month · ~1,500 pages · seasonal themes · starting October 2026</p><div class="stats" id="stats"></div></header>
 <div class="filters">
 <select id="fy"></select><select id="fg"></select><select id="fa"></select><select id="fs"></select><input id="fq" placeholder="Search title…"><button id="rs">Reset</button></div>
-<main id="out"></main><footer>Tick a book to mark it read (saved in your browser). Series order is always preserved.</footer>
+<nav id="nav" aria-label="Timeline"></nav><main id="out"></main><footer>Tick a book to mark it read (saved in your browser). Series order is always preserved.</footer>
 <script>
+// ➕ TO ADD BOOKS: add a line under the right author (or a new '#Author' line):
+//    Title|Series name|Number in series|Genre (F,S,N,C,T,H)|Pages     (leave Series/Number empty for standalones)
 const RAW=`#Douglas Adams
 The Restaurant at the End of the Universe|Hitchhiker's Guide|2|S|208
 Life, the Universe and Everything|Hitchhiker's Guide|3|S|224
@@ -407,18 +419,32 @@ async function find(b){
  if(ok){cv[k]=0;sv()}return 0}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);const el=e.target,b=books[+el.dataset.i];
  qp=qp.then(async()=>{const id=await find(b);if(!id)return;const im=new Image(),txt=el.innerHTML;im.alt=b.t;im.onload=()=>{el.innerHTML='';el.appendChild(im)};im.src=`https://covers.openlibrary.org/b/id/${id}-M.jpg?default=false`;await new Promise(r=>setTimeout(r,120))})}),{rootMargin:'400px'});
+let spy;
+function buildNav(){
+ const nav=$('nav'),secs=[...document.querySelectorAll('.month')];
+ const by={};secs.forEach(e=>{const[,y,m]=e.id.split('-');(by[y]=by[y]||[]).push([+m,e.id])});
+ nav.innerHTML=Object.keys(by).map(y=>`<div class="ny"><a class="yl" href="#y-${y}" title="Jump to ${y}">${y}</a><div class="nm">`+by[y].map(([m,id])=>`<a href="#${id}" data-t="${id}" title="${MN[m]} ${y} · ${TH[m][0]}">${MN[m].slice(0,3)}</a>`).join('')+`</div></div>`).join('');
+ if(spy)spy.disconnect();
+ spy=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;
+  nav.querySelectorAll('.on').forEach(a=>a.classList.remove('on'));
+  const a=nav.querySelector(`[data-t="${e.target.id}"]`);if(!a)return;a.classList.add('on');
+  const t=a.offsetTop-nav.clientHeight/2;nav.scrollTo({top:t,behavior:'smooth'})}),{rootMargin:'-25% 0px -65% 0px'});
+ secs.forEach(e=>spy.observe(e));
+}
 function render(){
  const f={y:$('fy').value,g:$('fg').value,a:$('fa').value,s:$('fs').value,q:$('fq').value.toLowerCase()};
  const ok=b=>(!f.g||b.g==f.g)&&(!f.a||b.a==f.a)&&(!f.s||b.s==f.s)&&(!f.q||b.t.toLowerCase().includes(f.q));
  let html='',cy=0,shown=0;
  sched.forEach(s=>{
   if(f.y&&s.y!=f.y)return;const bs=s.b.filter(ok);if(!bs.length)return;
-  if(s.y!=cy){cy=s.y;html+=`<div class="year">${cy}</div>`}
+  if(s.y!=cy){cy=s.y;html+=`<div class="year" id="y-${cy}">${cy}</div>`}
   const[th,se]=TH[s.m];shown+=bs.length;
-  html+=`<section class="month" data-s="${se}"><div class="mh"><h2>${MN[s.m]}<small>${th}</small></h2><em>${s.b.length} books · ${s.p.toLocaleString()} pages</em></div><div class="grid">`+
-  bs.map(b=>{const k=b.t+b.a;return `<div class="card${rd[k]?' read':''}">${b==GS||b==BF?'<span class="now">Reading now</span>':''}<input type="checkbox" data-k="${esc(k)}" ${rd[k]?'checked':''}><div class="cv" data-i="${books.indexOf(b)}">${esc(b.t)}</div><div class="bd"><h3>${esc(b.t)}</h3><div class="au">${esc(b.a)}</div><div class="tags"><span class="g">${GN[b.g]}</span><span>${b.p} pp</span>${b.s?`<span>${esc(b.s)}${b.n?' #'+b.n:''}</span>`:''}</div></div>`}).join('')+`</div></section>`});
+  html+=`<section class="month" id="m-${s.y}-${s.m}" data-s="${se}"><div class="mh"><h2>${MN[s.m]}<small>${th}</small></h2><em>${s.b.length} books · ${s.p.toLocaleString()} pages</em></div><div class="grid">`+
+  bs.map(b=>{const k=b.t+b.a;return `<div class="card${rd[k]?' read':''}">${b==GS||b==BF?'<span class="now">Reading now</span>':''}<div class="cv" data-i="${books.indexOf(b)}">${esc(b.t)}</div><div class="bd"><h3>${esc(b.t)}</h3><div class="au">${esc(b.a)}</div><div class="tags"><span class="g">${GN[b.g]}</span><span>${b.p} pp</span>${b.s?`<span>${esc(b.s)}${b.n?' #'+b.n:''}</span>`:''}</div><label class="rd"><input type="checkbox" data-k="${esc(k)}" ${rd[k]?'checked':''}><span>${rd[k]?'Read':'Mark as read'}</span></label></div></div>`}).join('')+`</div></section>`});
  $('out').innerHTML=html||'<div class="empty">No books match these filters.</div>';
+
  document.querySelectorAll('.cv').forEach(e=>io.observe(e));
+ buildNav();
  const end=sched[sched.length-1];
  $('stats').innerHTML=`<span>${books.length} books</span><span>${sched.length} months</span><span>${books.reduce((a,b)=>a+b.p,0).toLocaleString()} pages</span><span>Finish: ${MN[end.m]} ${end.y}</span><span>Showing ${shown}</span><span>Read: ${Object.values(rd).filter(Boolean).length}</span>`;
 }
