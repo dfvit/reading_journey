@@ -47,6 +47,14 @@
    "n": 0,
    "g": "N",
    "p": 368
+  },
+  {
+   "t": "SPQR",
+   "a": "Mary Beard",
+   "s": "",
+   "n": 0,
+   "g": "N",
+   "p": 606
   }
  ],
  "rd": {
@@ -582,16 +590,16 @@
    "k": [
     "Blood of DragonsRobin Hobb",
     "The Player of GamesIain M. Banks",
-    "Biological WarAnnie Jacobsen"
+    "SPQRMary Beard"
    ]
   },
   {
    "y": 2031,
    "m": 8,
    "k": [
+    "Biological WarAnnie Jacobsen",
     "The Obelisk GateN. K. Jemisin",
-    "Howling DarkChristopher Ruocchio",
-    "Rendezvous with RamaArthur C. Clarke"
+    "Howling DarkChristopher Ruocchio"
    ]
   },
   {
@@ -600,7 +608,7 @@
    "k": [
     "Fool's AssassinRobin Hobb",
     "Use of WeaponsIain M. Banks",
-    "The Blade ItselfJoe Abercrombie"
+    "Rendezvous with RamaArthur C. Clarke"
    ]
   },
   {
@@ -609,7 +617,7 @@
    "k": [
     "The Stone SkyN. K. Jemisin",
     "Demon in WhiteChristopher Ruocchio",
-    "Before They Are HangedJoe Abercrombie"
+    "The Blade ItselfJoe Abercrombie"
    ]
   },
   {
@@ -626,7 +634,7 @@
    "m": 0,
    "k": [
     "Kingdoms of DeathChristopher Ruocchio",
-    "Last Argument of KingsJoe Abercrombie",
+    "Before They Are HangedJoe Abercrombie",
     "MaliceJohn Gwynne"
    ]
   },
@@ -643,7 +651,7 @@
    "y": 2032,
    "m": 2,
    "k": [
-    "Best Served ColdJoe Abercrombie",
+    "Last Argument of KingsJoe Abercrombie",
     "Ashes of ManChristopher Ruocchio",
     "ValourJohn Gwynne"
    ]
@@ -661,7 +669,7 @@
    "y": 2032,
    "m": 4,
    "k": [
-    "The HeroesJoe Abercrombie",
+    "Best Served ColdJoe Abercrombie",
     "RuinJohn Gwynne",
     "Look to WindwardIain M. Banks"
    ]
@@ -680,7 +688,7 @@
    "m": 6,
    "k": [
     "WrathJohn Gwynne",
-    "Red CountryJoe Abercrombie",
+    "The HeroesJoe Abercrombie",
     "Surface DetailIain M. Banks"
    ]
   },
@@ -698,7 +706,7 @@
    "m": 8,
    "k": [
     "The Hydrogen SonataIain M. Banks",
-    "Sharp EndsJoe Abercrombie",
+    "Red CountryJoe Abercrombie",
     "Empire of the VampireJay Kristoff"
    ]
   },
@@ -708,7 +716,7 @@
    "k": [
     "The Strength of the FewJames Islington",
     "The Light of All That FallsJames Islington",
-    "A Little HatredJoe Abercrombie"
+    "Sharp EndsJoe Abercrombie"
    ]
   },
   {
@@ -717,7 +725,7 @@
    "k": [
     "Empire of the DamnedJay Kristoff",
     "The Wise Man's FearPatrick Rothfuss",
-    "The Trouble with PeaceJoe Abercrombie"
+    "A Little HatredJoe Abercrombie"
    ]
   },
   {
@@ -725,7 +733,7 @@
    "m": 11,
    "k": [
     "Empire of the DawnJay Kristoff",
-    "The Wisdom of CrowdsJoe Abercrombie",
+    "The Trouble with PeaceJoe Abercrombie",
     "The Slow Regard of Silent ThingsPatrick Rothfuss"
    ]
   },
@@ -733,7 +741,7 @@
    "y": 2033,
    "m": 0,
    "k": [
-    "The Great Change (and Other Lies)Joe Abercrombie",
+    "The Wisdom of CrowdsJoe Abercrombie",
     "The Narrow Road Between DesiresPatrick Rothfuss"
    ]
   },
@@ -741,7 +749,8 @@
    "y": 2033,
    "m": 1,
    "k": [
-    "The Lightning Tree Patrick Rothfuss"
+    "The Lightning Tree Patrick Rothfuss",
+    "The Great Change (and Other Lies)Joe Abercrombie"
    ]
   },
   {
