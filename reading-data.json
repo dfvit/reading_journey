@@ -1,14 +1,5 @@
 {
- "ex": [
-  {
-   "t": "Assyria: The Rise and Fall of the World’s First Empire",
-   "a": "Eckart Frahm",
-   "s": "",
-   "n": 0,
-   "g": "N",
-   "p": 528
-  }
- ],
+ "ex": [],
  "rd": {
   "Between Two FiresChristopher Buehlman": false,
   "The Great Change (and Other Lies)Joe Abercrombie": false
@@ -415,8 +406,7 @@
    "m": 5,
    "k": [
     "Season of StormsAndrzej Sapkowski",
-    "The Three-Body ProblemLiu Cixin",
-    "Assyria: The Rise and Fall of the World’s First EmpireEckart Frahm"
+    "The Three-Body ProblemLiu Cixin"
    ]
   },
   {
