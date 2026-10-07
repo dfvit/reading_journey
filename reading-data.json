@@ -1,14 +1,5 @@
 {
- "ex": [
-  {
-   "t": "Stalin: The Court of the Red Tsar",
-   "a": "Simon Sebag Montefiore",
-   "s": "",
-   "n": 0,
-   "g": "N",
-   "p": 848
-  }
- ],
+ "ex": [],
  "rd": {
   "Between Two FiresChristopher Buehlman": false,
   "The Great Change (and Other Lies)Joe Abercrombie": false
@@ -397,7 +388,6 @@
    "m": 3,
    "k": [
     "Exit PartyEmily St. John Mandel",
-    "Stalin: The Court of the Red TsarSimon Sebag Montefiore",
     "A Wizard of EarthseaUrsula K. Le Guin"
    ]
   },
