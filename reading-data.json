@@ -1,5 +1,14 @@
 {
- "ex": [],
+ "ex": [
+  {
+   "t": "Assyria: The Rise and Fall of the World’s First Empire",
+   "a": "Eckart Frahm",
+   "s": "",
+   "n": 0,
+   "g": "N",
+   "p": 528
+  }
+ ],
  "rd": {
   "Between Two FiresChristopher Buehlman": false,
   "The Great Change (and Other Lies)Joe Abercrombie": false
@@ -681,7 +690,8 @@
    "y": 2033,
    "m": 0,
    "k": [
-    "The Great Change (and Other Lies)Joe Abercrombie"
+    "The Great Change (and Other Lies)Joe Abercrombie",
+    "Assyria: The Rise and Fall of the World’s First EmpireEckart Frahm"
    ]
   }
  ]
