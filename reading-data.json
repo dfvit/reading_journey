@@ -1,14 +1,5 @@
 {
- "ex": [
-  {
-   "t": "Assyria: The Rise and Fall of the World’s First Empire",
-   "a": "Eckart Frahm",
-   "s": "",
-   "n": 0,
-   "g": "H",
-   "p": 528
-  }
- ],
+ "ex": [],
  "rd": {
   "Between Two FiresChristopher Buehlman": false,
   "The Great Change (and Other Lies)Joe Abercrombie": false
@@ -37,7 +28,6 @@
    "m": 11,
    "k": [
     "Fourth WingRebecca Yarros",
-    "Assyria: The Rise and Fall of the World’s First EmpireEckart Frahm",
     "The Story of ChinaMichael Wood"
    ]
   },
