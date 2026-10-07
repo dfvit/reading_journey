@@ -15,14 +15,6 @@
    "n": 0,
    "g": "N",
    "p": 441
-  },
-  {
-   "t": "Say Nothing",
-   "a": "Patrick Radden Keefe",
-   "s": "",
-   "n": 0,
-   "g": "N",
-   "p": 350
   }
  ],
  "rd": {
@@ -707,8 +699,7 @@
    "y": 2033,
    "m": 0,
    "k": [
-    "The Lightning Tree (short)Patrick Rothfuss",
-    "Say NothingPatrick Radden Keefe"
+    "The Lightning Tree (short)Patrick Rothfuss"
    ]
   },
   {
