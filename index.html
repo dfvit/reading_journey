@@ -36,7 +36,7 @@ main{padding-right:76px!important}
 summary.year{cursor:pointer;list-style:none;display:flex;align-items:baseline;gap:12px}summary.year::-webkit-details-marker{display:none}summary.year small{font:600 .8rem Inter,sans-serif;color:var(--mut)}summary.year:after{content:'▾';margin-left:auto;font-size:1.2rem;color:var(--mut);transition:.2s}details:not([open])>summary.year:after{transform:rotate(-90deg)}
 button.sec{background:var(--card);color:var(--ink);border:1px solid var(--line)}
 .del{position:absolute;top:6px;right:8px;background:none!important;border:0!important;color:var(--mut)!important;padding:4px 8px!important;font-size:14px;cursor:pointer;z-index:2}.del:hover{color:#e8814a!important}
-dialog{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:22px;width:min(420px,92vw)}dialog::backdrop{background:#000a}dialog form{display:grid;gap:10px}dialog input,dialog select{width:100%;max-width:none}dialog h3{margin:0 0 4px;font:700 1.3rem Fraunces,serif}dialog .hint{margin:0;font-size:12.5px;color:var(--mut)}dialog code{color:var(--ac)}dialog .row{display:flex;gap:8px;justify-content:flex-end}
+dialog{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:22px;width:min(420px,92vw)}dialog::backdrop{background:#000a}dialog form{display:grid;gap:10px}dialog input,dialog select{width:100%;max-width:none}dialog h3{margin:0 0 4px;font:700 1.3rem Fraunces,serif}dialog .chk{font-size:13px;color:var(--mut);display:flex;gap:8px;align-items:center}dialog .chk input{width:auto}dialog .hint{margin:0;font-size:12.5px;color:var(--mut)}dialog code{color:var(--ac)}dialog .row{display:flex;gap:8px;justify-content:flex-end}
 #toast{position:fixed;left:50%;bottom:70px;transform:translateX(-50%);background:var(--ac);color:#1a1206;padding:10px 16px;border-radius:10px;z-index:20;font-weight:600;display:none;max-width:90vw;text-align:center}
 #nav .nm a{padding:3px 0}
 @media(max-width:700px){.filters{position:static}main{padding-right:20px!important;padding-bottom:90px!important}
@@ -47,7 +47,7 @@ dialog{background:var(--card);color:var(--ink);border:1px solid var(--line);bord
 <header><h1>📚 The Reading Journey</h1><p>3 books a month · ~1,500 pages · seasonal themes · starting October 2026</p><div class="stats" id="stats"></div></header>
 <div class="filters">
 <select id="fy"></select><select id="fg"></select><select id="fa"></select><select id="fs"></select><input id="fq" placeholder="Search title…"><button id="rs" class="sec">Reset</button><button id="add">＋ Add book</button><button id="sy" class="sec">⚙ Sync</button><button id="rp" class="sec" title="Reschedule unread books from this month">↻ Re-plan</button><button id="tg" class="sec">Collapse all</button></div>
-<nav id="nav" aria-label="Timeline"></nav><main id="out"></main><dialog id="dlg"><form id="af"><h3>Add a book to your TBR</h3><input id="at" placeholder="Title" required><input id="aa" list="al" placeholder="Author" required><input id="as" list="sl" placeholder="Series (optional)"><input id="an" type="number" min="0" step="0.5" placeholder="Number in series (optional)"><select id="ag"></select><input id="ap" type="number" min="1" placeholder="Pages (default 350)"><datalist id="al"></datalist><datalist id="sl"></datalist><div class="row"><button type="button" id="cx" class="sec">Cancel</button><button type="submit">Add &amp; re-plan</button></div></form></dialog><dialog id="sd"><form id="sf"><h3>Sync with GitHub</h3><p class="hint">Saves your added books, read ticks and plan to <code>reading-data.json</code> in your repo, so every device shows the same list.</p><input id="gr" placeholder="owner/repo (e.g. jane/reading-journey)" required><input id="gb" placeholder="Branch (main)"><input id="gt" type="password" placeholder="Access token (leave blank for read-only)"><p class="hint" id="gs"></p><p class="hint">Create a token at GitHub → Settings → Developer settings → Fine-grained tokens. Select only this repo and give it <b>Contents: Read and write</b>. It is stored only in this browser, never in the page. Note: if the repo is public, your list is public too.</p><div class="row"><button type="button" id="sd2" class="sec">Disconnect</button><button type="button" id="sx" class="sec">Cancel</button><button type="submit">Save &amp; sync</button></div></form></dialog>
+<nav id="nav" aria-label="Timeline"></nav><main id="out"></main><dialog id="dlg"><form id="af"><h3>Add a book to your TBR</h3><input id="at" placeholder="Title" required><input id="aa" list="al" placeholder="Author" required><input id="as" list="sl" placeholder="Series (optional)"><input id="an" type="number" min="0" step="0.5" placeholder="Number in series (optional)"><select id="ag"></select><input id="ap" type="number" min="1" placeholder="Pages (default 350)"><label class="chk"><input id="ar" type="checkbox"> Rebuild the whole plan (may reorder months)</label><datalist id="al"></datalist><datalist id="sl"></datalist><div class="row"><button type="button" id="cx" class="sec">Cancel</button><button type="submit">Add to plan</button></div></form></dialog><dialog id="sd"><form id="sf"><h3>Sync with GitHub</h3><p class="hint">Saves your added books, read ticks and plan to <code>reading-data.json</code> in your repo, so every device shows the same list.</p><input id="gr" placeholder="owner/repo (e.g. jane/reading-journey)" required><input id="gb" placeholder="Branch (main)"><input id="gt" type="password" placeholder="Access token (leave blank for read-only)"><p class="hint" id="gs"></p><p class="hint">Create a token at GitHub → Settings → Developer settings → Fine-grained tokens. Select only this repo and give it <b>Contents: Read and write</b>. It is stored only in this browser, never in the page. Note: if the repo is public, your list is public too.</p><div class="row"><button type="button" id="sd2" class="sec">Disconnect</button><button type="button" id="sx" class="sec">Cancel</button><button type="submit">Save &amp; sync</button></div></form></dialog>
 <div id="toast"></div>
 <footer>Tick a book to mark it read, add new books any time, then hit Re-plan to move finished books out of the way. Everything is saved in your browser.</footer>
 <script>
@@ -424,7 +424,39 @@ function plan(){
    if(!best)break;take(best)}
   if(!pick.length)break;
   sched.push({y:Y,m:M,b:pick,p:tot});mi++;if(++M>11){M=0;Y++}}
- sv('plan',sched.map(s=>({y:s.y,m:s.m,k:s.b.map(key)})));
+ savePlan();
+}
+const savePlan=()=>sv('plan',sched.map(s=>({y:s.y,m:s.m,k:s.b.map(key)})));
+// ---- minimal-disruption insert: places ONE book into the existing plan without rebuilding it ----
+const fitS=(b,mo)=>W[mo][GK.indexOf(b.g)]+((mo==9||mo==10)&&DARK.test(b.t+b.a)?1.5:0)+((mo==6||mo==1||mo==2||mo==5)&&LIGHT.test(b.t)?1.5:0);
+function okPos(d,i,S){const k=K(d);if(!k)return true;for(let j=0;j<S.length;j++)for(const o of S[j].b){if(o===d||K(o)!=k)continue;if(N(o)<N(d)&&j>=i)return false;if(N(o)>N(d)&&j<=i)return false}return true}
+const nextMo=l=>({y:l.m==11?l.y+1:l.y,m:(l.m+1)%12,b:[],p:0});
+function insertPlan(b){
+ if(!sched.length){plan();return}
+ if(sched.some(s=>s.b.includes(b)))return;
+ const now=new Date(),cy=now.getFullYear(),cm=now.getMonth();
+ let first=sched.findIndex(s=>s.y>cy||(s.y==cy&&s.m>=cm));if(first<0)first=0;
+ const pg=m=>m.b.reduce((a,x)=>a+x.p,0),over=m=>m.b.length>4||pg(m)>1650;
+ let best=null,bs=-9e9;
+ for(let i=first;i<=sched.length;i++){
+  const S=sched.map(x=>({...x,b:[...x.b]}));
+  if(i==S.length)S.push(nextMo(S[S.length-1]));
+  if(!okPos(b,i,S))continue;
+  S[i].b.push(b);let cur=i,rip=0,bad=0;
+  while(over(S[cur])){
+   if(cur+1>=S.length)S.push(nextMo(S[cur]));
+   let d=null,ds=-9e9;
+   for(const x of S[cur].b){if(x===b||!okPos(x,cur+1,S))continue;const v=fitS(x,S[cur+1].m)-fitS(x,S[cur].m);if(v>ds){ds=v;d=x}}
+   if(!d){bad=1;break}
+   S[cur].b.splice(S[cur].b.indexOf(d),1);S[cur+1].b.push(d);cur++;rip++}
+  if(bad)continue;
+  let sc=fitS(b,S[i].m);const k=K(b);
+  if(S[i].b.some(x=>x!==b&&x.g==b.g))sc-=3;
+  if(k&&S.slice(Math.max(0,i-2),i).some(x=>x.b.some(y=>K(y)==k)))sc+=2;
+  sc-=0.5*rip;if(S[i].b.length>3)sc-=0.8;const ex=pg(S[i])-1650;if(ex>0)sc-=ex/150;
+  if(sc>bs){bs=sc;best=S}}
+ if(!best){plan();return}
+ sched=best.filter(x=>x.b.length);sched.forEach(x=>x.p=pg(x));savePlan();
 }
 function loadPlan(){
  const P=ld('plan',null);if(!P)return plan();
@@ -511,7 +543,8 @@ function card(b){const k=key(b),now=!rd[k]&&(b.t=='Golden Son'||b.t=='Between Tw
  return `<div class="card${rd[k]?' read':''}">${now?'<span class="now">Reading now</span>':''}${b.x?`<button class="del" data-del="${esc(k)}" title="Remove from my list">✕</button>`:''}<div class="cv" data-i="${books.indexOf(b)}">${esc(b.t)}</div><div class="bd"><h3>${esc(b.t)}</h3><div class="au">${esc(b.a)}</div><div class="tags"><span class="g">${GN[b.g]}</span><span>${b.p} pp</span>${b.s?`<span>${esc(b.s)}${b.n?' #'+b.n:''}</span>`:''}${b.x?'<span>Added by you</span>':''}</div><label class="rd"><input type="checkbox" data-k="${esc(k)}" ${rd[k]?'checked':''}><span>${rd[k]?'Read':'Mark as read'}</span></label></div></div>`}
 function render(){
  let inPlan=new Set(sched.flatMap(s=>s.b));
- if(books.some(b=>!inPlan.has(b)&&!rd[key(b)])){plan();inPlan=new Set(sched.flatMap(s=>s.b));fillFilters()}
+ const orph=books.filter(b=>!inPlan.has(b)&&!rd[key(b)]);
+ if(orph.length){orph.forEach(insertPlan);inPlan=new Set(sched.flatMap(s=>s.b));fillFilters()}
  const f={y:$('fy').value,g:$('fg').value,a:$('fa').value,s:$('fs').value,q:$('fq').value.toLowerCase()};
  const filt=!!(f.y||f.g||f.a||f.s||f.q);
  const ok=b=>(!f.g||b.g==f.g)&&(!f.a||b.a==f.a)&&(!f.s||b.s==f.s)&&(!f.q||b.t.toLowerCase().includes(f.q));
@@ -540,8 +573,8 @@ $('nav').addEventListener('click',e=>{const a=e.target.closest('a');if(!a)return
  setTimeout(()=>window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-(narrow()?12:80),behavior:'smooth'}),40)});
 $('out').onchange=e=>{const k=e.target.dataset&&e.target.dataset.k;if(k){rd[k]=e.target.checked;sv('rd',rd);render()}};
 $('out').onclick=e=>{const d=e.target.closest('[data-del]');if(!d)return;const k=d.dataset.del,i=EX.findIndex(x=>x.t+x.a==k);
- if(i<0||!confirm('Remove this book from your list?'))return;EX.splice(i,1);sv('ex',EX);delete rd[k];sv('rd',rd);setBooks();plan();fillFilters();render()};
-$('rp').onclick=()=>{plan();fillFilters();render();const e=sched[0];toast(`Re-planned! Finished books moved to "Finished"; the rest are scheduled from ${e?MN[e.m]+' '+e.y:'now'}.`)};
+ if(i<0||!confirm('Remove this book from your list?'))return;EX.splice(i,1);sv('ex',EX);delete rd[k];sv('rd',rd);setBooks();loadPlan();savePlan();fillFilters();render()};
+$('rp').onclick=()=>{plan();fillFilters();render();const e=sched[0];toast(`Full re-plan done! Finished books moved to "Finished"; all unread books were rescheduled from ${e?MN[e.m]+' '+e.y:'now'}.`)};
 $('add').onclick=()=>$('dlg').showModal();
 $('cx').onclick=()=>$('dlg').close();
 $('af').onsubmit=e=>{e.preventDefault();
@@ -549,9 +582,13 @@ $('af').onsubmit=e=>{e.preventDefault();
  if(books.some(b=>key(b)==t+a)){toast('That book is already in your list.');return}
  let n=+$('an').value;if(s&&!n)n=Math.max(0,...books.filter(b=>b.s==s).map(b=>b.n))+1;
  EX.push({t,a,s,n,g:$('ag').value,p:+$('ap').value||350});sv('ex',EX);
- setBooks();plan();$('dlg').close();$('af').reset();fillFilters();render();
- const nb=books.find(b=>key(b)==t+a),m=sched.find(x=>x.b.includes(nb));
- toast(m?`Added! "${t}" is now scheduled for ${MN[m.m]} ${m.y} (${TH[m.m][0]}). Your plan was re-balanced.`:'Added!')};
+ const full=$('ar').checked;setBooks();loadPlan();
+ const nb=books.find(b=>key(b)==t+a),at=()=>new Map(sched.flatMap(x=>x.b.map(y=>[key(y),x.y*12+x.m])));
+ const before=at();if(full)plan();else insertPlan(nb);
+ const aft=at();let moved=0;before.forEach((v,k)=>{if(aft.has(k)&&aft.get(k)!=v)moved++});
+ $('dlg').close();$('af').reset();fillFilters();render();
+ const m=sched.find(x=>x.b.includes(nb));
+ toast(m?`Added! "${t}" goes in ${MN[m.m]} ${m.y} (${TH[m.m][0]}). ${full?'Whole plan rebuilt.':moved?moved+' other book'+(moved>1?'s':'')+' shifted by a month or so.':'No other books moved.'}`:'Added!')};
 $('ag').innerHTML=GK.split('').map(k=>`<option value="${k}">${GN[k]}</option>`).join('');
 $('sy').onclick=()=>{$('gr').value=gh?gh.repo:'';$('gb').value=gh?gh.branch:'main';$('gt').value=gh?gh.token||'':'';$('gs').textContent=gh&&gh.repo?(gh.token?'Connected to '+gh.repo+' (read & write).':'Connected to '+gh.repo+' (read-only, no token).'):'Not connected — changes are saved only in this browser.';$('sd').showModal()};
 $('sx').onclick=()=>$('sd').close();
