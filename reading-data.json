@@ -124,7 +124,7 @@
  "rd": {
   "Between Two FiresChristopher Buehlman": false,
   "The Great Change (and Other Lies)Joe Abercrombie": false,
-  "Golden SonPierce Brown": true
+  "Golden SonPierce Brown": false
  },
  "plan": [
   {
@@ -195,8 +195,8 @@
    "m": 4,
    "k": [
     "The Pillars of the EarthKen Follett",
-    "Tress of the Emerald SeaBrandon Sanderson",
-    "StrengthsFinder 2.0Tom Rath"
+    "StrengthsFinder 2.0Tom Rath",
+    "Golden SonPierce Brown"
    ]
   },
   {
@@ -205,7 +205,8 @@
    "k": [
     "The MartianAndy Weir",
     "Onyx StormRebecca Yarros",
-    "BananaDan Koeppel"
+    "BananaDan Koeppel",
+    "Tress of the Emerald SeaBrandon Sanderson"
    ]
   },
   {
