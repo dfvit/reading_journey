@@ -43,6 +43,7 @@ dialog{background:var(--card);color:var(--ink);border:1px solid var(--line);bord
 #nav{top:auto;bottom:0;left:0;right:0;width:auto;height:54px;display:flex;overflow-x:auto;overflow-y:hidden;background:#14110ff2;border-top:1px solid var(--line);padding:6px 8px;text-align:left;-webkit-overflow-scrolling:touch}
 #nav .ny{display:flex;align-items:center;flex:none;border:0;border-right:2px solid var(--line);margin:0 8px 0 0;padding:0 8px 0 0}
 #nav .nm{display:flex}#nav .yl{padding:8px 10px;font-size:14px}#nav .nm a{padding:9px 10px;font-size:12px;white-space:nowrap}#toast{bottom:70px}}
+.rt{color:#e8b84b!important;border-color:#6b5a2a!important}.rt.thin{opacity:.6}
 </style></head><body>
 <header><h1>📚 The Reading Journey</h1><p>3 books a month · ~1,500 pages · seasonal themes · starting October 2026</p><div class="stats" id="stats"></div></header>
 <div class="filters">
@@ -515,15 +516,24 @@ function fillFilters(){
 let tt;function toast(m){const t=$('toast');t.textContent=m;t.style.display='block';clearTimeout(tt);tt=setTimeout(()=>t.style.display='none',6000)}
 // ---- covers (Open Library, lazy) ----
 let qp=Promise.resolve();const enc=encodeURIComponent;
+const rt=ld('rt',{});
+const fmt=c=>c>=1000?(c/1000).toFixed(1).replace('.0','')+'k':String(c);
+const rateTag=b=>{const r=rt[key(b)];return r&&r.a?`<span class="rt${r.c<100?' thin':''}" title="${r.a} average from ${r.c} Open Library ratings${r.c<100?' (few ratings, take with a pinch of salt)':''}">★ ${r.a.toFixed(1)} · ${fmt(r.c)}</span>`:''};
+function setRate(el,b){const c=el.closest('.card');if(!c||c.querySelector('.rt'))return;const h=rateTag(b);if(h)c.querySelector('.tags').insertAdjacentHTML('beforeend',h)}
 async function find(b){
- const k=key(b);if(cv[k]!==undefined)return cv[k];
- const t=b.t.replace(/\(.*?\)/g,'').replace(': The Final Empire','').trim(),a=b.a.split('&')[0].trim();let ok=true;
+ const k=key(b);if(cv[k]!==undefined&&rt[k]!==undefined)return cv[k];
+ const t=b.t.replace(/\(.*?\)/g,'').replace(': The Final Empire','').trim(),a=b.a.split('&')[0].trim(),ln=a.split(' ').pop().toLowerCase();
+ let ok=true,cov=cv[k]||0,rat=rt[k]||0;
  for(const q of [`title=${enc(t)}&author=${enc(a)}`,`title=${enc(t)}`]){
-  try{const r=await fetch(`https://openlibrary.org/search.json?${q}&limit=8&fields=cover_i`);if(!r.ok){ok=false;continue}
-   const d=(await r.json()).docs.find(x=>x.cover_i);if(d){cv[k]=d.cover_i;sv('cv',cv);return d.cover_i}}catch(e){ok=false}}
- if(ok){cv[k]=0;sv('cv',cv)}return 0}
+  try{const r=await fetch(`https://openlibrary.org/search.json?${q}&limit=8&fields=cover_i,ratings_average,ratings_count,author_name`);if(!r.ok){ok=false;continue}
+   const ds=(await r.json()).docs;
+   if(!cov){const d=ds.find(x=>x.cover_i);if(d)cov=d.cover_i}
+   if(!rat){const rs=ds.filter(x=>x.ratings_average&&x.ratings_count&&(x.author_name||[]).join(' ').toLowerCase().includes(ln));
+    if(rs.length){const m=rs.reduce((x,y)=>y.ratings_count>x.ratings_count?y:x);rat={a:Math.round(m.ratings_average*100)/100,c:m.ratings_count}}}
+   if(cov&&rat)break}catch(e){ok=false}}
+ if(ok||cov)cv[k]=cov;if(ok||rat)rt[k]=rat;sv('cv',cv);sv('rt',rt);return cov}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);const el=e.target,b=books[+el.dataset.i];if(!b)return;
- qp=qp.then(async()=>{const id=await find(b);if(!id)return;const im=new Image();im.alt=b.t;im.onload=()=>{el.innerHTML='';el.appendChild(im)};im.src=`https://covers.openlibrary.org/b/id/${id}-M.jpg?default=false`;await new Promise(r=>setTimeout(r,120))})}),{rootMargin:'400px'});
+ qp=qp.then(async()=>{const id=await find(b);setRate(el,b);if(!id)return;const im=new Image();im.alt=b.t;im.onload=()=>{el.innerHTML='';el.appendChild(im)};im.src=`https://covers.openlibrary.org/b/id/${id}-M.jpg?default=false`;await new Promise(r=>setTimeout(r,120))})}),{rootMargin:'400px'});
 // ---- timeline ----
 let spy;const narrow=()=>matchMedia('(max-width:700px)').matches;
 function buildNav(){
@@ -540,7 +550,7 @@ function buildNav(){
 // ---- render ----
 const closed=new Set(['fin']);let init=0,ign=0;
 function card(b){const k=key(b),now=!rd[k]&&(b.t=='Golden Son'||b.t=='Between Two Fires');
- return `<div class="card${rd[k]?' read':''}">${now?'<span class="now">Reading now</span>':''}${b.x?`<button class="del" data-del="${esc(k)}" title="Remove from my list">✕</button>`:''}<div class="cv" data-i="${books.indexOf(b)}">${esc(b.t)}</div><div class="bd"><h3>${esc(b.t)}</h3><div class="au">${esc(b.a)}</div><div class="tags"><span class="g">${GN[b.g]}</span><span>${b.p} pp</span>${b.s?`<span>${esc(b.s)}${b.n?' #'+b.n:''}</span>`:''}${b.x?'<span>Added by you</span>':''}</div><label class="rd"><input type="checkbox" data-k="${esc(k)}" ${rd[k]?'checked':''}><span>${rd[k]?'Read':'Mark as read'}</span></label></div></div>`}
+ return `<div class="card${rd[k]?' read':''}">${now?'<span class="now">Reading now</span>':''}${b.x?`<button class="del" data-del="${esc(k)}" title="Remove from my list">✕</button>`:''}<div class="cv" data-i="${books.indexOf(b)}">${esc(b.t)}</div><div class="bd"><h3>${esc(b.t)}</h3><div class="au">${esc(b.a)}</div><div class="tags"><span class="g">${GN[b.g]}</span><span>${b.p} pp</span>${rateTag(b)}${b.s?`<span>${esc(b.s)}${b.n?' #'+b.n:''}</span>`:''}${b.x?'<span>Added by you</span>':''}</div><label class="rd"><input type="checkbox" data-k="${esc(k)}" ${rd[k]?'checked':''}><span>${rd[k]?'Read':'Mark as read'}</span></label></div></div>`}
 function render(){
  let inPlan=new Set(sched.flatMap(s=>s.b));
  const orph=books.filter(b=>!inPlan.has(b)&&!rd[key(b)]);
