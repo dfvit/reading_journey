@@ -122,7 +122,7 @@
   }
  ],
  "rd": {
-  "Between Two FiresChristopher Buehlman": true,
+  "Between Two FiresChristopher Buehlman": false,
   "The Great Change (and Other Lies)Joe Abercrombie": false,
   "Golden SonPierce Brown": false
  },
@@ -248,9 +248,9 @@
    "y": 2027,
    "m": 10,
    "k": [
-    "The Bands of MourningBrandon Sanderson",
     "King SorrowJoe Hill",
-    "AnnihilationJeff VanderMeer"
+    "AnnihilationJeff VanderMeer",
+    "Between Two FiresChristopher Buehlman"
    ]
   },
   {
@@ -259,7 +259,7 @@
    "k": [
     "A Column of FireKen Follett",
     "Because I Killed HimEdith Birde",
-    "The Summer My Mother Had Green EyesTatiana Țîbuleac"
+    "The Bands of MourningBrandon Sanderson"
    ]
   },
   {
@@ -268,7 +268,8 @@
    "k": [
     "Yumi and the Nightmare PainterBrandon Sanderson",
     "So Long, and Thanks for All the FishDouglas Adams",
-    "The GreeksRoderick Beaton"
+    "The GreeksRoderick Beaton",
+    "The Summer My Mother Had Green EyesTatiana Țîbuleac"
    ]
   },
   {
