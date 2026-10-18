@@ -124,7 +124,7 @@
  "rd": {
   "Between Two FiresChristopher Buehlman": true,
   "The Great Change (and Other Lies)Joe Abercrombie": false,
-  "Golden SonPierce Brown": true
+  "Golden SonPierce Brown": false
  },
  "plan": [
   {
@@ -412,7 +412,7 @@
    "k": [
     "Wild SwansJung Chang",
     "Blood Over Bright HavenM. L. Wang",
-    "Exit PartyEmily St. John Mandel"
+    "Golden SonPierce Brown"
    ]
   },
   {
@@ -421,7 +421,8 @@
    "k": [
     "Carl's Doomsday ScenarioMatt Dinniman",
     "The Rise and Reign of the MammalsSteve Brusatte",
-    "The HobbitJ.R.R. Tolkien"
+    "The HobbitJ.R.R. Tolkien",
+    "Exit PartyEmily St. John Mandel"
    ]
   },
   {
