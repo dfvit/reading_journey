@@ -138,10 +138,10 @@
   }
  ],
  "rd": {
-  "Between Two FiresChristopher Buehlman": true,
+  "Between Two FiresChristopher Buehlman": false,
   "The Great Change (and Other Lies)Joe Abercrombie": false,
-  "Golden SonPierce Brown": true,
-  "HavocChristopher Bollen": true
+  "Golden SonPierce Brown": false,
+  "HavocChristopher Bollen": false
  },
  "plan": [
   {
@@ -265,9 +265,9 @@
    "y": 2027,
    "m": 10,
    "k": [
-    "The Armor of LightKen Follett",
     "The Library at Mount CharScott Hawkins",
-    "AnnihilationJeff VanderMeer"
+    "AnnihilationJeff VanderMeer",
+    "Between Two FiresChristopher Buehlman"
    ]
   },
   {
@@ -276,7 +276,7 @@
    "k": [
     "Yumi and the Nightmare PainterBrandon Sanderson",
     "Children of StrifeAdrian Tchaikovsky",
-    "The Summer My Mother Had Green EyesTatiana Țîbuleac"
+    "The Armor of LightKen Follett"
    ]
   },
   {
@@ -285,7 +285,8 @@
    "k": [
     "ThunderheadNeal Shusterman",
     "Zonal MarkingMichael W. Cox",
-    "The Discourses of EpictetusEpictetus"
+    "The Discourses of EpictetusEpictetus",
+    "The Summer My Mother Had Green EyesTatiana Țîbuleac"
    ]
   },
   {
@@ -294,7 +295,7 @@
    "k": [
     "The Way of KingsBrandon Sanderson",
     "A Philosophy of WalkingFrédéric Gros",
-    "The Restaurant at the End of the UniverseDouglas Adams"
+    "Golden SonPierce Brown"
    ]
   },
   {
@@ -303,7 +304,8 @@
    "k": [
     "CirceMadeline Miller",
     "The TollNeal Shusterman",
-    "The Culture CodeDaniel Coyle"
+    "The Culture CodeDaniel Coyle",
+    "The Restaurant at the End of the UniverseDouglas Adams"
    ]
   },
   {
@@ -472,9 +474,9 @@
    "y": 2029,
    "m": 9,
    "k": [
-    "The Return of the KingJ.R.R. Tolkien",
     "EndymionDan Simmons",
-    "GulagAnne Applebaum"
+    "GulagAnne Applebaum",
+    "HavocChristopher Bollen"
    ]
   },
   {
@@ -483,7 +485,7 @@
    "k": [
     "Assassin's QuestRobin Hobb",
     "The Eye of the Bedlam BrideMatt Dinniman",
-    "GravityGeorge Gamow"
+    "The Return of the KingJ.R.R. Tolkien"
    ]
   },
   {
@@ -492,7 +494,8 @@
    "k": [
     "Fourth WingRebecca Yarros",
     "The Rise of EndymionDan Simmons",
-    "Nuclear WarAnnie Jacobsen"
+    "Nuclear WarAnnie Jacobsen",
+    "GravityGeorge Gamow"
    ]
   },
   {
