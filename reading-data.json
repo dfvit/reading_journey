@@ -159,6 +159,14 @@
    "n": 5,
    "g": "F",
    "p": 296
+  },
+  {
+   "t": "The Other Wind",
+   "a": "Ursula K. Le Guin",
+   "s": "Earthsea",
+   "n": 6,
+   "g": "F",
+   "p": 246
   }
  ],
  "rd": {
@@ -578,8 +586,8 @@
    "m": 6,
    "k": [
     "Children of RuinAdrian Tchaikovsky",
-    "Blood Over Bright HavenM. L. Wang",
-    "The Sixth ExtinctionElizabeth Kolbert"
+    "The Other WindUrsula K. Le Guin",
+    "Mafia RepublicJohn Dickie"
    ]
   },
   {
@@ -597,15 +605,15 @@
    "k": [
     "Nuclear WarAnnie Jacobsen",
     "MeditationsMarcus Aurelius",
-    "Children of MemoryAdrian Tchaikovsky"
+    "Blood Over Bright HavenM. L. Wang"
    ]
   },
   {
    "y": 2030,
    "m": 9,
    "k": [
+    "Children of MemoryAdrian Tchaikovsky",
     "Fool's AssassinRobin Hobb",
-    "ScytheNeal Shusterman",
     "The OdysseyHomer"
    ]
   },
@@ -613,8 +621,8 @@
    "y": 2030,
    "m": 10,
    "k": [
+    "The Poppy WarR. F. Kuang",
     "The Dark ForestLiu Cixin",
-    "BabelR. F. Kuang",
     "The Rise and Fall of the DinosaursSteve Brusatte"
    ]
   },
@@ -622,18 +630,18 @@
    "y": 2030,
    "m": 11,
    "k": [
-    "Children of StrifeAdrian Tchaikovsky",
     "Fool's QuestRobin Hobb",
-    "The Sports GeneDavid Epstein"
+    "Children of StrifeAdrian Tchaikovsky",
+    "The Sixth ExtinctionElizabeth Kolbert"
    ]
   },
   {
    "y": 2031,
    "m": 0,
    "k": [
-    "ThunderheadNeal Shusterman",
-    "Mafia RepublicJohn Dickie",
-    "The Fifth SeasonN. K. Jemisin"
+    "A Short History of Nearly EverythingBill Bryson",
+    "The Dragon RepublicR. F. Kuang",
+    "Klara and the SunKazuo Ishiguro"
    ]
   },
   {
@@ -642,15 +650,15 @@
    "k": [
     "Assassin's FateRobin Hobb",
     "Death's EndLiu Cixin",
-    "Sources of PowerGary Klein"
+    "The Sports GeneDavid Epstein"
    ]
   },
   {
    "y": 2031,
    "m": 2,
    "k": [
-    "The Obelisk GateN. K. Jemisin",
-    "The TollNeal Shusterman",
+    "The Burning GodR. F. Kuang",
+    "Dark MatterBlake Crouch",
     "The Last Emperor of MexicoEdward Shawcross"
    ]
   },
@@ -658,44 +666,44 @@
    "y": 2031,
    "m": 3,
    "k": [
-    "Dark MatterBlake Crouch",
-    "A Short History of Nearly EverythingBill Bryson",
-    "The Poppy WarR. F. Kuang"
+    "StalinSimon Sebag Montefiore",
+    "Service ModelAdrian Tchaikovsky",
+    "Blood of ElvesAndrzej Sapkowski"
    ]
   },
   {
    "y": 2031,
    "m": 4,
    "k": [
-    "StalinSimon Sebag Montefiore",
-    "The Stone SkyN. K. Jemisin",
-    "GleaningsNeal Shusterman"
+    "The Drowning FaithR. F. Kuang",
+    "Inverting the PyramidJonathan Wilson",
+    "Empire of SilenceChristopher Ruocchio"
    ]
   },
   {
    "y": 2031,
    "m": 5,
    "k": [
-    "Service ModelAdrian Tchaikovsky",
-    "The Dragon RepublicR. F. Kuang",
-    "Inverting the PyramidJonathan Wilson"
+    "The Other ValleyScott Alexander Howard",
+    "The Time of ContemptAndrzej Sapkowski",
+    "Plagues upon the EarthKyle Harper"
    ]
   },
   {
    "y": 2031,
    "m": 6,
    "k": [
-    "Klara and the SunKazuo Ishiguro",
-    "Blood of ElvesAndrzej Sapkowski",
-    "Plagues upon the EarthKyle Harper"
+    "Howling DarkChristopher Ruocchio",
+    "The Fifth SeasonN. K. Jemisin",
+    "Memory RescueDaniel G. Amen"
    ]
   },
   {
    "y": 2031,
    "m": 7,
    "k": [
-    "The Burning GodR. F. Kuang",
-    "The Other ValleyScott Alexander Howard",
+    "Baptism of FireAndrzej Sapkowski",
+    "Consider PhlebasIain M. Banks",
     "Bury My Heart at Wounded KneeDee Brown"
    ]
   },
@@ -703,71 +711,71 @@
    "y": 2031,
    "m": 8,
    "k": [
-    "Memory RescueDaniel G. Amen",
-    "The Time of ContemptAndrzej Sapkowski",
-    "Empire of SilenceChristopher Ruocchio"
+    "Into Thin AirJon Krakauer",
+    "The Obelisk GateN. K. Jemisin",
+    "Demon in WhiteChristopher Ruocchio"
    ]
   },
   {
    "y": 2031,
    "m": 9,
    "k": [
-    "The Blade ItselfJoe Abercrombie",
-    "Consider PhlebasIain M. Banks",
-    "Into Thin AirJon Krakauer"
+    "The Tower of SwallowsAndrzej Sapkowski",
+    "The Player of GamesIain M. Banks",
+    "StalingradAntony Beevor"
    ]
   },
   {
    "y": 2031,
    "m": 10,
    "k": [
-    "The Drowning FaithR. F. Kuang",
-    "Howling DarkChristopher Ruocchio",
-    "SPQRMary Beard"
+    "The Stone SkyN. K. Jemisin",
+    "Kingdoms of DeathChristopher Ruocchio",
+    "The Story of BirdsSteve Brusatte"
    ]
   },
   {
    "y": 2031,
    "m": 11,
    "k": [
-    "Baptism of FireAndrzej Sapkowski",
-    "The Player of GamesIain M. Banks",
-    "StalingradAntony Beevor"
+    "The Lady of the LakeAndrzej Sapkowski",
+    "Sources of PowerGary Klein",
+    "Use of WeaponsIain M. Banks"
    ]
   },
   {
    "y": 2032,
    "m": 0,
    "k": [
-    "Before They Are HangedJoe Abercrombie",
-    "The Story of BirdsSteve Brusatte",
-    "Demon in WhiteChristopher Ruocchio"
+    "Carthage: A New HistoryEve MacDonald",
+    "Ashes of ManChristopher Ruocchio",
+    "BabelR. F. Kuang"
    ]
   },
   {
    "y": 2032,
    "m": 1,
    "k": [
-    "The Tower of SwallowsAndrzej Sapkowski",
-    "Use of WeaponsIain M. Banks",
-    "Biological WarAnnie Jacobsen"
+    "Season of StormsAndrzej Sapkowski",
+    "The State of the ArtIain M. Banks",
+    "SPQRMary Beard"
    ]
   },
   {
    "y": 2032,
    "m": 2,
    "k": [
-    "Last Argument of KingsJoe Abercrombie",
-    "Kingdoms of DeathChristopher Ruocchio",
-    "Carthage: A New HistoryEve MacDonald"
+    "The Shadow of What Was LostJames Islington",
+    "Disquiet GodsChristopher Ruocchio",
+    "Biological WarAnnie Jacobsen"
    ]
   },
   {
    "y": 2032,
    "m": 3,
    "k": [
-    "The State of the ArtIain M. Banks",
-    "The Lady of the LakeAndrzej Sapkowski",
+    "ExcessionIain M. Banks",
+    "Crossroads of RavensAndrzej Sapkowski",
     "Rendezvous with RamaArthur C. Clarke"
    ]
   },
@@ -775,8 +783,8 @@
    "y": 2032,
    "m": 4,
    "k": [
-    "Best Served ColdJoe Abercrombie",
-    "Ashes of ManChristopher Ruocchio",
+    "An Echo of Things to ComeJames Islington",
+    "Shadows Upon TimeChristopher Ruocchio",
     "The Daughters' WarChristopher Buehlman"
    ]
   },
@@ -784,135 +792,130 @@
    "y": 2032,
    "m": 5,
    "k": [
-    "ExcessionIain M. Banks",
-    "Season of StormsAndrzej Sapkowski",
-    "Disquiet GodsChristopher Ruocchio"
+    "InversionsIain M. Banks",
+    "The Blade ItselfJoe Abercrombie",
+    "ScytheNeal Shusterman"
    ]
   },
   {
    "y": 2032,
    "m": 6,
    "k": [
-    "The HeroesJoe Abercrombie",
+    "The Light of All That FallsJames Islington",
     "The Blacktongue ThiefChristopher Buehlman",
-    "InversionsIain M. Banks"
+    "Look to WindwardIain M. Banks"
    ]
   },
   {
    "y": 2032,
    "m": 7,
    "k": [
-    "Crossroads of RavensAndrzej Sapkowski",
-    "Shadows Upon TimeChristopher Ruocchio",
-    "Red CountryJoe Abercrombie"
+    "Before They Are HangedJoe Abercrombie",
+    "ThunderheadNeal Shusterman",
+    "The Shadow of the GodsJohn Gwynne"
    ]
   },
   {
    "y": 2032,
    "m": 8,
    "k": [
-    "Look to WindwardIain M. Banks",
-    "The Shadow of What Was LostJames Islington",
-    "The Shadow of the GodsJohn Gwynne"
+    "MatterIain M. Banks",
+    "The Will of the ManyJames Islington",
+    "MaliceJohn Gwynne"
    ]
   },
   {
    "y": 2032,
    "m": 9,
    "k": [
-    "Sharp EndsJoe Abercrombie",
-    "MatterIain M. Banks",
-    "Empire of the VampireJay Kristoff"
+    "The TollNeal Shusterman",
+    "Last Argument of KingsJoe Abercrombie",
+    "The Hunger of the GodsJohn Gwynne"
    ]
   },
   {
    "y": 2032,
    "m": 10,
    "k": [
-    "The Hunger of the GodsJohn Gwynne",
-    "An Echo of Things to ComeJames Islington",
-    "A Little HatredJoe Abercrombie"
+    "The Strength of the FewJames Islington",
+    "Surface DetailIain M. Banks",
+    "ValourJohn Gwynne"
    ]
   },
   {
    "y": 2032,
    "m": 11,
    "k": [
-    "Empire of the DamnedJay Kristoff",
-    "Surface DetailIain M. Banks",
-    "MaliceJohn Gwynne"
+    "The Fury of the GodsJohn Gwynne",
+    "GleaningsNeal Shusterman",
+    "Best Served ColdJoe Abercrombie"
    ]
   },
   {
    "y": 2033,
    "m": 0,
    "k": [
-    "The Fury of the GodsJohn Gwynne",
-    "The Trouble with PeaceJoe Abercrombie",
-    "The Hydrogen SonataIain M. Banks"
+    "The Hydrogen SonataIain M. Banks",
+    "RuinJohn Gwynne",
+    "The Name of the WindPatrick Rothfuss"
    ]
   },
   {
    "y": 2033,
    "m": 1,
    "k": [
-    "The Light of All That FallsJames Islington",
-    "ValourJohn Gwynne",
-    "Empire of the DawnJay Kristoff"
+    "The HeroesJoe Abercrombie",
+    "Empire of the VampireJay Kristoff",
+    "WrathJohn Gwynne"
    ]
   },
   {
    "y": 2033,
    "m": 2,
    "k": [
-    "The Wisdom of CrowdsJoe Abercrombie",
-    "The Will of the ManyJames Islington",
-    "The Name of the WindPatrick Rothfuss"
+    "The Wise Man's FearPatrick Rothfuss",
+    "Red CountryJoe Abercrombie",
+    "Empire of the DamnedJay Kristoff"
    ]
   },
   {
    "y": 2033,
    "m": 3,
    "k": [
-    "RuinJohn Gwynne",
-    "The Great Change (and Other Lies)Joe Abercrombie",
-    "The Strength of the FewJames Islington"
+    "Sharp EndsJoe Abercrombie",
+    "Empire of the DawnJay Kristoff",
+    "The Slow Regard of Silent ThingsPatrick Rothfuss"
    ]
   },
   {
    "y": 2033,
    "m": 4,
    "k": [
-    "The Wise Man's FearPatrick Rothfuss",
-    "WrathJohn Gwynne"
+    "A Little HatredJoe Abercrombie",
+    "The Narrow Road Between DesiresPatrick Rothfuss"
    ]
   },
   {
    "y": 2033,
    "m": 5,
    "k": [
-    "The Slow Regard of Silent ThingsPatrick Rothfuss"
+    "The Trouble with PeaceJoe Abercrombie",
+    "The Lightning Tree Patrick Rothfuss"
    ]
   },
   {
    "y": 2033,
    "m": 6,
    "k": [
-    "The Narrow Road Between DesiresPatrick Rothfuss"
+    "The Wisdom of CrowdsJoe Abercrombie",
+    "How Old Holly Came to Be Patrick Rothfuss"
    ]
   },
   {
    "y": 2033,
    "m": 7,
    "k": [
-    "The Lightning Tree Patrick Rothfuss"
-   ]
-  },
-  {
-   "y": 2033,
-   "m": 8,
-   "k": [
-    "How Old Holly Came to Be Patrick Rothfuss"
+    "The Great Change (and Other Lies)Joe Abercrombie"
    ]
   }
  ]
