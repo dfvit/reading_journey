@@ -135,6 +135,14 @@
    "n": 2,
    "g": "F",
    "p": 163
+  },
+  {
+   "t": "The Farthest Shore",
+   "a": "Ursula K. Le Guin",
+   "s": "Earthsea",
+   "n": 3,
+   "g": "F",
+   "p": 223
   }
  ],
  "rd": {
@@ -258,7 +266,7 @@
    "k": [
     "The Last House on Needless StreetCatriona Ward",
     "Light BringerPierce Brown",
-    "The Blacktongue ThiefChristopher Buehlman"
+    "LexiconMax Barry"
    ]
   },
   {
@@ -274,8 +282,8 @@
    "y": 2027,
    "m": 11,
    "k": [
-    "The Daughters' WarChristopher Buehlman",
     "ShantaramGregory David Roberts",
+    "Assassin's ApprenticeRobin Hobb",
     "On WritingErnest Hemingway"
    ]
   },
@@ -293,8 +301,8 @@
    "m": 1,
    "k": [
     "The Armor of LightKen Follett",
-    "Before the Coffee Gets ColdToshikazu Kawaguchi",
-    "A Philosophy of WalkingFrédéric Gros"
+    "Royal AssassinRobin Hobb",
+    "The Restaurant at the End of the UniverseDouglas Adams"
    ]
   },
   {
@@ -302,17 +310,17 @@
    "m": 2,
    "k": [
     "The Way of KingsBrandon Sanderson",
-    "The Restaurant at the End of the UniverseDouglas Adams",
-    "Astrophysics for People in a HurryNeil deGrasse Tyson"
+    "Carl's Doomsday ScenarioMatt Dinniman",
+    "A Philosophy of WalkingFrédéric Gros"
    ]
   },
   {
    "y": 2028,
    "m": 3,
    "k": [
-    "ScytheNeal Shusterman",
+    "Life, the Universe and EverythingDouglas Adams",
     "The Hotel YearsJoseph Roth",
-    "Blood Over Bright HavenM. L. Wang"
+    "Assassin's QuestRobin Hobb"
    ]
   },
   {
@@ -321,34 +329,34 @@
    "k": [
     "Words of RadianceBrandon Sanderson",
     "Playing With RealityKelly Clancy",
-    "Life, the Universe and EverythingDouglas Adams"
+    "AnnihilationJeff VanderMeer"
    ]
   },
   {
    "y": 2028,
    "m": 5,
    "k": [
-    "Carl's Doomsday ScenarioMatt Dinniman",
-    "The GreeksRoderick Beaton",
-    "The HobbitJ.R.R. Tolkien"
+    "The Dungeon Anarchist's CookbookMatt Dinniman",
+    "Astrophysics for People in a HurryNeil deGrasse Tyson",
+    "The Chronicles of Narnia (Books 1–7)C.S. Lewis"
    ]
   },
   {
    "y": 2028,
    "m": 6,
    "k": [
-    "ThunderheadNeal Shusterman",
+    "So Long, and Thanks for All the FishDouglas Adams",
     "OathbringerBrandon Sanderson",
-    "So Long, and Thanks for All the FishDouglas Adams"
+    "The RoadCormac McCarthy"
    ]
   },
   {
    "y": 2028,
    "m": 7,
    "k": [
-    "The Fellowship of the RingJ.R.R. Tolkien",
-    "The Dungeon Anarchist's CookbookMatt Dinniman",
-    "King Leopold's GhostAdam Hochschild"
+    "Ship of MagicRobin Hobb",
+    "The Gate of the Feral GodsMatt Dinniman",
+    "Horns, Strings, and HarmonyArthur H. Benade"
    ]
   },
   {
@@ -356,7 +364,7 @@
    "m": 8,
    "k": [
     "Rhythm of WarBrandon Sanderson",
-    "Horns, Strings, and HarmonyArthur H. Benade",
+    "The Smart NeanderthalClive Finlayson",
     "Notes from UndergroundFyodor Dostoevsky"
    ]
   },
@@ -364,9 +372,9 @@
    "y": 2028,
    "m": 9,
    "k": [
-    "The TollNeal Shusterman",
-    "LexiconMax Barry",
-    "The Two TowersJ.R.R. Tolkien"
+    "Mostly HarmlessDouglas Adams",
+    "The Library at Mount CharScott Hawkins",
+    "Mad ShipRobin Hobb"
    ]
   },
   {
@@ -374,17 +382,17 @@
    "m": 10,
    "k": [
     "The Lost MetalBrandon Sanderson",
-    "Mostly HarmlessDouglas Adams",
-    "The Library at Mount CharScott Hawkins"
+    "The Butcher's MasqueradeMatt Dinniman",
+    "MagpieElizabeth Day"
    ]
   },
   {
    "y": 2028,
    "m": 11,
    "k": [
-    "The Gate of the Feral GodsMatt Dinniman",
-    "The Return of the KingJ.R.R. Tolkien",
-    "AssyriaEckart Frahm"
+    "Ship of DestinyRobin Hobb",
+    "The GreeksRoderick Beaton",
+    "One Thousand and One NightsHanan al-Shaykh"
    ]
   },
   {
@@ -392,7 +400,7 @@
    "m": 0,
    "k": [
     "The Fires of DecemberBrandon Sanderson",
-    "GleaningsNeal Shusterman",
+    "And Another Thing...Eoin Colfer",
     "The Dawn of EverythingDavid Graeber & David Wengrow"
    ]
   },
@@ -400,9 +408,9 @@
    "y": 2029,
    "m": 1,
    "k": [
-    "And Another Thing...Eoin Colfer",
-    "The Chronicles of Narnia (Books 1–7)C.S. Lewis",
-    "One Thousand and One NightsHanan al-Shaykh"
+    "Before the Coffee Gets ColdToshikazu Kawaguchi",
+    "The Eye of the Bedlam BrideMatt Dinniman",
+    "The IliadHomer"
    ]
   },
   {
@@ -410,7 +418,7 @@
    "m": 2,
    "k": [
     "Wind and TruthBrandon Sanderson",
-    "The Butcher's MasqueradeMatt Dinniman",
+    "SolarisStanisław Lem",
     "GravityGeorge Gamow"
    ]
   },
@@ -418,16 +426,16 @@
    "y": 2029,
    "m": 3,
    "k": [
-    "ShroudAdrian Tchaikovsky",
-    "Wild SwansJung Chang",
-    "Assassin's ApprenticeRobin Hobb"
+    "Fool's ErrandRobin Hobb",
+    "This Inevitable RuinMatt Dinniman",
+    "The Structure of Magic IRichard Bandler"
    ]
   },
   {
    "y": 2029,
    "m": 4,
    "k": [
-    "The Rise and Reign of the MammalsSteve Brusatte",
+    "King Leopold's GhostAdam Hochschild",
     "Lonesome DoveLarry McMurtry",
     "A Wizard of EarthseaUrsula K. Le Guin"
    ]
@@ -436,89 +444,89 @@
    "y": 2029,
    "m": 5,
    "k": [
-    "The Eye of the Bedlam BrideMatt Dinniman",
-    "Royal AssassinRobin Hobb",
-    "The Smart NeanderthalClive Finlayson"
+    "A Parade of HorriblesMatt Dinniman",
+    "AssyriaEckart Frahm",
+    "The HobbitJ.R.R. Tolkien"
    ]
   },
   {
    "y": 2029,
    "m": 6,
    "k": [
-    "HyperionDan Simmons",
-    "The Tombs of AtuanUrsula K. Le Guin",
-    "11/22/63Stephen King"
+    "Golden FoolRobin Hobb",
+    "ShroudAdrian Tchaikovsky",
+    "Murder on the Orient ExpressAgatha Christie"
    ]
   },
   {
    "y": 2029,
    "m": 7,
    "k": [
-    "Assassin's QuestRobin Hobb",
-    "This Inevitable RuinMatt Dinniman",
-    "The RoadCormac McCarthy"
+    "The Tombs of AtuanUrsula K. Le Guin",
+    "HyperionDan Simmons",
+    "11/22/63Stephen King"
    ]
   },
   {
    "y": 2029,
    "m": 8,
    "k": [
-    "The Story of ChinaMichael Wood",
-    "The IliadHomer",
-    "The Fall of HyperionDan Simmons"
+    "The Fellowship of the RingJ.R.R. Tolkien",
+    "Wild SwansJung Chang",
+    "TrainspottingIrvine Welsh"
    ]
   },
   {
    "y": 2029,
    "m": 9,
    "k": [
-    "MagpieElizabeth Day",
-    "AnnihilationJeff VanderMeer",
-    "Empire of the VampireJay Kristoff"
+    "Fool's FateRobin Hobb",
+    "The Fall of HyperionDan Simmons",
+    "A Moveable FeastErnest Hemingway"
    ]
   },
   {
    "y": 2029,
    "m": 10,
    "k": [
-    "Ship of MagicRobin Hobb",
-    "A Parade of HorriblesMatt Dinniman",
-    "Murder on the Orient ExpressAgatha Christie"
+    "The Farthest ShoreUrsula K. Le Guin",
+    "GulagAnne Applebaum",
+    "Project Hail MaryAndy Weir"
    ]
   },
   {
    "y": 2029,
    "m": 11,
    "k": [
-    "Empire of the DamnedJay Kristoff",
-    "EndymionDan Simmons",
-    "A Moveable FeastErnest Hemingway"
+    "The Two TowersJ.R.R. Tolkien",
+    "The Rise and Reign of the MammalsSteve Brusatte",
+    "The Divine ComedyDante Alighieri"
    ]
   },
   {
    "y": 2030,
    "m": 0,
    "k": [
-    "The Looming TowerLawrence Wright",
-    "TrainspottingIrvine Welsh",
-    "Project Hail MaryAndy Weir"
+    "EndymionDan Simmons",
+    "Dragon KeeperRobin Hobb",
+    "The Story of ChinaMichael Wood"
    ]
   },
   {
    "y": 2030,
    "m": 1,
    "k": [
-    "Mad ShipRobin Hobb",
-    "The Rise of EndymionDan Simmons",
-    "MeditationsMarcus Aurelius"
+    "The Return of the KingJ.R.R. Tolkien",
+    "MeditationsMarcus Aurelius",
+    "StalinSimon Sebag Montefiore"
    ]
   },
   {
    "y": 2030,
    "m": 2,
    "k": [
-    "Empire of the DawnJay Kristoff",
-    "RecursionBlake Crouch",
+    "Dragon HavenRobin Hobb",
+    "The Rise of EndymionDan Simmons",
     "Nuclear WarAnnie Jacobsen"
    ]
   },
@@ -526,17 +534,17 @@
    "y": 2030,
    "m": 3,
    "k": [
-    "Exit PartyEmily St. John Mandel",
-    "Say NothingPatrick Radden Keefe",
-    "Ship of DestinyRobin Hobb"
+    "RecursionBlake Crouch",
+    "The Looming TowerLawrence Wright",
+    "Blood Over Bright HavenM. L. Wang"
    ]
   },
   {
    "y": 2030,
    "m": 4,
    "k": [
-    "The MosquitoTimothy C. Winegard",
-    "The Fifth SeasonN. K. Jemisin",
+    "Say NothingPatrick Radden Keefe",
+    "City of DragonsRobin Hobb",
     "The Three-Body ProblemLiu Cixin"
    ]
   },
@@ -544,9 +552,9 @@
    "y": 2030,
    "m": 5,
    "k": [
-    "Dark MatterBlake Crouch",
-    "Persian FireTom Holland",
-    "Fool's ErrandRobin Hobb"
+    "Exit PartyEmily St. John Mandel",
+    "The MosquitoTimothy C. Winegard",
+    "The Fifth SeasonN. K. Jemisin"
    ]
   },
   {
@@ -554,26 +562,26 @@
    "m": 6,
    "k": [
     "The Dark ForestLiu Cixin",
-    "The Obelisk GateN. K. Jemisin",
-    "KindredRebecca Wragg Sykes"
+    "Blood of DragonsRobin Hobb",
+    "Persian FireTom Holland"
    ]
   },
   {
    "y": 2030,
    "m": 7,
    "k": [
-    "Golden FoolRobin Hobb",
-    "Children of TimeAdrian Tchaikovsky",
-    "The Structure of Magic IRichard Bandler"
+    "The Obelisk GateN. K. Jemisin",
+    "Dark MatterBlake Crouch",
+    "Mafia RepublicJohn Dickie"
    ]
   },
   {
    "y": 2030,
    "m": 8,
    "k": [
-    "The Rise and Fall of the DinosaursSteve Brusatte",
+    "KindredRebecca Wragg Sykes",
     "The OdysseyHomer",
-    "The Stone SkyN. K. Jemisin"
+    "Fool's AssassinRobin Hobb"
    ]
   },
   {
@@ -581,297 +589,304 @@
    "m": 9,
    "k": [
     "Death's EndLiu Cixin",
-    "The Poppy WarR. F. Kuang",
+    "The Stone SkyN. K. Jemisin",
+    "The Rise and Fall of the DinosaursSteve Brusatte"
+   ]
+  },
+  {
+   "y": 2030,
+   "m": 10,
+   "k": [
+    "Fool's QuestRobin Hobb",
+    "ScytheNeal Shusterman",
     "The Sixth ExtinctionElizabeth Kolbert"
    ]
   },
   {
    "y": 2030,
-   "m": 10,
-   "k": [
-    "Fool's FateRobin Hobb",
-    "Children of RuinAdrian Tchaikovsky",
-    "The Sports GeneDavid Epstein"
-   ]
-  },
-  {
-   "y": 2030,
    "m": 11,
    "k": [
-    "The Dragon RepublicR. F. Kuang",
-    "Mafia RepublicJohn Dickie",
-    "SolarisStanisław Lem"
+    "Blood of ElvesAndrzej Sapkowski",
+    "A Short History of Nearly EverythingBill Bryson",
+    "Children of TimeAdrian Tchaikovsky"
    ]
   },
   {
    "y": 2031,
    "m": 0,
    "k": [
-    "A Short History of Nearly EverythingBill Bryson",
-    "The Divine ComedyDante Alighieri",
-    "Dragon KeeperRobin Hobb"
+    "The Sports GeneDavid Epstein",
+    "The Count of Monte CristoAlexandre Dumas",
+    "I Who Have Never Known MenJacqueline Harpman"
    ]
   },
   {
    "y": 2031,
    "m": 1,
    "k": [
-    "The Burning GodR. F. Kuang",
-    "Children of MemoryAdrian Tchaikovsky",
+    "Assassin's FateRobin Hobb",
+    "ThunderheadNeal Shusterman",
+    "The Time of ContemptAndrzej Sapkowski"
+   ]
+  },
+  {
+   "y": 2031,
+   "m": 2,
+   "k": [
+    "Children of RuinAdrian Tchaikovsky",
+    "BabelR. F. Kuang",
+    "Memory RescueDaniel G. Amen"
+   ]
+  },
+  {
+   "y": 2031,
+   "m": 3,
+   "k": [
+    "The TollNeal Shusterman",
+    "Inverting the PyramidJonathan Wilson",
+    "Baptism of FireAndrzej Sapkowski"
+   ]
+  },
+  {
+   "y": 2031,
+   "m": 4,
+   "k": [
+    "The Last Emperor of MexicoEdward Shawcross",
+    "The Poppy WarR. F. Kuang",
+    "Children of MemoryAdrian Tchaikovsky"
+   ]
+  },
+  {
+   "y": 2031,
+   "m": 5,
+   "k": [
+    "GleaningsNeal Shusterman",
+    "The Tower of SwallowsAndrzej Sapkowski",
+    "Bury My Heart at Wounded KneeDee Brown"
+   ]
+  },
+  {
+   "y": 2031,
+   "m": 6,
+   "k": [
+    "Children of StrifeAdrian Tchaikovsky",
+    "The Dragon RepublicR. F. Kuang",
     "Sources of PowerGary Klein"
    ]
   },
   {
    "y": 2031,
-   "m": 2,
-   "k": [
-    "Dragon HavenRobin Hobb",
-    "Service ModelAdrian Tchaikovsky",
-    "Inverting the PyramidJonathan Wilson"
-   ]
-  },
-  {
-   "y": 2031,
-   "m": 3,
-   "k": [
-    "Children of StrifeAdrian Tchaikovsky",
-    "StalinSimon Sebag Montefiore",
-    "The Drowning FaithR. F. Kuang"
-   ]
-  },
-  {
-   "y": 2031,
-   "m": 4,
-   "k": [
-    "City of DragonsRobin Hobb",
-    "The Last Emperor of MexicoEdward Shawcross",
-    "Consider PhlebasIain M. Banks"
-   ]
-  },
-  {
-   "y": 2031,
-   "m": 5,
-   "k": [
-    "Klara and the SunKazuo Ishiguro",
-    "Bury My Heart at Wounded KneeDee Brown",
-    "BabelR. F. Kuang"
-   ]
-  },
-  {
-   "y": 2031,
-   "m": 6,
-   "k": [
-    "The Player of GamesIain M. Banks",
-    "Blood of DragonsRobin Hobb",
-    "Plagues upon the EarthKyle Harper"
-   ]
-  },
-  {
-   "y": 2031,
    "m": 7,
    "k": [
-    "Blood of ElvesAndrzej Sapkowski",
-    "I Who Have Never Known MenJacqueline Harpman",
-    "GulagAnne Applebaum"
+    "The Lady of the LakeAndrzej Sapkowski",
+    "Service ModelAdrian Tchaikovsky",
+    "StalingradAntony Beevor"
    ]
   },
   {
    "y": 2031,
    "m": 8,
    "k": [
-    "The Count of Monte CristoAlexandre Dumas",
-    "Memory RescueDaniel G. Amen",
-    "Rendezvous with RamaArthur C. Clarke"
+    "Plagues upon the EarthKyle Harper",
+    "The Burning GodR. F. Kuang",
+    "Klara and the SunKazuo Ishiguro"
    ]
   },
   {
    "y": 2031,
    "m": 9,
    "k": [
-    "Fool's AssassinRobin Hobb",
-    "Use of WeaponsIain M. Banks",
-    "Into Thin AirJon Krakauer"
+    "The Blade ItselfJoe Abercrombie",
+    "The Other ValleyScott Alexander Howard",
+    "SPQRMary Beard"
    ]
   },
   {
    "y": 2031,
    "m": 10,
    "k": [
-    "The Time of ContemptAndrzej Sapkowski",
-    "The Blade ItselfJoe Abercrombie",
-    "Empire of SilenceChristopher Ruocchio"
+    "Season of StormsAndrzej Sapkowski",
+    "The Drowning FaithR. F. Kuang",
+    "Empire of the VampireJay Kristoff"
    ]
   },
   {
    "y": 2031,
    "m": 11,
    "k": [
-    "Fool's QuestRobin Hobb",
-    "The State of the ArtIain M. Banks",
-    "The Story of BirdsSteve Brusatte"
+    "Before They Are HangedJoe Abercrombie",
+    "Into Thin AirJon Krakauer",
+    "Consider PhlebasIain M. Banks"
    ]
   },
   {
    "y": 2032,
    "m": 0,
    "k": [
-    "StalingradAntony Beevor",
-    "Baptism of FireAndrzej Sapkowski",
-    "Howling DarkChristopher Ruocchio"
+    "The Story of BirdsSteve Brusatte",
+    "Empire of the DamnedJay Kristoff",
+    "Rendezvous with RamaArthur C. Clarke"
    ]
   },
   {
    "y": 2032,
    "m": 1,
    "k": [
-    "Before They Are HangedJoe Abercrombie",
-    "ExcessionIain M. Banks",
-    "Carthage: A New HistoryEve MacDonald"
-   ]
-  },
-  {
-   "y": 2032,
-   "m": 2,
-   "k": [
-    "Assassin's FateRobin Hobb",
-    "Demon in WhiteChristopher Ruocchio",
-    "The Tower of SwallowsAndrzej Sapkowski"
-   ]
-  },
-  {
-   "y": 2032,
-   "m": 3,
-   "k": [
-    "InversionsIain M. Banks",
-    "Biological WarAnnie Jacobsen",
+    "Crossroads of RavensAndrzej Sapkowski",
+    "The Player of GamesIain M. Banks",
     "Last Argument of KingsJoe Abercrombie"
    ]
   },
   {
    "y": 2032,
+   "m": 2,
+   "k": [
+    "Empire of the DawnJay Kristoff",
+    "Empire of SilenceChristopher Ruocchio",
+    "Carthage: A New HistoryEve MacDonald"
+   ]
+  },
+  {
+   "y": 2032,
+   "m": 3,
+   "k": [
+    "Use of WeaponsIain M. Banks",
+    "Biological WarAnnie Jacobsen",
+    "Best Served ColdJoe Abercrombie"
+   ]
+  },
+  {
+   "y": 2032,
    "m": 4,
    "k": [
-    "The Lady of the LakeAndrzej Sapkowski",
-    "SPQRMary Beard",
-    "The Other ValleyScott Alexander Howard"
+    "The Shadow of What Was LostJames Islington",
+    "Howling DarkChristopher Ruocchio",
+    "The Daughters' WarChristopher Buehlman"
    ]
   },
   {
    "y": 2032,
    "m": 5,
    "k": [
-    "Kingdoms of DeathChristopher Ruocchio",
-    "Best Served ColdJoe Abercrombie",
-    "Look to WindwardIain M. Banks"
+    "The State of the ArtIain M. Banks",
+    "The HeroesJoe Abercrombie",
+    "Demon in WhiteChristopher Ruocchio"
    ]
   },
   {
    "y": 2032,
    "m": 6,
    "k": [
-    "Season of StormsAndrzej Sapkowski",
-    "Ashes of ManChristopher Ruocchio",
-    "The Shadow of the GodsJohn Gwynne"
+    "An Echo of Things to ComeJames Islington",
+    "The Blacktongue ThiefChristopher Buehlman",
+    "ExcessionIain M. Banks"
    ]
   },
   {
    "y": 2032,
    "m": 7,
    "k": [
-    "The HeroesJoe Abercrombie",
-    "MatterIain M. Banks",
-    "Crossroads of RavensAndrzej Sapkowski"
+    "Red CountryJoe Abercrombie",
+    "Kingdoms of DeathChristopher Ruocchio",
+    "The Shadow of the GodsJohn Gwynne"
    ]
   },
   {
    "y": 2032,
    "m": 8,
    "k": [
-    "Disquiet GodsChristopher Ruocchio",
-    "The Hunger of the GodsJohn Gwynne",
-    "Red CountryJoe Abercrombie"
+    "The Light of All That FallsJames Islington",
+    "InversionsIain M. Banks",
+    "Sharp EndsJoe Abercrombie"
    ]
   },
   {
    "y": 2032,
    "m": 9,
    "k": [
-    "Surface DetailIain M. Banks",
-    "Sharp EndsJoe Abercrombie",
-    "MaliceJohn Gwynne"
+    "Ashes of ManChristopher Ruocchio",
+    "The Hunger of the GodsJohn Gwynne",
+    "A Little HatredJoe Abercrombie"
    ]
   },
   {
    "y": 2032,
    "m": 10,
    "k": [
-    "The Fury of the GodsJohn Gwynne",
-    "Shadows Upon TimeChristopher Ruocchio",
-    "A Little HatredJoe Abercrombie"
+    "Look to WindwardIain M. Banks",
+    "The Trouble with PeaceJoe Abercrombie",
+    "MaliceJohn Gwynne"
    ]
   },
   {
    "y": 2032,
    "m": 11,
    "k": [
-    "ValourJohn Gwynne",
-    "The Hydrogen SonataIain M. Banks",
-    "The Will of the ManyJames Islington"
+    "The Fury of the GodsJohn Gwynne",
+    "Disquiet GodsChristopher Ruocchio",
+    "The Wisdom of CrowdsJoe Abercrombie"
    ]
   },
   {
    "y": 2033,
    "m": 0,
    "k": [
-    "The Trouble with PeaceJoe Abercrombie",
-    "The Shadow of What Was LostJames Islington",
-    "The Name of the WindPatrick Rothfuss"
+    "ValourJohn Gwynne",
+    "MatterIain M. Banks",
+    "The Great Change (and Other Lies)Joe Abercrombie"
    ]
   },
   {
    "y": 2033,
    "m": 1,
    "k": [
-    "The Strength of the FewJames Islington",
-    "RuinJohn Gwynne",
-    "The Wisdom of CrowdsJoe Abercrombie"
+    "The Will of the ManyJames Islington",
+    "Shadows Upon TimeChristopher Ruocchio",
+    "The Name of the WindPatrick Rothfuss"
    ]
   },
   {
    "y": 2033,
    "m": 2,
    "k": [
-    "The Wise Man's FearPatrick Rothfuss",
-    "An Echo of Things to ComeJames Islington",
-    "The Great Change (and Other Lies)Joe Abercrombie"
+    "RuinJohn Gwynne",
+    "Surface DetailIain M. Banks",
+    "The Strength of the FewJames Islington"
    ]
   },
   {
    "y": 2033,
    "m": 3,
    "k": [
-    "WrathJohn Gwynne",
-    "The Slow Regard of Silent ThingsPatrick Rothfuss",
-    "The Light of All That FallsJames Islington"
+    "The Wise Man's FearPatrick Rothfuss",
+    "The Hydrogen SonataIain M. Banks",
+    "WrathJohn Gwynne"
    ]
   },
   {
    "y": 2033,
    "m": 4,
+   "k": [
+    "The Slow Regard of Silent ThingsPatrick Rothfuss"
+   ]
+  },
+  {
+   "y": 2033,
+   "m": 5,
    "k": [
     "The Narrow Road Between DesiresPatrick Rothfuss"
    ]
   },
   {
    "y": 2033,
-   "m": 5,
+   "m": 6,
    "k": [
     "The Lightning Tree Patrick Rothfuss"
    ]
   },
   {
    "y": 2033,
-   "m": 6,
+   "m": 7,
    "k": [
     "How Old Holly Came to Be Patrick Rothfuss"
    ]
