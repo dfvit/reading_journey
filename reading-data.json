@@ -167,6 +167,14 @@
    "n": 6,
    "g": "F",
    "p": 246
+  },
+  {
+   "t": "The Thrice-Bound Fool",
+   "a": "Christopher Buehlman",
+   "s": "Blacktongue",
+   "n": 2,
+   "g": "F",
+   "p": 432
   }
  ],
  "rd": {
@@ -819,8 +827,8 @@
    "y": 2032,
    "m": 8,
    "k": [
+    "The Thrice-Bound FoolChristopher Buehlman",
     "MatterIain M. Banks",
-    "The Will of the ManyJames Islington",
     "MaliceJohn Gwynne"
    ]
   },
@@ -837,9 +845,9 @@
    "y": 2032,
    "m": 10,
    "k": [
-    "The Strength of the FewJames Islington",
+    "ValourJohn Gwynne",
     "Surface DetailIain M. Banks",
-    "ValourJohn Gwynne"
+    "Empire of the VampireJay Kristoff"
    ]
   },
   {
@@ -855,9 +863,9 @@
    "y": 2033,
    "m": 0,
    "k": [
+    "Empire of the DamnedJay Kristoff",
     "The Hydrogen SonataIain M. Banks",
-    "RuinJohn Gwynne",
-    "The Name of the WindPatrick Rothfuss"
+    "RuinJohn Gwynne"
    ]
   },
   {
@@ -865,26 +873,26 @@
    "m": 1,
    "k": [
     "The HeroesJoe Abercrombie",
-    "Empire of the VampireJay Kristoff",
-    "WrathJohn Gwynne"
+    "The Will of the ManyJames Islington",
+    "The Name of the WindPatrick Rothfuss"
    ]
   },
   {
    "y": 2033,
    "m": 2,
    "k": [
-    "The Wise Man's FearPatrick Rothfuss",
-    "Red CountryJoe Abercrombie",
-    "Empire of the DamnedJay Kristoff"
+    "WrathJohn Gwynne",
+    "Empire of the DawnJay Kristoff",
+    "Red CountryJoe Abercrombie"
    ]
   },
   {
    "y": 2033,
    "m": 3,
    "k": [
-    "Sharp EndsJoe Abercrombie",
-    "Empire of the DawnJay Kristoff",
-    "The Slow Regard of Silent ThingsPatrick Rothfuss"
+    "The Strength of the FewJames Islington",
+    "The Wise Man's FearPatrick Rothfuss",
+    "Sharp EndsJoe Abercrombie"
    ]
   },
   {
@@ -892,7 +900,7 @@
    "m": 4,
    "k": [
     "A Little HatredJoe Abercrombie",
-    "The Narrow Road Between DesiresPatrick Rothfuss"
+    "The Slow Regard of Silent ThingsPatrick Rothfuss"
    ]
   },
   {
@@ -900,22 +908,23 @@
    "m": 5,
    "k": [
     "The Trouble with PeaceJoe Abercrombie",
-    "The Lightning Tree Patrick Rothfuss"
+    "The Narrow Road Between DesiresPatrick Rothfuss"
    ]
   },
   {
    "y": 2033,
    "m": 6,
    "k": [
-    "The Wisdom of CrowdsJoe Abercrombie",
-    "How Old Holly Came to Be Patrick Rothfuss"
+    "The Lightning Tree Patrick Rothfuss",
+    "The Wisdom of CrowdsJoe Abercrombie"
    ]
   },
   {
    "y": 2033,
    "m": 7,
    "k": [
-    "The Great Change (and Other Lies)Joe Abercrombie"
+    "The Great Change (and Other Lies)Joe Abercrombie",
+    "How Old Holly Came to Be Patrick Rothfuss"
    ]
   }
  ]
