@@ -177,14 +177,6 @@
    "p": 432
   },
   {
-   "t": "A Time of Dread",
-   "a": "John Gwynne",
-   "s": "Of Blood and Bone",
-   "n": 1,
-   "g": "F",
-   "p": 463
-  },
-  {
    "t": "A Time of Blood",
    "a": "John Gwynne",
    "s": "Of Blood and Bone",
@@ -914,7 +906,6 @@
    "y": 2033,
    "m": 3,
    "k": [
-    "A Time of BloodJohn Gwynne",
     "Shadows Upon TimeChristopher Ruocchio",
     "Season of StormsAndrzej Sapkowski"
    ]
@@ -940,7 +931,6 @@
    "y": 2033,
    "m": 6,
    "k": [
-    "A Time of CourageJohn Gwynne",
     "The Slow Regard of Silent ThingsPatrick Rothfuss"
    ]
   },
@@ -956,7 +946,6 @@
    "y": 2033,
    "m": 8,
    "k": [
-    "The Shadow of the GodsJohn Gwynne",
     "The Lightning Tree (short)Patrick Rothfuss"
    ]
   },
@@ -964,13 +953,54 @@
    "y": 2033,
    "m": 9,
    "k": [
-    "The Hunger of the GodsJohn Gwynne",
     "How Old Holly Came to Be (short)Patrick Rothfuss"
    ]
   },
   {
    "y": 2033,
-   "m": 10,
+   "m": 11,
+   "k": [
+    "A Time of BloodJohn Gwynne"
+   ]
+  },
+  {
+   "y": 2034,
+   "m": 0,
+   "k": [
+    "A Time of BloodJohn Gwynne"
+   ]
+  },
+  {
+   "y": 2034,
+   "m": 1,
+   "k": [
+    "A Time of CourageJohn Gwynne"
+   ]
+  },
+  {
+   "y": 2034,
+   "m": 2,
+   "k": [
+    "A Time of CourageJohn Gwynne"
+   ]
+  },
+  {
+   "y": 2034,
+   "m": 3,
+   "k": [
+    "The Shadow of the GodsJohn Gwynne"
+   ]
+  },
+  {
+   "y": 2034,
+   "m": 4,
+   "k": [
+    "The Hunger of the GodsJohn Gwynne"
+   ]
+  },
+  {
+   "y": 2034,
+   "m": 5,
    "k": [
     "The Fury of the GodsJohn Gwynne"
    ]
