@@ -183,14 +183,6 @@
    "n": 2,
    "g": "F",
    "p": 496
-  },
-  {
-   "t": "A Time of Courage",
-   "a": "John Gwynne",
-   "s": "Of Blood and Bone",
-   "n": 3,
-   "g": "F",
-   "p": 648
   }
  ],
  "rd": {
@@ -826,8 +818,8 @@
    "m": 6,
    "k": [
     "Howling DarkChristopher Ruocchio",
-    "ValourJohn Gwynne",
-    "Blood of ElvesAndrzej Sapkowski"
+    "Blood of ElvesAndrzej Sapkowski",
+    "ValourJohn Gwynne"
    ]
   },
   {
@@ -861,9 +853,9 @@
    "y": 2032,
    "m": 10,
    "k": [
-    "WrathJohn Gwynne",
     "Kingdoms of DeathChristopher Ruocchio",
-    "Baptism of FireAndrzej Sapkowski"
+    "Baptism of FireAndrzej Sapkowski",
+    "WrathJohn Gwynne"
    ]
   },
   {
@@ -879,9 +871,9 @@
    "y": 2033,
    "m": 0,
    "k": [
-    "A Time of DreadJohn Gwynne",
     "Ashes of ManChristopher Ruocchio",
-    "The Tower of SwallowsAndrzej Sapkowski"
+    "The Tower of SwallowsAndrzej Sapkowski",
+    "A Time of DreadJohn Gwynne"
    ]
   },
   {
@@ -907,7 +899,8 @@
    "m": 3,
    "k": [
     "Shadows Upon TimeChristopher Ruocchio",
-    "Season of StormsAndrzej Sapkowski"
+    "Season of StormsAndrzej Sapkowski",
+    "A Time of BloodJohn Gwynne"
    ]
   },
   {
@@ -923,8 +916,8 @@
    "y": 2033,
    "m": 5,
    "k": [
-    "A Time of BloodJohn Gwynne",
-    "The Wise Man's FearPatrick Rothfuss"
+    "The Wise Man's FearPatrick Rothfuss",
+    "A Time of BloodJohn Gwynne"
    ]
   },
   {
@@ -938,8 +931,8 @@
    "y": 2033,
    "m": 7,
    "k": [
-    "A Time of CourageJohn Gwynne",
-    "The Narrow Road Between DesiresPatrick Rothfuss"
+    "The Narrow Road Between DesiresPatrick Rothfuss",
+    "A Time of BloodJohn Gwynne"
    ]
   },
   {
@@ -967,7 +960,7 @@
    "y": 2034,
    "m": 0,
    "k": [
-    "A Time of BloodJohn Gwynne"
+    "A Time of CourageJohn Gwynne"
    ]
   },
   {
