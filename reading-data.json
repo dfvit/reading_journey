@@ -175,6 +175,14 @@
    "n": 2,
    "g": "F",
    "p": 432
+  },
+  {
+   "t": "A Time of Dread",
+   "a": "John Gwynne",
+   "s": "Of Blood and Bone",
+   "n": 1,
+   "g": "F",
+   "p": 463
   }
  ],
  "rd": {
@@ -757,7 +765,7 @@
    "k": [
     "Carthage: A New HistoryEve MacDonald",
     "Ashes of ManChristopher Ruocchio",
-    "BabelR. F. Kuang"
+    "A Time of DreadJohn Gwynne"
    ]
   },
   {
@@ -773,7 +781,7 @@
    "y": 2032,
    "m": 2,
    "k": [
-    "The Shadow of What Was LostJames Islington",
+    "BabelR. F. Kuang",
     "Disquiet GodsChristopher Ruocchio",
     "Biological WarAnnie Jacobsen"
    ]
@@ -784,34 +792,34 @@
    "k": [
     "ExcessionIain M. Banks",
     "Crossroads of RavensAndrzej Sapkowski",
-    "Rendezvous with RamaArthur C. Clarke"
+    "ScytheNeal Shusterman"
    ]
   },
   {
    "y": 2032,
    "m": 4,
    "k": [
-    "An Echo of Things to ComeJames Islington",
+    "The Shadow of What Was LostJames Islington",
     "Shadows Upon TimeChristopher Ruocchio",
-    "The Daughters' WarChristopher Buehlman"
+    "Rendezvous with RamaArthur C. Clarke"
    ]
   },
   {
    "y": 2032,
    "m": 5,
    "k": [
-    "InversionsIain M. Banks",
+    "ThunderheadNeal Shusterman",
     "The Blade ItselfJoe Abercrombie",
-    "ScytheNeal Shusterman"
+    "InversionsIain M. Banks"
    ]
   },
   {
    "y": 2032,
    "m": 6,
    "k": [
-    "The Light of All That FallsJames Islington",
-    "The Blacktongue ThiefChristopher Buehlman",
-    "Look to WindwardIain M. Banks"
+    "An Echo of Things to ComeJames Islington",
+    "Look to WindwardIain M. Banks",
+    "The Daughters' WarChristopher Buehlman"
    ]
   },
   {
@@ -819,7 +827,7 @@
    "m": 7,
    "k": [
     "Before They Are HangedJoe Abercrombie",
-    "ThunderheadNeal Shusterman",
+    "The TollNeal Shusterman",
     "The Shadow of the GodsJohn Gwynne"
    ]
   },
@@ -827,17 +835,17 @@
    "y": 2032,
    "m": 8,
    "k": [
-    "The Thrice-Bound FoolChristopher Buehlman",
+    "The Light of All That FallsJames Islington",
     "MatterIain M. Banks",
-    "MaliceJohn Gwynne"
+    "The Blacktongue ThiefChristopher Buehlman"
    ]
   },
   {
    "y": 2032,
    "m": 9,
    "k": [
-    "The TollNeal Shusterman",
     "Last Argument of KingsJoe Abercrombie",
+    "GleaningsNeal Shusterman",
     "The Hunger of the GodsJohn Gwynne"
    ]
   },
@@ -845,7 +853,7 @@
    "y": 2032,
    "m": 10,
    "k": [
-    "ValourJohn Gwynne",
+    "The Thrice-Bound FoolChristopher Buehlman",
     "Surface DetailIain M. Banks",
     "Empire of the VampireJay Kristoff"
    ]
@@ -855,8 +863,8 @@
    "m": 11,
    "k": [
     "The Fury of the GodsJohn Gwynne",
-    "GleaningsNeal Shusterman",
-    "Best Served ColdJoe Abercrombie"
+    "Best Served ColdJoe Abercrombie",
+    "The Hydrogen SonataIain M. Banks"
    ]
   },
   {
@@ -864,8 +872,8 @@
    "m": 0,
    "k": [
     "Empire of the DamnedJay Kristoff",
-    "The Hydrogen SonataIain M. Banks",
-    "RuinJohn Gwynne"
+    "The Will of the ManyJames Islington",
+    "MaliceJohn Gwynne"
    ]
   },
   {
@@ -873,16 +881,16 @@
    "m": 1,
    "k": [
     "The HeroesJoe Abercrombie",
-    "The Will of the ManyJames Islington",
-    "The Name of the WindPatrick Rothfuss"
+    "The Name of the WindPatrick Rothfuss",
+    "ValourJohn Gwynne"
    ]
   },
   {
    "y": 2033,
    "m": 2,
    "k": [
-    "WrathJohn Gwynne",
     "Empire of the DawnJay Kristoff",
+    "The Strength of the FewJames Islington",
     "Red CountryJoe Abercrombie"
    ]
   },
@@ -890,8 +898,8 @@
    "y": 2033,
    "m": 3,
    "k": [
-    "The Strength of the FewJames Islington",
     "The Wise Man's FearPatrick Rothfuss",
+    "RuinJohn Gwynne",
     "Sharp EndsJoe Abercrombie"
    ]
   },
@@ -900,7 +908,8 @@
    "m": 4,
    "k": [
     "A Little HatredJoe Abercrombie",
-    "The Slow Regard of Silent ThingsPatrick Rothfuss"
+    "The Slow Regard of Silent ThingsPatrick Rothfuss",
+    "WrathJohn Gwynne"
    ]
   },
   {
