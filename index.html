@@ -43,6 +43,7 @@ dialog{background:var(--card);color:var(--ink);border:1px solid var(--line);bord
 #nav{top:auto;bottom:0;left:0;right:0;width:auto;height:54px;display:flex;overflow-x:auto;overflow-y:hidden;background:#14110ff2;border-top:1px solid var(--line);padding:6px 8px;text-align:left;-webkit-overflow-scrolling:touch}
 #nav .ny{display:flex;align-items:center;flex:none;border:0;border-right:2px solid var(--line);margin:0 8px 0 0;padding:0 8px 0 0}
 #nav .nm{display:flex}#nav .yl{padding:8px 10px;font-size:14px}#nav .nm a{padding:9px 10px;font-size:12px;white-space:nowrap}#toast{bottom:70px}}
+.rt{color:#e8b84b!important;border-color:#6b5a2a!important}.rt.thin{opacity:.6}
 </style></head><body>
 <header><h1>📚 The Reading Journey</h1><p>3 books a month · ~1,500 pages · seasonal themes · starting October 2026</p><div class="stats" id="stats"></div></header>
 <div class="filters">
@@ -66,7 +67,7 @@ The Fellowship of the Ring|Middle-earth|1|F|423
 The Two Towers|Middle-earth|2|F|352
 The Return of the King|Middle-earth|3|F|416
 #Ursula K. Le Guin
-A Wizard of Earthsea|Earthsea|1|F|183
+A Wizard of Earthsea|||F|183
 #Jacqueline Harpman
 I Who Have Never Known Men|||S|200
 #Michael W. Cox
@@ -117,6 +118,9 @@ Malice|Faithful and the Fallen|1|F|560
 Valour|Faithful and the Fallen|2|F|640
 Ruin|Faithful and the Fallen|3|F|700
 Wrath|Faithful and the Fallen|4|F|720
+A Time of Dread|Of Blood and Bone|1|F|600
+A Time of Blood|Of Blood and Bone|2|F|640
+A Time of Courage|Of Blood and Bone|3|F|650
 The Shadow of the Gods|Bloodsworn|1|F|560
 The Hunger of the Gods|Bloodsworn|2|F|640
 The Fury of the Gods|Bloodsworn|3|F|720
@@ -125,8 +129,8 @@ The Name of the Wind|Kingkiller Chronicle|1|F|662
 The Wise Man's Fear|Kingkiller Chronicle|2|F|994
 The Slow Regard of Silent Things|Kingkiller Chronicle|3|F|176
 The Narrow Road Between Desires|Kingkiller Chronicle|4|F|150
-The Lightning Tree |Kingkiller Chronicle|5|F|50
-How Old Holly Came to Be |Kingkiller Chronicle|6|F|40
+The Lightning Tree (short)|Kingkiller Chronicle|5|F|50
+How Old Holly Came to Be (short)|Kingkiller Chronicle|6|F|40
 #Joe Abercrombie
 The Blade Itself|First Law|1|F|515
 Before They Are Hanged|First Law|2|F|480
@@ -338,7 +342,7 @@ The Divine Comedy|||C|500
 The Dawn of Everything|||N|700
 #Christopher Buehlman
 The Blacktongue Thief|Blacktongue|1|F|440
-The Daughters' War|Blacktongue|0|F|450
+The Daughters' War|Blacktongue|2|F|450
 Between Two Fires|||F|400
 #Daniel Coyle
 The Culture Code|||N|270
@@ -382,7 +386,8 @@ const W=[[1,1,3,3,0,1],[3,1,1,2,1,3],[3,2,1,1,0,1],[1,3,3,1,0,1],[2,1,3,1,1,3],[
 const LIGHT=/Hitchhik|Restaurant at|Life, the|So Long|Mostly|Another Thing|Martian|Kaiju|Carl|Dungeon|Anne of|Coffee|Tress|Astrophysics|Hobbit|Circe|Banana|Narnia|Culture Code|Walking/;
 const DARK=/Abercrombie|Poppy|Dragon Republic|Burning|Needless|Mount Char|Between Two|Vampire|Damned|Dawn$|Annihilation|Magpie|Havoc|Gulag|Short Stay|Lexicon|King Sorrow|Hierarchy|Blacktongue|Bees|Scythe|Thunderhead|Toll|Bloodsworn|Gods$/;
 // Reading chains: books that must be read in this exact order across sub-series
-const CH={Cosmere:['Mistborn: The Final Empire','The Well of Ascension','The Hero of Ages','Tress of the Emerald Sea','The Alloy of Law','Shadows of Self','The Bands of Mourning','Yumi and the Nightmare Painter','The Way of Kings','Words of Radiance','Oathbringer','Rhythm of War','The Lost Metal','The Fires of December','Wind and Truth']};
+const CH={Cosmere:['Mistborn: The Final Empire','The Well of Ascension','The Hero of Ages','Tress of the Emerald Sea','The Alloy of Law','Shadows of Self','The Bands of Mourning','Yumi and the Nightmare Painter','The Way of Kings','Words of Radiance','Oathbringer','Rhythm of War','The Lost Metal','The Fires of December','Wind and Truth'],
+ Gwynne:['Malice','Valour','Ruin','Wrath','A Time of Dread','A Time of Blood','A Time of Courage','The Shadow of the Gods','The Hunger of the Gods','The Fury of the Gods']};
 const MN=['January','February','March','April','May','June','July','August','September','October','November','December'];
 const $=id=>document.getElementById(id);
 const ld=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))||d}catch(e){return d}};
@@ -416,7 +421,7 @@ function plan(){
     if(K(b)&&last[K(b)]==mi-1)sc-=4;else if(K(b)&&last[K(b)]==mi-2)sc-=1.5;
     if(K(b)&&last[K(b)]!==undefined&&last[K(b)]<mi-1)sc+=2+Math.min(mi-1-last[K(b)],8)*0.6;
     if(K(b)&&last[K(b)]===undefined&&ip.size>=4)sc-=3;
-    if(b.c)sc+=2.5;
+    if(b.c=='Cosmere')sc+=2.5;
     const nt=tot+b.p;if(nt>1500)sc-=(nt-1500)/150;
     if(pick.length==2&&nt<1300)sc-=(1300-nt)/200;
     if(b.p>900&&pick.some(x=>x.p>700))sc-=2;
@@ -458,10 +463,48 @@ function insertPlan(b){
  if(!best){plan();return}
  sched=best.filter(x=>x.b.length);sched.forEach(x=>x.p=pg(x));savePlan();
 }
+
+// ---- order guards: series/chains are ALWAYS read in order (Gwynne: Faithful & Fallen > Of Blood and Bone > Bloodsworn) ----
+// fixOrder: if a saved plan has a series out of order, swap those books between the months they already occupy.
+function fixOrder(){
+ const by={};sched.forEach((s,i)=>s.b.forEach(b=>{const k=K(b);if(k)(by[k]=by[k]||[]).push([i,b])}));let ch=0;
+ for(const k in by){const a=by[k];if(a.length<2)continue;
+  const cur=a.slice().sort((x,y)=>x[0]-y[0]),ns=cur.map(x=>N(x[1]));
+  if(ns.every((n,j)=>!j||n>=ns[j-1]))continue;
+  const slots=cur.map(x=>x[0]),bs=a.map(x=>x[1]).sort((x,y)=>N(x)-N(y));
+  a.forEach(([i,b])=>sched[i].b.splice(sched[i].b.indexOf(b),1));
+  bs.forEach((b,j)=>sched[slots[j]].b.push(b));ch=1}
+ if(ch){sched.forEach(s=>s.p=s.b.reduce((a,x)=>a+x.p,0));savePlan()}
+}
+// sequence: places unscheduled books of a series right after the book before them, moving a later book only if it would end up out of order.
+function sequence(k){
+ const all=books.filter(b=>K(b)==k&&!rd[key(b)]).sort((x,y)=>N(x)-N(y));if(!all.length||!sched.length)return;
+ const now=new Date(),cy=now.getFullYear(),cm=now.getMonth();
+ let fi=sched.findIndex(s=>s.y>cy||(s.y==cy&&s.m>=cm));if(fi<0)fi=sched.length;
+ const where=b=>sched.findIndex(s=>s.b.includes(b));let prev=fi-1;
+ all.forEach((b,idx)=>{
+  const w=where(b);if(w>prev&&w>=0){prev=w;return}
+  if(w>=0)sched[w].b.splice(sched[w].b.indexOf(b),1);
+  const nx=all.slice(idx+1).map(where).filter(x=>x>prev),nw=nx.length?Math.min(...nx):1e9;
+  let bi=-1,bs=-9e9;
+  for(let i=prev+1;i<=sched.length;i++){
+   if(i>prev+5&&bi>=0)break;const s=sched[i];
+   if(s&&(s.b.length>=4||s.b.some(x=>K(x)==k)||s.b.reduce((a,x)=>a+x.p,0)+b.p>1700))continue;
+   const v=fitS(b,s?s.m:nextMo(sched[sched.length-1]).m)-0.3*Math.abs(i-prev-2)-(i>=nw?3:0);
+   if(v>bs){bs=v;bi=i}}
+  if(bi<0)bi=sched.length;if(bi>=sched.length)sched.push(nextMo(sched[sched.length-1]));
+  sched[bi].b.push(b);prev=bi});
+}
+function seqOrphans(orph){
+ [...new Set(orph.filter(b=>K(b)).map(K))].forEach(sequence);
+ sched=sched.filter(s=>s.b.length);sched.forEach(s=>s.p=s.b.reduce((a,x)=>a+x.p,0));savePlan();
+ orph.filter(b=>!K(b)&&!sched.some(s=>s.b.includes(b))).forEach(insertPlan);
+}
 function loadPlan(){
  const P=ld('plan',null);if(!P)return plan();
  const map=new Map(books.map(b=>[key(b),b]));
  sched=P.map(s=>{const bs=s.k.map(k=>map.get(k)).filter(Boolean);return{y:s.y,m:s.m,b:bs,p:bs.reduce((a,b)=>a+b.p,0)}}).filter(s=>s.b.length);
+ fixOrder();
 }
 
 // ---- GitHub sync: saves ex/rd/plan to reading-data.json in your repo ----
@@ -515,15 +558,24 @@ function fillFilters(){
 let tt;function toast(m){const t=$('toast');t.textContent=m;t.style.display='block';clearTimeout(tt);tt=setTimeout(()=>t.style.display='none',6000)}
 // ---- covers (Open Library, lazy) ----
 let qp=Promise.resolve();const enc=encodeURIComponent;
+const rt=ld('rt',{});
+const fmt=c=>c>=1000?(c/1000).toFixed(1).replace('.0','')+'k':String(c);
+const rateTag=b=>{const r=rt[key(b)];return r&&r.a?`<span class="rt${r.c<100?' thin':''}" title="${r.a} average from ${r.c} Open Library ratings${r.c<100?' (few ratings, take with a pinch of salt)':''}">★ ${r.a.toFixed(1)} · ${fmt(r.c)}</span>`:''};
+function setRate(el,b){const c=el.closest('.card');if(!c||c.querySelector('.rt'))return;const h=rateTag(b);if(h)c.querySelector('.tags').insertAdjacentHTML('beforeend',h)}
 async function find(b){
- const k=key(b);if(cv[k]!==undefined)return cv[k];
- const t=b.t.replace(/\(.*?\)/g,'').replace(': The Final Empire','').trim(),a=b.a.split('&')[0].trim();let ok=true;
+ const k=key(b);if(cv[k]!==undefined&&rt[k]!==undefined)return cv[k];
+ const t=b.t.replace(/\(.*?\)/g,'').replace(': The Final Empire','').trim(),a=b.a.split('&')[0].trim(),ln=a.split(' ').pop().toLowerCase();
+ let ok=true,cov=cv[k]||0,rat=rt[k]||0;
  for(const q of [`title=${enc(t)}&author=${enc(a)}`,`title=${enc(t)}`]){
-  try{const r=await fetch(`https://openlibrary.org/search.json?${q}&limit=8&fields=cover_i`);if(!r.ok){ok=false;continue}
-   const d=(await r.json()).docs.find(x=>x.cover_i);if(d){cv[k]=d.cover_i;sv('cv',cv);return d.cover_i}}catch(e){ok=false}}
- if(ok){cv[k]=0;sv('cv',cv)}return 0}
+  try{const r=await fetch(`https://openlibrary.org/search.json?${q}&limit=8&fields=cover_i,ratings_average,ratings_count,author_name`);if(!r.ok){ok=false;continue}
+   const ds=(await r.json()).docs;
+   if(!cov){const d=ds.find(x=>x.cover_i);if(d)cov=d.cover_i}
+   if(!rat){const rs=ds.filter(x=>x.ratings_average&&x.ratings_count&&(x.author_name||[]).join(' ').toLowerCase().includes(ln));
+    if(rs.length){const m=rs.reduce((x,y)=>y.ratings_count>x.ratings_count?y:x);rat={a:Math.round(m.ratings_average*100)/100,c:m.ratings_count}}}
+   if(cov&&rat)break}catch(e){ok=false}}
+ if(ok||cov)cv[k]=cov;if(ok||rat)rt[k]=rat;sv('cv',cv);sv('rt',rt);return cov}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);const el=e.target,b=books[+el.dataset.i];if(!b)return;
- qp=qp.then(async()=>{const id=await find(b);if(!id)return;const im=new Image();im.alt=b.t;im.onload=()=>{el.innerHTML='';el.appendChild(im)};im.src=`https://covers.openlibrary.org/b/id/${id}-M.jpg?default=false`;await new Promise(r=>setTimeout(r,120))})}),{rootMargin:'400px'});
+ qp=qp.then(async()=>{const id=await find(b);setRate(el,b);if(!id)return;const im=new Image();im.alt=b.t;im.onload=()=>{el.innerHTML='';el.appendChild(im)};im.src=`https://covers.openlibrary.org/b/id/${id}-M.jpg?default=false`;await new Promise(r=>setTimeout(r,120))})}),{rootMargin:'400px'});
 // ---- timeline ----
 let spy;const narrow=()=>matchMedia('(max-width:700px)').matches;
 function buildNav(){
@@ -540,25 +592,28 @@ function buildNav(){
 // ---- render ----
 const closed=new Set(['fin']);let init=0,ign=0;
 function card(b){const k=key(b),now=!rd[k]&&(b.t=='Golden Son'||b.t=='Between Two Fires');
- return `<div class="card${rd[k]?' read':''}">${now?'<span class="now">Reading now</span>':''}${b.x?`<button class="del" data-del="${esc(k)}" title="Remove from my list">✕</button>`:''}<div class="cv" data-i="${books.indexOf(b)}">${esc(b.t)}</div><div class="bd"><h3>${esc(b.t)}</h3><div class="au">${esc(b.a)}</div><div class="tags"><span class="g">${GN[b.g]}</span><span>${b.p} pp</span>${b.s?`<span>${esc(b.s)}${b.n?' #'+b.n:''}</span>`:''}${b.x?'<span>Added by you</span>':''}</div><label class="rd"><input type="checkbox" data-k="${esc(k)}" ${rd[k]?'checked':''}><span>${rd[k]?'Read':'Mark as read'}</span></label></div></div>`}
+ return `<div class="card${rd[k]?' read':''}">${now?'<span class="now">Reading now</span>':''}${b.x?`<button class="del" data-del="${esc(k)}" title="Remove from my list">✕</button>`:''}<div class="cv" data-i="${books.indexOf(b)}">${esc(b.t)}</div><div class="bd"><h3>${esc(b.t)}</h3><div class="au">${esc(b.a)}</div><div class="tags"><span class="g">${GN[b.g]}</span><span>${b.p} pp</span>${rateTag(b)}${b.s?`<span>${esc(b.s)}${b.n?' #'+b.n:''}</span>`:''}${b.x?'<span>Added by you</span>':''}</div><label class="rd"><input type="checkbox" data-k="${esc(k)}" ${rd[k]?'checked':''}><span>${rd[k]?'Read':'Mark as read'}</span></label></div></div>`}
 function render(){
  let inPlan=new Set(sched.flatMap(s=>s.b));
  const orph=books.filter(b=>!inPlan.has(b)&&!rd[key(b)]);
- if(orph.length){orph.forEach(insertPlan);inPlan=new Set(sched.flatMap(s=>s.b));fillFilters()}
+ if(orph.length){seqOrphans(orph);inPlan=new Set(sched.flatMap(s=>s.b));fillFilters()}
  const f={y:$('fy').value,g:$('fg').value,a:$('fa').value,s:$('fs').value,q:$('fq').value.toLowerCase()};
  const filt=!!(f.y||f.g||f.a||f.s||f.q);
- const ok=b=>(!f.g||b.g==f.g)&&(!f.a||b.a==f.a)&&(!f.s||b.s==f.s)&&(!f.q||b.t.toLowerCase().includes(f.q));
+ const ok=b=>(!f.g||b.g==f.g)&&(!f.a||b.a==f.a)&&(!f.s||b.s==f.s)&&(!f.q||b.t.toLowerCase().includes(f.q))  ;
  if(!init&&sched.length){init=1;sched.forEach(s=>{if(s.y!=sched[0].y)closed.add(String(s.y))})}
  const yrs=[];let shown=0;
  sched.forEach(s=>{if(f.y&&s.y!=f.y)return;const bs=s.b.filter(ok);if(!bs.length)return;
   let Yo=yrs[yrs.length-1];if(!Yo||Yo.y!=s.y){Yo={y:s.y,h:'',n:0};yrs.push(Yo)}
   const[th,se]=TH[s.m];shown+=bs.length;Yo.n+=bs.length;
-  Yo.h+=`<section class="month" id="m-${s.y}-${s.m}" data-s="${se}"><div class="mh"><h2>${MN[s.m]}<small>${th}</small></h2><em>${s.b.length} books · ${s.p.toLocaleString()} pages</em></div><div class="grid">${bs.map(card).join('')}</div></section>`});
+  Yo.h+=`<section class="month" id="m-${s.y}-${s.m}" data-s="${se}"><div class="mh"><h2>${MN[s.m]}<small>${th}</small></h2><em>${s.b.length} books · ${s.p.toLocaleString()} pages</em></div><div class="grid">${bs.map(b=>card(b)).join('')}</div></section>`});
  const fin=f.y?[]:books.filter(b=>rd[key(b)]&&!inPlan.has(b)&&ok(b));shown+=fin.length;
- let html=fin.length?`<details class="yr" id="y-fin"${filt||!closed.has('fin')?' open':''}><summary class="year">✓ Finished<small>${fin.length} books</small></summary><section class="month" data-s="sp"><div class="grid">${fin.map(card).join('')}</div></section></details>`:'';
+ let html=fin.length?`<details class="yr" id="y-fin"${filt||!closed.has('fin')?' open':''}><summary class="year">✓ Finished<small>${fin.length} books</small></summary><section class="month" data-s="sp"><div class="grid">${fin.map(b=>card(b)).join('')}</div></section></details>`:'';
  html+=yrs.map(Yo=>`<details class="yr" id="y-${Yo.y}"${filt||!closed.has(String(Yo.y))?' open':''}><summary class="year">${Yo.y}<small>${Yo.n} books</small></summary>${Yo.h}</details>`).join('');
  ign=1;$('out').innerHTML=html||'<div class="empty">No books match these filters.</div>';setTimeout(()=>ign=0,80);
  document.querySelectorAll('.cv').forEach(e=>io.observe(e));buildNav();
+ stats(shown);
+}
+function stats(shown){
  const end=sched[sched.length-1],unread=books.filter(b=>!rd[key(b)]);
  $('stats').innerHTML=`<span>${books.length} books</span><span>${unread.length} to read</span><span>${sched.length} months</span><span>${unread.reduce((a,b)=>a+b.p,0).toLocaleString()} pages left</span><span>${end?'Finish: '+MN[end.m]+' '+end.y:'All done! 🎉'}</span><span>Showing ${shown}</span>`;
 }
