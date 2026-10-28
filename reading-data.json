@@ -781,7 +781,7 @@
    "k": [
     "Carthage: A New HistoryEve MacDonald",
     "Ashes of ManChristopher Ruocchio",
-    "A Time of DreadJohn Gwynne"
+    "MaliceJohn Gwynne"
    ]
   },
   {
@@ -797,9 +797,9 @@
    "y": 2032,
    "m": 2,
    "k": [
-    "A Time of BloodJohn Gwynne",
     "Disquiet GodsChristopher Ruocchio",
-    "Biological WarAnnie Jacobsen"
+    "Biological WarAnnie Jacobsen",
+    "ValourJohn Gwynne"
    ]
   },
   {
@@ -815,9 +815,9 @@
    "y": 2032,
    "m": 4,
    "k": [
-    "A Time of CourageJohn Gwynne",
     "Shadows Upon TimeChristopher Ruocchio",
-    "The Daughters' WarChristopher Buehlman"
+    "RuinJohn Gwynne",
+    "The Blacktongue ThiefChristopher Buehlman"
    ]
   },
   {
@@ -833,9 +833,9 @@
    "y": 2032,
    "m": 6,
    "k": [
-    "The Blacktongue ThiefChristopher Buehlman",
     "Look to WindwardIain M. Banks",
-    "The Blade ItselfJoe Abercrombie"
+    "The Blade ItselfJoe Abercrombie",
+    "The Daughters' WarChristopher Buehlman"
    ]
   },
   {
@@ -853,7 +853,7 @@
    "k": [
     "MatterIain M. Banks",
     "Before They Are HangedJoe Abercrombie",
-    "The Shadow of the GodsJohn Gwynne"
+    "WrathJohn Gwynne"
    ]
   },
   {
@@ -870,8 +870,7 @@
    "m": 10,
    "k": [
     "Last Argument of KingsJoe Abercrombie",
-    "Surface DetailIain M. Banks",
-    "The Hunger of the GodsJohn Gwynne"
+    "Surface DetailIain M. Banks"
    ]
   },
   {
@@ -888,7 +887,6 @@
    "m": 0,
    "k": [
     "The Hydrogen SonataIain M. Banks",
-    "The Fury of the GodsJohn Gwynne",
     "Best Served ColdJoe Abercrombie"
    ]
   },
@@ -897,8 +895,7 @@
    "m": 1,
    "k": [
     "Empire of the DawnJay Kristoff",
-    "The Will of the ManyJames Islington",
-    "MaliceJohn Gwynne"
+    "The Will of the ManyJames Islington"
    ]
   },
   {
@@ -906,8 +903,7 @@
    "m": 2,
    "k": [
     "The HeroesJoe Abercrombie",
-    "The Name of the WindPatrick Rothfuss",
-    "ValourJohn Gwynne"
+    "The Name of the WindPatrick Rothfuss"
    ]
   },
   {
@@ -915,8 +911,7 @@
    "m": 3,
    "k": [
     "The Strength of the FewJames Islington",
-    "Red CountryJoe Abercrombie",
-    "RuinJohn Gwynne"
+    "Red CountryJoe Abercrombie"
    ]
   },
   {
@@ -924,8 +919,7 @@
    "m": 4,
    "k": [
     "The Wise Man's FearPatrick Rothfuss",
-    "Sharp EndsJoe Abercrombie",
-    "WrathJohn Gwynne"
+    "Sharp EndsJoe Abercrombie"
    ]
   },
   {
@@ -933,7 +927,8 @@
    "m": 5,
    "k": [
     "A Little HatredJoe Abercrombie",
-    "The Slow Regard of Silent ThingsPatrick Rothfuss"
+    "The Slow Regard of Silent ThingsPatrick Rothfuss",
+    "A Time of DreadJohn Gwynne"
    ]
   },
   {
@@ -948,16 +943,66 @@
    "y": 2033,
    "m": 7,
    "k": [
-    "The Lightning Tree Patrick Rothfuss",
-    "The Wisdom of CrowdsJoe Abercrombie"
+    "The Wisdom of CrowdsJoe Abercrombie",
+    "A Time of DreadJohn Gwynne",
+    "The Lightning Tree (short)Patrick Rothfuss"
    ]
   },
   {
    "y": 2033,
    "m": 8,
    "k": [
-    "The Great Change (and Other Lies)Joe Abercrombie",
-    "How Old Holly Came to Be Patrick Rothfuss"
+    "The Great Change (and Other Lies)Joe Abercrombie"
+   ]
+  },
+  {
+   "y": 2033,
+   "m": 9,
+   "k": [
+    "A Time of BloodJohn Gwynne"
+   ]
+  },
+  {
+   "y": 2033,
+   "m": 10,
+   "k": [
+    "A Time of BloodJohn Gwynne",
+    "How Old Holly Came to Be (short)Patrick Rothfuss"
+   ]
+  },
+  {
+   "y": 2033,
+   "m": 11,
+   "k": [
+    "A Time of CourageJohn Gwynne"
+   ]
+  },
+  {
+   "y": 2034,
+   "m": 0,
+   "k": [
+    "A Time of CourageJohn Gwynne"
+   ]
+  },
+  {
+   "y": 2034,
+   "m": 1,
+   "k": [
+    "The Shadow of the GodsJohn Gwynne"
+   ]
+  },
+  {
+   "y": 2034,
+   "m": 2,
+   "k": [
+    "The Hunger of the GodsJohn Gwynne"
+   ]
+  },
+  {
+   "y": 2034,
+   "m": 3,
+   "k": [
+    "The Fury of the GodsJohn Gwynne"
    ]
   }
  ]
