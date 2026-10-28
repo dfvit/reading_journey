@@ -927,8 +927,7 @@
    "m": 5,
    "k": [
     "A Little HatredJoe Abercrombie",
-    "The Slow Regard of Silent ThingsPatrick Rothfuss",
-    "A Time of DreadJohn Gwynne"
+    "The Slow Regard of Silent ThingsPatrick Rothfuss"
    ]
   },
   {
@@ -973,13 +972,6 @@
    ]
   },
   {
-   "y": 2034,
-   "m": 7,
-   "k": [
-    "A Time of BloodJohn Gwynne"
-   ]
-  },
-  {
    "y": 2035,
    "m": 0,
    "k": [
@@ -1004,21 +996,14 @@
    "y": 2035,
    "m": 7,
    "k": [
-    "A Time of CourageJohn Gwynne"
+    "A Time of BloodJohn Gwynne"
    ]
   },
   {
    "y": 2035,
    "m": 8,
    "k": [
-    "A Time of CourageJohn Gwynne"
-   ]
-  },
-  {
-   "y": 2035,
-   "m": 9,
-   "k": [
-    "A Time of CourageJohn Gwynne"
+    "A Time of BloodJohn Gwynne"
    ]
   },
   {
@@ -1032,14 +1017,14 @@
    "y": 2036,
    "m": 2,
    "k": [
-    "A Time of BloodJohn Gwynne"
+    "A Time of CourageJohn Gwynne"
    ]
   },
   {
    "y": 2036,
    "m": 3,
    "k": [
-    "A Time of BloodJohn Gwynne"
+    "A Time of CourageJohn Gwynne"
    ]
   },
   {
@@ -1058,21 +1043,63 @@
   },
   {
    "y": 2036,
-   "m": 6,
+   "m": 9,
+   "k": [
+    "A Time of DreadJohn Gwynne"
+   ]
+  },
+  {
+   "y": 2036,
+   "m": 10,
+   "k": [
+    "A Time of DreadJohn Gwynne"
+   ]
+  },
+  {
+   "y": 2036,
+   "m": 11,
+   "k": [
+    "A Time of BloodJohn Gwynne"
+   ]
+  },
+  {
+   "y": 2037,
+   "m": 0,
+   "k": [
+    "A Time of BloodJohn Gwynne"
+   ]
+  },
+  {
+   "y": 2037,
+   "m": 1,
+   "k": [
+    "A Time of CourageJohn Gwynne"
+   ]
+  },
+  {
+   "y": 2037,
+   "m": 2,
+   "k": [
+    "A Time of CourageJohn Gwynne"
+   ]
+  },
+  {
+   "y": 2037,
+   "m": 3,
    "k": [
     "The Shadow of the GodsJohn Gwynne"
    ]
   },
   {
-   "y": 2036,
-   "m": 7,
+   "y": 2037,
+   "m": 4,
    "k": [
     "The Hunger of the GodsJohn Gwynne"
    ]
   },
   {
-   "y": 2036,
-   "m": 8,
+   "y": 2037,
+   "m": 5,
    "k": [
     "The Fury of the GodsJohn Gwynne"
    ]
