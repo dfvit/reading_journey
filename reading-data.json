@@ -927,8 +927,7 @@
    "m": 5,
    "k": [
     "A Little HatredJoe Abercrombie",
-    "The Slow Regard of Silent ThingsPatrick Rothfuss",
-    "A Time of DreadJohn Gwynne"
+    "The Slow Regard of Silent ThingsPatrick Rothfuss"
    ]
   },
   {
@@ -936,7 +935,8 @@
    "m": 6,
    "k": [
     "The Trouble with PeaceJoe Abercrombie",
-    "The Narrow Road Between DesiresPatrick Rothfuss"
+    "The Narrow Road Between DesiresPatrick Rothfuss",
+    "A Time of DreadJohn Gwynne"
    ]
   },
   {
@@ -952,14 +952,8 @@
    "y": 2033,
    "m": 8,
    "k": [
-    "The Great Change (and Other Lies)Joe Abercrombie"
-   ]
-  },
-  {
-   "y": 2033,
-   "m": 9,
-   "k": [
-    "A Time of BloodJohn Gwynne"
+    "The Great Change (and Other Lies)Joe Abercrombie",
+    "A Time of DreadJohn Gwynne"
    ]
   },
   {
@@ -971,13 +965,6 @@
    ]
   },
   {
-   "y": 2033,
-   "m": 11,
-   "k": [
-    "A Time of CourageJohn Gwynne"
-   ]
-  },
-  {
    "y": 2034,
    "m": 0,
    "k": [
@@ -986,21 +973,49 @@
   },
   {
    "y": 2034,
-   "m": 1,
+   "m": 4,
+   "k": [
+    "A Time of BloodJohn Gwynne"
+   ]
+  },
+  {
+   "y": 2034,
+   "m": 5,
+   "k": [
+    "A Time of BloodJohn Gwynne"
+   ]
+  },
+  {
+   "y": 2034,
+   "m": 6,
+   "k": [
+    "A Time of CourageJohn Gwynne"
+   ]
+  },
+  {
+   "y": 2034,
+   "m": 7,
+   "k": [
+    "A Time of CourageJohn Gwynne"
+   ]
+  },
+  {
+   "y": 2034,
+   "m": 8,
    "k": [
     "The Shadow of the GodsJohn Gwynne"
    ]
   },
   {
    "y": 2034,
-   "m": 2,
+   "m": 9,
    "k": [
     "The Hunger of the GodsJohn Gwynne"
    ]
   },
   {
    "y": 2034,
-   "m": 3,
+   "m": 10,
    "k": [
     "The Fury of the GodsJohn Gwynne"
    ]
