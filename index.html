@@ -567,10 +567,10 @@ async function find(b){
  if(ok){cv[k]=0;sv('cv',cv)}return 0}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);const el=e.target,b=books[+el.dataset.i];if(!b)return;
  qp=qp.then(async()=>{const id=await find(b);if(!id)return;const im=new Image();im.alt=b.t;im.onload=()=>{el.innerHTML='';el.appendChild(im)};im.src=`https://covers.openlibrary.org/b/id/${id}-M.jpg?default=false`;await new Promise(r=>setTimeout(r,120))})}),{rootMargin:'400px'});
-// ---- timeline ----
+// ---- timeline ----g
 let spy;const narrow=()=>matchMedia('(max-width:700px)').matches;
 function buildNav(){
- const nav=$('nav'),secs=[...document.querySelectorAll('.month')],by={};
+ const nav=$('nav'),secs=[...document.querySelectorAll('.month[id]')],by={};
  secs.forEach(e=>{const[,y,m]=e.id.split('-');(by[y]=by[y]||[]).push([+m,e.id])});
  nav.innerHTML=Object.keys(by).map(y=>`<div class="ny"><a class="yl" href="#y-${y}" data-y="y-${y}" title="Jump to ${y}">${y}</a><div class="nm">`+by[y].map(([m,id])=>`<a href="#${id}" data-t="${id}" title="${MN[m]} ${y} · ${TH[m][0]}">${MN[m].slice(0,3)}</a>`).join('')+`</div></div>`).join('');
  if(spy)spy.disconnect();
@@ -601,8 +601,9 @@ function render(){
  let html=fin.length?`<details class="yr" id="y-fin"${filt||!closed.has('fin')?' open':''}><summary class="year">✓ Finished<small>${fin.length} books</small></summary><section class="month" data-s="sp"><div class="grid">${fin.map(b=>card(b)).join('')}</div></section></details>`:'';
  html+=yrs.map(Yo=>`<details class="yr" id="y-${Yo.y}"${filt||!closed.has(String(Yo.y))?' open':''}><summary class="year">${Yo.y}<small>${Yo.n} books</small></summary>${Yo.h}</details>`).join('');
  ign=1;$('out').innerHTML=html||'<div class="empty">No books match these filters.</div>';setTimeout(()=>ign=0,80);
- document.querySelectorAll('.cv').forEach(e=>io.observe(e));buildNav();
  stats(shown);
+ document.querySelectorAll('.cv').forEach(e=>io.observe(e));
+ try{buildNav()}catch(e){console.error(e)}
 }
 function stats(shown){
  const end=sched[sched.length-1],unread=books.filter(b=>!rd[key(b)]);
