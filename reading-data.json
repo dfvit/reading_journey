@@ -175,6 +175,14 @@
    "n": 2,
    "g": "F",
    "p": 432
+  },
+  {
+   "t": "The Wolves of War",
+   "a": "John Gwynne",
+   "s": "Wolfheart Chronicles",
+   "n": 1,
+   "g": "F",
+   "p": 496
   }
  ],
  "rd": {
@@ -648,8 +656,8 @@
    "m": 1,
    "k": [
     "Dark AgePierce Brown",
-    "Blood Over Bright HavenM. L. Wang",
-    "The Tombs of AtuanUrsula K. Le Guin"
+    "The Wolves of WarJohn Gwynne",
+    "Sources of PowerGary Klein"
    ]
   },
   {
@@ -667,7 +675,7 @@
    "k": [
     "Light BringerPierce Brown",
     "Inverting the PyramidJonathan Wilson",
-    "The Farthest ShoreUrsula K. Le Guin"
+    "The Tombs of AtuanUrsula K. Le Guin"
    ]
   },
   {
@@ -684,8 +692,8 @@
    "m": 5,
    "k": [
     "Death's EndLiu Cixin",
-    "TehanuUrsula K. Le Guin",
-    "Bury My Heart at Wounded KneeDee Brown"
+    "StalinSimon Sebag Montefiore",
+    "The Farthest ShoreUrsula K. Le Guin"
    ]
   },
   {
@@ -694,16 +702,16 @@
    "k": [
     "Children of TimeAdrian Tchaikovsky",
     "Assassin's FateRobin Hobb",
-    "Sources of PowerGary Klein"
+    "Into Thin AirJon Krakauer"
    ]
   },
   {
    "y": 2031,
    "m": 7,
    "k": [
-    "Tales From EarthseaUrsula K. Le Guin",
+    "TehanuUrsula K. Le Guin",
     "Service ModelAdrian Tchaikovsky",
-    "StalinSimon Sebag Montefiore"
+    "Plagues upon the EarthKyle Harper"
    ]
   },
   {
@@ -711,7 +719,7 @@
    "m": 8,
    "k": [
     "The Count of Monte CristoAlexandre Dumas",
-    "Into Thin AirJon Krakauer",
+    "Carthage: A New HistoryEve MacDonald",
     "A Wizard of EarthseaUrsula K. Le Guin"
    ]
   },
@@ -721,14 +729,14 @@
    "k": [
     "Children of RuinAdrian Tchaikovsky",
     "The Poppy WarR. F. Kuang",
-    "Carthage: A New HistoryEve MacDonald"
+    "The Story of BirdsSteve Brusatte"
    ]
   },
   {
    "y": 2031,
    "m": 10,
    "k": [
-    "The Other WindUrsula K. Le Guin",
+    "Tales From EarthseaUrsula K. Le Guin",
     "Empire of the VampireJay Kristoff",
     "The Other ValleyScott Alexander Howard"
    ]
@@ -738,7 +746,7 @@
    "m": 11,
    "k": [
     "The Dragon RepublicR. F. Kuang",
-    "Plagues upon the EarthKyle Harper",
+    "Bury My Heart at Wounded KneeDee Brown",
     "Rendezvous with RamaArthur C. Clarke"
    ]
   },
@@ -747,8 +755,8 @@
    "m": 0,
    "k": [
     "Children of MemoryAdrian Tchaikovsky",
-    "The Story of BirdsSteve Brusatte",
-    "The Fifth SeasonN. K. Jemisin"
+    "StalingradAntony Beevor",
+    "The Other WindUrsula K. Le Guin"
    ]
   },
   {
@@ -764,9 +772,9 @@
    "y": 2032,
    "m": 2,
    "k": [
-    "The Obelisk GateN. K. Jemisin",
     "Children of StrifeAdrian Tchaikovsky",
-    "StalingradAntony Beevor"
+    "Blood Over Bright HavenM. L. Wang",
+    "Blood of ElvesAndrzej Sapkowski"
    ]
   },
   {
@@ -784,7 +792,7 @@
    "k": [
     "Empire of the DawnJay Kristoff",
     "Empire of SilenceChristopher Ruocchio",
-    "Blood of ElvesAndrzej Sapkowski"
+    "The Time of ContemptAndrzej Sapkowski"
    ]
   },
   {
@@ -792,7 +800,7 @@
    "m": 5,
    "k": [
     "The Player of GamesIain M. Banks",
-    "The Stone SkyN. K. Jemisin",
+    "The Fifth SeasonN. K. Jemisin",
     "BabelR. F. Kuang"
    ]
   },
@@ -801,7 +809,7 @@
    "m": 6,
    "k": [
     "Howling DarkChristopher Ruocchio",
-    "The Time of ContemptAndrzej Sapkowski",
+    "Baptism of FireAndrzej Sapkowski",
     "The Daughters' WarChristopher Buehlman"
    ]
   },
@@ -809,8 +817,8 @@
    "y": 2032,
    "m": 7,
    "k": [
+    "The Obelisk GateN. K. Jemisin",
     "Use of WeaponsIain M. Banks",
-    "The Will of the ManyJames Islington",
     "MaliceJohn Gwynne"
    ]
   },
@@ -818,8 +826,8 @@
    "y": 2032,
    "m": 8,
    "k": [
+    "The Tower of SwallowsAndrzej Sapkowski",
     "Demon in WhiteChristopher Ruocchio",
-    "Baptism of FireAndrzej Sapkowski",
     "The Blacktongue ThiefChristopher Buehlman"
    ]
   },
@@ -828,8 +836,8 @@
    "m": 9,
    "k": [
     "The State of the ArtIain M. Banks",
-    "The Strength of the FewJames Islington",
-    "ValourJohn Gwynne"
+    "ValourJohn Gwynne",
+    "The Stone SkyN. K. Jemisin"
    ]
   },
   {
@@ -838,7 +846,7 @@
    "k": [
     "The Thrice-Bound FoolChristopher Buehlman",
     "Kingdoms of DeathChristopher Ruocchio",
-    "The Tower of SwallowsAndrzej Sapkowski"
+    "The Lady of the LakeAndrzej Sapkowski"
    ]
   },
   {
@@ -847,7 +855,7 @@
    "k": [
     "RuinJohn Gwynne",
     "ExcessionIain M. Banks",
-    "The Lady of the LakeAndrzej Sapkowski"
+    "Season of StormsAndrzej Sapkowski"
    ]
   },
   {
@@ -855,8 +863,8 @@
    "m": 0,
    "k": [
     "Ashes of ManChristopher Ruocchio",
-    "The Name of the WindPatrick Rothfuss",
-    "Season of StormsAndrzej Sapkowski"
+    "The Will of the ManyJames Islington",
+    "Crossroads of RavensAndrzej Sapkowski"
    ]
   },
   {
@@ -865,14 +873,14 @@
    "k": [
     "WrathJohn Gwynne",
     "InversionsIain M. Banks",
-    "Crossroads of RavensAndrzej Sapkowski"
+    "The Name of the WindPatrick Rothfuss"
    ]
   },
   {
    "y": 2033,
    "m": 2,
    "k": [
-    "The Wise Man's FearPatrick Rothfuss",
+    "The Strength of the FewJames Islington",
     "Disquiet GodsChristopher Ruocchio",
     "A Time of DreadJohn Gwynne"
    ]
@@ -882,7 +890,7 @@
    "m": 3,
    "k": [
     "Look to WindwardIain M. Banks",
-    "A Time of BloodJohn Gwynne",
+    "The Wise Man's FearPatrick Rothfuss",
     "Shadows Upon TimeChristopher Ruocchio"
    ]
   },
@@ -890,9 +898,9 @@
    "y": 2033,
    "m": 4,
    "k": [
-    "The Slow Regard of Silent ThingsPatrick Rothfuss",
+    "A Time of BloodJohn Gwynne",
     "MatterIain M. Banks",
-    "A Time of CourageJohn Gwynne"
+    "The Slow Regard of Silent ThingsPatrick Rothfuss"
    ]
   },
   {
@@ -900,7 +908,7 @@
    "m": 5,
    "k": [
     "Surface DetailIain M. Banks",
-    "The Shadow of the GodsJohn Gwynne",
+    "A Time of CourageJohn Gwynne",
     "The Narrow Road Between DesiresPatrick Rothfuss"
    ]
   },
@@ -909,7 +917,7 @@
    "m": 6,
    "k": [
     "The Hydrogen SonataIain M. Banks",
-    "The Hunger of the GodsJohn Gwynne",
+    "The Shadow of the GodsJohn Gwynne",
     "The Lightning TreePatrick Rothfuss"
    ]
   },
@@ -917,8 +925,15 @@
    "y": 2033,
    "m": 7,
    "k": [
-    "The Fury of the GodsJohn Gwynne",
-    "How Old Holly Came to BePatrick Rothfuss"
+    "How Old Holly Came to BePatrick Rothfuss",
+    "The Hunger of the GodsJohn Gwynne"
+   ]
+  },
+  {
+   "y": 2033,
+   "m": 8,
+   "k": [
+    "The Fury of the GodsJohn Gwynne"
    ]
   }
  ]
