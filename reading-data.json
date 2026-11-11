@@ -190,7 +190,7 @@
   "The Great Change (and Other Lies)Joe Abercrombie": false,
   "Golden SonPierce Brown": true,
   "HavocChristopher Bollen": true,
-  "Project Hail MaryAndy Weir": true
+  "Project Hail MaryAndy Weir": false
  },
  "plan": [
   {
@@ -917,7 +917,8 @@
    "y": 2033,
    "m": 6,
    "k": [
-    "A Time of BloodJohn Gwynne"
+    "A Time of BloodJohn Gwynne",
+    "Project Hail MaryAndy Weir"
    ]
   },
   {
